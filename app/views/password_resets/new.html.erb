@@ -1,0 +1,31 @@
+<div id="settings">
+
+<div class="formarea_left">
+<% form_tag password_resets_path do %>		
+	<h1 class="formheader"><img src="/images/icons/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("pwreset.title") %></h1>
+	<fieldset>
+		<ol>
+			<li>
+  		<label>Email</label>
+  		<%= text_field_tag t("pwreset.email"), "", :size => 30 %>
+			</li>
+		</ol>
+	</fieldset>
+</div>
+
+<div class="formarea_right">	
+
+<h1 class="formheader">&nbsp;</h1>
+	<p class="instructions"><%= t("pwreset.pageinstructions") %></p>
+	<p>&nbsp;</p>
+	<div class="buttons">
+		<%= cancel_button %>
+	  <button type="submit"><img src="/images/icons/textfield_key.png" alt=""/><%= t("pwreset.title") %></button>
+	</div>
+</div>
+	
+<% end %>
+
+<div style="clear:both;"></div>
+
+</div>

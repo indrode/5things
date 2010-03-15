@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<!--
+		***************************************************************************************
+		*** 5things
+		*** by Indro De (http://www.indrode.com/)
+		***************************************************************************************
+	-->
+
+  <title>5things | <%= h @title %></title>	
+	<meta name="author" content="Indro De" />
+	<meta name="description" content="The simple task manager and to-do list for managing all those things in your life." />
+	<meta name="keywords" content="5things, productivity, five things, task manager, todo, task, zenpunch, zen punch, indro de, indro" />
+	<meta name="copyright" content="5things" />
+	<meta name="email" content="5things@zenpunch.com" />
+	<meta name="google-site-verification" content="gklsdc5QAalgcsZVquS80BrmQ9fbHeNxK-bpW5mq_JE" />
+	<%= stylesheet_link_tag '5things' %>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery-ui-1.8rc1.custom.min.js"></script>
+	<%= javascript_include_tag 'loopedslider', 'jquery.tablesorter.min', 'jqModal', 'application2', :cache => 'outside' %>
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
+	<script>
+
+	$(document).ready(function() {	
+		$("#tasktable")
+			.tablesorter({ 
+			widthFixed: true });
+	});
+	</script>
+</head>
+
+<body>
+<div><img id="bg_image" src="/images/5things_bg.jpg" alt="" title="" /></div>
+<%= render :partial => 'shared/outside_nav', :locals => {:headerclass => @hd || "defaultclass"} %>
+<% if flash[:notice] %>
+	<div id="flash_space">
+		<div id="flash_notice"><%= flash[:notice] %> &nbsp; <a href="#">[<%= t("common.close") %>]</a></div>
+	</div>
+<% end %>
+
+<noscript>
+	<div id="alert_space">
+		<div id="flash_notice"><%= t("common.javascript") %></div>
+	</div>
+</noscript>
+
+<div id="showhide_button">
+</div>
+
+<div id="container_bg">
+	<div id="container">
+		<div id="headerarea">
+			<a href="<%= root_path %>"><img id="logo" src="/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
+		</div>
+		<%= yield %>
+	</div>
+</div>
+
+<%= render :partial => 'shared/footer' %>
+<%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
+</body>
+</html>

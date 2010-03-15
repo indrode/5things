@@ -1,0 +1,65 @@
+<div id="navline">
+	<div id="navleft">
+		<a href="?d=<%= @today.yesterday %>"><img src="/images/icons/<%= t("common.previous_image") %>" width="160" height="40" alt="<%= t("common.previous") %>" class="clean" /></a>
+	</div>
+	<div id="navright">
+		<a href="?d=<%= @today.tomorrow %>"><img src="/images/icons/<%= t("common.next_image") %>" width="160" height="40" alt="<%= t("common.next") %>" class="clean" /></a>
+	</div>
+</div>
+
+<div id="lists" style="clear:both;">
+<% # unassigned %>
+<% form_for :task, @task, :html => { :id => 'new_unassigned'} do |f| %>	
+<%= f.hidden_field :completed, :value => '0', :id => "a_1" %>
+<%= f.hidden_field :addtype, :value => 'unassigned', :id => "a_2" %>
+<%= f.hidden_field :duedate, :value => NEVER, :id => "a_3" %>
+<%= f.hidden_field :ordinal, :value => '32767', :id => "a_4" %>
+<ul id="unassigned_list" class="unassigned active" lang="">
+	<li class="clean"><div id="loader_new_unassigned"></div><h2 class="black"><span><%= t "common.unassigned" %></span><br /><%= t "common.unassigned2" %></h2></li>
+	<li class="clean"><%= f.text_field :body, :class => 'taskbox watermarkOn', :id => "new_unassigned_value", :value => t("common.addtask") %></li>	
+	<%= render :partial => "tasks", :collection => @unassigned, :as => :item, :locals => {:tasktype => NEVER} %> 
+</ul>
+<% end %>
+
+<div id="datebins">
+<% # day one (yesterday) %>
+<% form_for :task, @task, :html => { :id => 'new_yesterday'} do |f| %>
+<%= f.hidden_field :completed, :value => '0', :id => "b_1" %>
+<%= f.hidden_field :addtype, :value => 'yesterday', :id => "b_2" %>
+<%= f.hidden_field :duedate, :value => @yesterday, :id => "b_3" %>
+<%= f.hidden_field :ordinal, :value => '32767', :id => "b_4" %>
+<ul id="yesterday_list" class="day active" lang="<%= @yesterday %>">
+	<li class="clean"><div id="loader_new_yesterday"></div><h2 class="<%= @yesterday == @actualday ? "black" : "" %>"><span><%= l @yesterday, :format => :day_name %></span><br /><%= l @yesterday, :format => :long %></h2></li>
+	<li class="clean"><%= f.text_field :body, :class => 'taskbox watermarkOn', :id => "new_yesterday_value", :value => t("common.addtask") %></li>
+	<%= render :partial => "tasks", :collection => @tasks, :as => :item, :locals => {:tasktype => @yesterday} %>
+</ul>
+<% end %>
+
+<% # day two (today) %>
+<% form_for :task, @task, :html => { :id => 'new_today'} do |f| %>
+<%= f.hidden_field :completed, :value => '0', :id => "c_1" %>
+<%= f.hidden_field :addtype, :value => 'today', :id => "c_2" %>
+<%= f.hidden_field :duedate, :value => @today, :id => "c_3" %>
+<%= f.hidden_field :ordinal, :value => '32767', :id => "c_4" %>
+<ul id="today_list" class="day active" lang="<%= @today %>">
+	<li class="clean"><div id="loader_new_today"></div><h2 class="<%= @today == @actualday ? "black" : "" %>"><span><%= l @today, :format => :day_name %></span><br /><%= l @today, :format => :long %></h2></li>
+	<li class="clean"><%= f.text_field :body, :class => 'taskbox watermarkOn', :id => "new_today_value", :value => t("common.addtask") %></li>
+	<%= render :partial => "tasks", :collection => @tasks, :as => :item, :locals => {:tasktype => @today} %> 
+</ul>
+<% end %>
+
+<% # day three (tomorrow) %>
+<% form_for :task, @task, :html => { :id => 'new_tomorrow'} do |f| %>
+<%= f.hidden_field :completed, :value => '0', :id => "d_1" %>
+<%= f.hidden_field :addtype, :value => 'tomorrow', :id => "d_2" %>
+<%= f.hidden_field :duedate, :value => @tomorrow, :id => "d_3" %>
+<%= f.hidden_field :ordinal, :value => '32767', :id => "d_4" %>
+<ul id="tomorrow_list" class="day active" lang="<%= @tomorrow %>">
+	<li class="clean"><div id="loader_new_tomorrow"></div><h2 class="<%= @tomorrow == @actualday ? "black" : "" %>"><span><%= l @tomorrow, :format => :day_name %></span><br /><%= l @tomorrow, :format => :long %></h2></li>
+	<li class="clean"><%= f.text_field :body, :class => 'taskbox watermarkOn', :id => "new_tomorrow_value", :value => t("common.addtask") %></li>
+	<%= render :partial => "tasks", :collection => @tasks, :as => :item, :locals => {:tasktype => @tomorrow} %> 
+</ul>
+<% end %>
+
+</div>
+</div>

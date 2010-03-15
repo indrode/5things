@@ -1,0 +1,11 @@
+$("#flash_notice").show();
+$("#flash_notice").html('<%=escape_javascript(flash.delete(:notice)) %>'); 
+// wait a little bit, then fadeout
+$("#flash_notice").pause(1000).fadeOut();
+$("#<%= @addtype %>_list").append("<%= escape_javascript(render :partial => @task) %>");
+$("#<%= @addtype %>_list").effect("highlight", {}, 1000);
+
+$(':text').removeAttr("readonly").addClass("watermarkOn").blur();
+$("#new_<%= @addtype %>")[0].reset();
+
+$('#loader_new_unassigned, #loader_new_yesterday, #loader_new_today, #loader_new_tomorrow').removeClass('loading');

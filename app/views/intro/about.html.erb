@@ -1,0 +1,22 @@
+<div id="tabmenu">
+	<a class="tab" href="/contact"><%= t("pages.contact") %></a>
+	<a class="tab" href="/help"><%= t("common.help") %></a>
+	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
+	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+	<div class="tab current"><%= t("pages.about") %></div>
+	<% unless current_user %>
+	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
+	<% end %>
+</div>
+
+<div id="settings">
+	<h1>What is 5things?</h1>
+	<p class="instructions">5things was created to simplify your daily planning and increase productivity by having all your tasks and to-do items neatly organized in one place. A user can create an unlimited number of "lists" which contain a number of tasks for a given day. Completed tasks can be checked off once they have been completed or become obsolete.</p>
+	<p class="instructions">The web app provides enough flexibility to be used in many different fashions, such as an events calendar, event planning, and for your various projects. Advanced functions such as reporting, exporting, and being able to share lists publicly add to the many different ways, 5things can support productivity.</p>
+	<h1>About the Technology</h1>
+	<p class="instructions">5things was designed and developed by <a href="http://www.indrode.com/">Indro De</a>, a web developer from Germany, in the beginning of 2010. Hosting provided by Dreamhost. Powered by Apache, mySQL, and Ruby on Rails (through Passenger).</p>
+	<p class="instructions">The source code of this application will be made available on <a href="http://github.com/indrode">GitHub</a> shortly. Additionally, design and development notes will be <a href="http://blog.indrode.com/">published</a> from time to time.</p>
+	<h1>Privacy and Security</h1>
+	<p class="instructions">5things respects the privacy of its account holders and their data. Intentionally, no specific user data is collected apart from the email address. All user information is governed by the <a href="/terms">Terms of Service</a>. The user always retains all rights to his/her data. For more information, read the <a href="/privacy">Privacy Policy</a> or contact <%= mail_to "support@5things.zenpunch.com", "5things Support", :encode => "hex" %>.</p>
+	
+</div>

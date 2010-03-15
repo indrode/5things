@@ -1,0 +1,286 @@
+# Localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  date:
+    formats:
+#      default: "%d.%m.%Y"
+#      short: "%e. %b"
+#      long: "%e. %B %Y"
+#      only_day: "%e"
+      day_name: "%A"
+ 
+#    day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
+#    abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
+#    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+#    abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+#    order: [ :day, :month, :year ]
+
+  authlogic:
+    error_messages:
+      login_blank: "can not be blank!"
+      login_not_found: "is invalid or was not found!"
+      login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
+      consecutive_failed_logins_limit_exceeded: "Consecutive failed logins limit exceeded, account is disabled."
+      email_invalid: "should look like an email address."
+      password_blank: "can not be blank!"
+      password_invalid: "is not valid!"
+      not_active: "Your account is not active!"
+      not_confirmed: "Your account is not confirmed!"
+      not_approved: "Your account is not approved!"
+      no_authentication_details: "You did not provide authentication."
+    models:
+      user_session: "UserSession"
+    attributes:
+      user_session:
+        login: "Username"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "" # Removed so default does not print
+          other:  "" # Removed so default does not print
+        # The variable :count is also available
+        body: ""
+      messages:
+        too_short: "must have at least {{count}} characters."
+
+  common:
+    unassigned: "Unassigned"
+    unassigned2: "ready for assignment"
+    unassigned_sm: "unassigned"
+    login: "Login"
+    login_long: "Login to 5things"
+    logout: "Logout"
+    register: "Sign Up Now!"
+    help: "Help"
+    forgot: "Forgot your password?"
+    rememberme: "keep me logged in"
+    addtask: "add new task..."
+    previous: "previous"
+    next: "next"
+    cancel: "Cancel"
+    save: "Save Changes"
+    javascript: "Javascript is disabled on your browser! Please enable Javascript on your browser or upgrade to a Javascript-capable browser."
+    return: "Return to Home"
+    unmask: "unmask"
+    close: "close"
+    tools: "tools_en.png"
+    todocount1: "you have"
+    todocount2: "left to do today"
+    thing: "thing"
+    things: "things"
+    options: "Options"
+    error404: "Error 404 - Page Not Found"
+    error500: "Error 500 - Server Error"
+    addmanagelists: "Add/manage lists..."
+    submit: "Submit"
+    next_image: "go-next_en.png"
+    previous_image: "go-previous_en.png"
+  
+  user:
+    account_settings: "Account Settings"
+    preferences: "Preferences"
+    emailaddress: "Email Address"
+    language: "Language"
+    timezone: "Time Zone"
+    delete_account: "Delete Account"
+    account_created: "Your account has been created!<br />Please check your e-mail for your account activation instructions."
+    firstsignup: "sign up for 5things!"
+    firstlist: "My To-Do List"
+    change_password: "Change Password"
+    updated: "Account updated."
+    delete: "Delete Account"
+    deleteaccount: "delete your account"
+    deleteinstructions: "This will delete your account, including all the records you created.<br />Warning: This action cannot be undone!"
+    deleted: "Account deleted."
+    registration: "Registration"
+    register: "Register"
+    validatefail: "fields don't match."
+    newactivationsent: "A new activation link has been sent to "
+    emailnotfound: "This email address was not found in the database. Please register again."
+    alreadyactive: "This user account is already active. Just login with your email address and password."
+    resendactivation: "Resend Activation Link"
+    loginhere: "Login Here"
+    activation_copy_1: "Enter the email address you used to sign up with to receive your new activation link."
+    new_copy_1: "Signing up for 5things is simple and painless! Just enter your email address. Then check your emails for the activation link."
+    new_copy_2: "Already a user?"
+    new_copy_3: "Already registered, but lost your activation link?"
+    edit_copy_1: "On this page you can view and modify your account settings."
+    edit_copy_2: "To remove your entire account, including all of your lists and tasks,"
+    delete_warning_1: "This action can't be undone!"
+    delete_warning_2: "This will <span class='highlight'>cancel your entire account</span> with 5things and delete all your lists and tasks. You may consider backing up your tasks using the Export feature. Once your account is deleted, you will have to re-register to use 5things."
+    delete_warning_3: "Do you really want to delete your account?"
+    delete_confirm: "Yes, delete my account"
+    set_pw: "Set your password"
+    confirm_pw: "Confirm password"
+    
+  pages:
+    about: "About 5things"
+    privacy: "Privacy Policy"
+    terms: "Terms of Service"
+    contact: "Contact"
+    intro: "The Simple Task Manager"
+    
+  activations:
+    title: "Activate Your Account"
+    success: "Your account has been activated. Welcome to 5things!"
+    invalidtoken: "Invalid/expired activation token."
+    createaccount: "Create Your Account"
+    activate_copy_1: "This is the last step before you can start using 5things and make your life more productive and organized!"
+    activate_copy_2: "Please set your password and location settings. You can always change these settings later."
+    register_login: "Register and Sign In"
+    
+  application:
+    loginrequired: "You must be logged in to access this page"
+    logoutrequired: "You must be logged out to access this page"
+    
+  contact:
+    title: "Contact Form"
+    success: "Email was successfully sent."
+    fail: "An error occurred while sending this email."
+    name: "Your name"
+    email: "Enter your email-address"
+    message: "Your Message"
+    type: "Type of Feedback"
+    type_option_1: "Feedback"
+    type_option_2: "Support Inquiry"
+    type_option_3: "Feature Request"
+    type_option_4: "Bug Report"
+    type_option_5: "Other"
+    button: "Send Message"
+    contact_copy_1: "Use this form to contact 5things."
+    contact_copy_2: "You must enable JavaScript to use this contact form. This is a security measurement."
+
+  pwreset:
+    title: "Reset Password"
+    changetitle: "Change Password"
+    pageinstructions: "Enter your email address. Instructions to reset your password will be emailed to you."
+    instructions: "Instructions to reset your password have been emailed to you. Please check your email."
+    notfound: "No user was found with that email address."
+    success: "Password successfully updated!"
+    fail: "You must enter a new password. Please try again."
+    invalidtoken: "We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
+    button: "Update My Password"
+    email: "Email"   
+    
+  tasks:
+    maint_message: "View refreshed. "
+    maint_today: " task(s) moved to Today."
+    maint_unassigned: " task(s) moved to Unassigned."
+    created: "Task created."
+    export: "Export complete."
+    duedate: "Due Date"
+    task: "Task"
+    list: "List"
+    completed: "Completed"
+    editicon: "edit this task"
+    removed: "Task removed."
+    notexist: "Task does not exist."
+    edittask: "Edit Task"
+    managetasks: "Manage Tasks"
+    
+  session:
+    login: "Successfully logged in."
+    logout: "Logout successful!"
+    
+  prefs:
+    reportprefs: "Report Preferences"
+    mainttitle: "Maintenance"
+    maintenance: "Specify what 5things should do with tasks that have not been completed in previous days (overdue tasks). This will be performed on each login or reset."
+    maint_1: "leave everything as is (default behavior)"
+    maint_2: "move overdue tasks to current day"
+    maint_3: "move overdue tasks to Unassigned"
+    reports: "5things lets you create reports in various formats, such as PDF files and emails. Here you can set your default report preferences."
+    reports_1: "include completed tasks in reports"
+    reports_2: "include unassigned tasks in reports"
+    reports_3: "show empty days"
+    prefs_copy_1: "On this page you can view and modify your preferred application settings:"
+    prefs_copy_2: "<strong>Maintenance</strong> settings determine what should be done with overdue tasks."
+    prefs_copy_3: "<strong>Report Preferences</strong> specify what kind of information should or should not be displayed in PDF reports and on a shared list page. These settings can be modified for each list individually under "
+  
+  lists:
+    title: "Manage Lists"
+    notfound: "List Not Found"
+    errormessage: "This list was not found or is not shared."
+    createlist: "Create a New List"
+    add_list: "Add This List"
+    editlist: "Edit List"
+    listcreated: "New list created."
+    listupdated: "List was successfully updated."
+    listremoved: "List removed."
+    removedisabled: "You may not remove your active list."
+    notexist: "This list does not exist."
+    edit: "edit"
+    remove: "remove"
+    key: "Key"
+    security: "Security"
+    numberoftasks: "# Tasks"
+    coltitle: "Title"
+    description: "Description"
+    private: "Private"
+    public: "Public"
+    security_copy_1: "Set your list to <strong>Private</strong> if you do not want to share it with anyone. This is the default settings for new lists. Set your list to <strong>Public</strong> to share your list at the URL below:"
+    security_copy_2: "Public Share URL"
+    edit_copy_1: "You can create an unlimited number of task lists to organize your tasks."
+    edit_copy_2: "<strong>Security</strong> specifies whether the list will be shared or kept private."
+    edit_copy_3: "<strong>Report Preferences</strong> specify what kind of information should or should not be displayed in PDF reports and on a shared list page."
+    delete_warning_1: "This action can't be undone!"
+    delete_warning_2: "By removing this list you will lose all of its tasks. You may want to consider backing up your records using the Export function."
+    delete_warning_3: "Do you really want to remove this list?"
+    delete_confirm: "Yes, remove this list"
+    new_copy_1: "You can create an unlimited number of task lists to organize your tasks."
+    new_copy_2: "<strong>Security</strong> specifies whether the list will be shared or kept private."
+    new_copy_3: "<strong>Report Preferences</strong> specify what kind of information should or should not be displayed in PDF reports and on a shared list page."
+
+  share:
+    alltasks: "All Tasks"
+    unassigned: "Unassigned Tasks"
+    upcoming: "Upcoming Tasks"
+    
+  tools:
+    intro1: "5things - The Simple Task Manager"
+    intro2: "click on an icon to select a function"
+    refresh_title: "Refresh screen"
+    refresh_desc: "resets this screen to today's date and performs maintenance"
+    calendar_title: "Display calendar"
+    calendar_desc: "opens a monthly calendar that quickly lets you select a particular date"
+    achievements_title: "View my progress and achievements"
+    achievements_desc: "see some stats about your tasks"
+    pdf_title: "Create PDF report"
+    pdf_desc: "this creates a PDF report of your tasks for viewing and printing"
+    export_title: "Export my tasks"
+    export_desc: "export your records to iCalendar or Excel"
+    share_title: "Share this list"
+    share_desc: "share the current task list with people you know"
+    feedback_title: "Send off feedback"
+    feedback_desc: "request a new feature, report a bug, or just send some feedback"
+    support_title: "Support 5things"
+    support_desc: "find out how to support 5things, which is actually a one-man project"
+    achievements_copy: "Once you have accumulated enough data, this area will contain a couple of stats and numbers about your usage of 5things."
+    pdf_copy: "Download a PDF report of your upcoming tasks for easy viewing and printing. You may change your report preferences for this list under <a class='highlight' href='/tasklists'>Manage Lists</a>."
+    export_excel: "Export to Excel (.csv)"
+    export_ical: "Export to iCalendar (.ics)"
+    export_copy_1: "Here you can export your records to different formats to use them with your favorite desktop application. Click on a button to initiate the download."
+    export_copy_2: "Learn more about the supported formats..."
+    is_shared: "This list is currently shared at the following URL."
+    not_shared: "This list is not currently shared."
+    share_settings: "You may change security settings for this list under <a href='/tasklists' class='highlight'>Manage Lists</a>."
+    share_email: "Enter email-address"
+    share_button: "Send Share URL"
+    feedback_copy: "Use this form to send any general feedback, bug reports, or feature requests. Replies will be sent to"
+    support_copy_1: "If you find this application useful, consider making a small pledge through Pledgie or Dreamhost, my web host, to support the development and maintenance of this application. I guarantee that all pledges will go directly towards the costs of beer err... running expenses, primarily web hosting fees. All donations are made through PayPal. No sign-up required."
+    support_copy_2: "Click here to go to the 5things Pledgie campaign page..."     
+
+  email:
+    activation_instructions: "5things - Activation Instructions"
+    admin_email: "5things Admin <noreply@zenpunch.com>"
+    welcome: "5things - Welcome to 5things!"
+    pw_reset: "5things - Password Reset Instructions"
+    feedback: "5things - Feedback"
+    sharelink: "5things - Here is a shared list for you"
+    

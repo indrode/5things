@@ -1,0 +1,20 @@
+<div id="user_nav">
+	<div class="user_container">
+		<p id="home_link" class="<%= headerclass %>">
+			<%- unless @title == t("pages.intro") -%>
+		<a href="/" style="font-weight:bold; color:#fff; border:none; text-decoration:none;">&larr; back to homepage</a>
+			<%- end -%>
+		</p>
+		<p>
+			<%- if !current_user -%>	
+			<%= link_to t("common.register"), new_account_path %> &nbsp;|&nbsp;
+		  <%= link_to t("common.login"), login_path %>
+		<%- else -%>
+			<strong><%= current_user.email %></strong> &nbsp;|&nbsp; 
+			<%= link_to_unless_current t("user.preferences"), "/account" %> &nbsp;|&nbsp;
+			<%= link_to_unless_current t("common.help"), help_path %> &nbsp;|&nbsp;			
+		  <%= link_to_unless false, t("common.logout"), user_session_path, :method => :delete %>
+		<%- end -%>
+		</p>
+	</div>
+</div>

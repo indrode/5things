@@ -1,0 +1,24 @@
+/* Internet Explorer specific styles
+		primarily to simulate CSS2/3 styles such as text-shadows and rounded corners
+		
+		if you need this style sheet you should be ashamed and download a real browser:
+		http://getfirefox.com/
+
+*/
+
+.buttons a, .buttons button, #showhide_button a.togglebutton  {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Glow(color=#cccccc,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=6)";
+				filter: progid:DXImageTransform.Microsoft.Glow(color=#cccccc,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=6);
+	
+}
+
+
+#navleft, #navright {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Glow(color=#666666,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#222222,direction=135,strength=6)";
+				filter: progid:DXImageTransform.Microsoft.Glow(color=#666666,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#222222,direction=135,strength=6);	
+}
+
+.errorExplanation li, h1.formheader, #flash_notice {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Glow(color=#cccccc,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=6)";
+				filter: progid:DXImageTransform.Microsoft.Glow(color=#cccccc,strength=1) progid:DXImageTransform.Microsoft.Shadow(color=#777777,direction=135,strength=6);	
+}

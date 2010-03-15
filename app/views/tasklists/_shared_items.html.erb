@@ -1,0 +1,3 @@
+<% if item.completed == false or report_include_completed?(@tasklist.reporting) %>
+     <li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span class="share_checked"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
+<% end %>
