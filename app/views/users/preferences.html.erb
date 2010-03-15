@@ -1,0 +1,82 @@
+<div id="tabmenu">
+	<a class="tab" href="/list"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</a>
+	<a class="tab" href="/tasklists"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</a>
+	<div class="tab current"><%= t("user.preferences") %></div>
+	<a class="tab" href="/account"><%= t("user.account_settings") %></a>
+</div>
+		
+<div id="settings">
+	
+<% form_for @user, :url => account_path do |f| %>
+
+<%= f.error_messages %>
+
+<div style="clear:both;"></div>
+
+<div class="formarea_left">	
+
+<h1 class="formheader"><img src="/images/icons/applications-system.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.preferences") %></h1>
+<fieldset>
+	<ol>
+		<li>
+			<p><%= t("prefs.maintenance") %></p>
+		</li>
+		<li>
+			<%= f.label :env_maintenance_1, t("prefs.mainttitle") %> 
+			<%= f.radio_button :env_maintenance, 1 %> <%= t("prefs.maint_1") %>
+		</li>
+		<li>
+			<%= f.label :env_maintenance_2, "&nbsp;" %>
+			<%= f.radio_button :env_maintenance, 2 %> <%= t("prefs.maint_2") %>
+		</li>
+		<li>
+			<%= f.label :env_maintenance_3, "&nbsp;" %>
+			<%= f.radio_button :env_maintenance, 3 %> <%= t("prefs.maint_3") %>
+		</li>
+		<li>
+			<p><hr /></p>
+		</li>
+		<li>
+			<p><%= t("prefs.reports") %></p>
+		</li>
+		<li>
+			<%= f.label :env_reporting_1, t("prefs.reportprefs") %> 
+			<%#= f.check_box "check_1", {}, 1, 0 %> 
+			<%= check_box_tag "check_1", 1, Array[ 1, 3, 5, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_1") %>
+		</li>
+		<li>
+			<%= f.label :env_reporting_2, "&nbsp;" %>
+			<%= check_box_tag "check_2", 2, Array[ 2, 3, 6, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_2") %> 
+		</li>
+		<li>
+			<%= f.label :env_reporting_3, "&nbsp;" %>
+			<%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_3") %> 
+			<%= f.hidden_field :env_reporting %>		
+		</li>
+	</ol>
+</fieldset>
+
+
+
+</div>
+
+<div class="formarea_right">	
+
+<h1 class="formheader">&nbsp;</h1>
+
+	<p class="instructions"><%= t("prefs.prefs_copy_1") %></p>
+	<p class="instructions"><img src="/images/icons/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2") %></p>
+	<p class="instructions"><img src="/images/icons/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_3") %><a href="/tasklists"><%= t("lists.title") %></a>.</p>
+	<p>&nbsp;</p>
+
+	<div class="buttons">
+		<%= cancel_button %>
+	  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/><%= t("common.save") %></button>
+	</div>
+</div>
+
+<% end %>
+
+<div style="clear:both;"></div>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="formarea">
+	<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
+	<h1 class="formheader"><img src="/images/icons/lock_edit.png" alt="" width="16" height="16" /> <%= t("pwreset.changetitle") %></h1>	
+	<fieldset class="transparent">
+	<ol>
+		<li>
+			<%= f.label :password, f.object.new_record? ? nil : t("pwreset.changetitle") %>
+			<%= f.password_field :password %>
+		</li>  
+		<li>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation %>
+		</li>
+		</ol>
+	</fieldset>
+		
+	<%= f.error_messages %>
+	<div class="buttons">
+		<%= cancel_button %>
+	  <button type="submit"><img src="/images/icons/tick.png" alt=""/><%= t("pwreset.button") %></button>
+	</div>
+	<% end %>
+	<div style="clear:both;"></div>
+
+</div>

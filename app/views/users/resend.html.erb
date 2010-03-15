@@ -1,0 +1,33 @@
+<div id="settings">
+<% form_for @user, :url => "/rs" do |f| %>
+
+<div class="formarea_left">
+
+	<h1 class="formheader"><img src="/images/icons/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.resendactivation") %></h1>		
+	<fieldset>
+		<ol>
+			<li>
+				<%= f.label :email, "Enter your email-address" %>
+				<%= f.text_field :email %>	
+			</li>
+		</ol>
+	</fieldset>
+
+<%= f.error_messages %>
+</div>
+
+<div class="formarea_right">	
+
+<h1 class="formheader">&nbsp;</h1>
+	<p class="instructions"><%= t("user.activation_copy_1") %></p>
+	<p>&nbsp;</p>
+	<div class="buttons">
+	  <%= cancel_button %>
+	  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/> <%= t("user.resendactivation") %></button>
+	</div>
+</div>
+	
+<% end %>
+
+<div style="clear:both;"></div>
+</div>

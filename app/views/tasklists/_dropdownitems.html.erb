@@ -1,0 +1,1 @@
+<li><a href="/set/<%= item.id %>" class="switchlist"><%= h item.title %> <span class="menu_count"><%= item.tasks.count(:conditions => "completed = 0") %></span></a></li>

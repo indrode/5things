@@ -1,0 +1,27 @@
+<div class="formarea">
+<h1 class="formheader"><img src="/images/icons/key.png" alt="" width="16" height="16" /> <%= t("common.login_long") %></h1>
+<% form_for @user_session, :url => user_session_path do |f| %>
+<fieldset class="transparent">
+	<ol>
+		<li>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		</li>  
+		<li>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		</li>  
+		<li>
+		<%= f.check_box :remember_me %><%= f.label :remember_me, t("common.rememberme") %><%= link_to t("common.forgot"), {:controller => 'password_resets', :action => 'new'}, :class => "forgot" %>
+		</li>
+	</ol>
+</fieldset>
+<div class="buttons">
+  <%= cancel_button %>
+  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/><%= t("common.submit") %></button>
+</div>
+<%= f.error_messages %>
+
+<% end %>
+
+</div>

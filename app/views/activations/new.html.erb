@@ -1,0 +1,47 @@
+<div id="settings">
+<% form_for @user, :url => activate_path(@user.id), :html => { :method => :post } do |f| %>
+
+<div class="formarea_left">
+
+	<h1 class="formheader"><img src="/images/icons/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("activations.createaccount") %></h1>		
+	<fieldset>
+		<ol>
+			<li>
+				<%= f.label :password, f.object.new_record? ? nil : t("user.set_pw") %>
+				<%= f.password_field :password %>&nbsp; <input id="unmask1" name="unmask1" onclick="toggleMask('user_password', 'unmask1');" type="checkbox" value="1" /> <%= t("common.unmask") %>
+			</li>  
+			<li>
+				<%= f.label :password_confirmation, t("user.confirm_pw") %>
+				<%= f.password_field :password_confirmation %>&nbsp; <input id="unmask2" name="unmask2" onclick="toggleMask('user_password_confirmation', 'unmask2');" type="checkbox" value="1" /> <%= t("common.unmask") %>
+			</li>
+			<li>
+				<%= f.label :language, t("user.language") %> 
+				<%= f.select :language, [['English', 'en'], ['Deutsch', 'de']] %>
+			</li>
+			<li>
+				<%= f.label :time_zone, t("user.timezone") %> 
+				<%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all(), :default => "Pacific Time (US & Canada)" %>
+			</li>
+		</ol>
+	</fieldset>
+
+<%= f.error_messages %>
+</div>
+
+<div class="formarea_right">	
+
+<h1 class="formheader">&nbsp;</h1>
+	<p class="instructions"><%= t("activations.activate_copy_1") %></p>
+	<p class="instructions"><img src="/images/icons/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("activations.activate_copy_2") %></p>
+	<p>&nbsp;</p>
+	<div class="buttons">
+	  <%= cancel_button %>
+	  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/><%= t("activations.register_login") %></button>
+	</div>
+</div>
+	
+<% end %>
+
+<div style="clear:both;"></div>
+
+</div>

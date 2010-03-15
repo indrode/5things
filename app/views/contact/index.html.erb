@@ -1,0 +1,64 @@
+<div id="tabmenu">
+	<div class="tab current"><%= t("pages.contact") %></div>
+	<a class="tab" href="/help"><%= t("common.help") %></a>
+	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
+	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+	<a class="tab" href="/about"><%= t("pages.about") %></a>
+	<% unless current_user %>
+	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
+	<% end %>
+</div>
+		
+<div id="settings">
+	
+<div class="formarea_left">
+	
+<h1 class="formheader"><img src="/images/icons/key.png" alt="" width="16" height="16" /> <%= t("contact.title") %></h1>
+<% form_for(:contact, :url => contact_path) do |f| %>
+	<% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
+<fieldset>
+	<ol>
+		<li>
+			<%= f.label :name, t("contact.name") %>
+			<%= f.text_field :name %>	
+		</li>
+		<li>
+			<%= f.label :email, t("contact.email") %>
+			<%= f.text_field :email %>	
+		</li>
+		<li>
+			<%= f.label :body, t("contact.message") %>
+			<%= f.text_area :body %>	
+		</li>
+		<li>
+			<%= f.label :type, t("contact.type") %>
+			<%= f.select :type, options_for_select(typeoptions) %>
+		</li>
+	</ol>
+</fieldset>
+	
+<%= f.error_messages %>
+
+</div>
+
+
+<div class="formarea_right">
+
+	<h1 class="formheader">&nbsp;</h1>
+
+	<p class="instructions"><%= t("contact.contact_copy_1") %></p>
+	<p class="instructions"><img src="/images/icons/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_2") %></p>
+	<p>&nbsp;</p>
+
+	<div class="buttons">
+	  <%= link_to '<img src="/images/icons/cross.png" alt="Cancel" width="16" height="16" />' + t("common.cancel"), root_path, :class => 'negative' %>
+	  <button type="submit" class="positive" id="new_contact"><img src="/images/icons/tick.png" alt=""/><%= t("contact.button") %></button>
+	</div>
+
+</div>
+	
+<% end %>
+
+<div style="clear:both;"></div>
+
+</div>

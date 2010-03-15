@@ -1,0 +1,109 @@
+<div id="view_nav">
+<div class="container">
+	<div id="iconmenu_description">
+		<strong><%= t("tools.intro1") %></strong><br /><%= t("tools.intro2") %>
+	</div>	
+	<ul id="iconmenu">
+		<li class="icon_item" id="opt_refresh"><a href="/maintenance"><span><strong><%= t("tools.refresh_title") %></strong><br /><%= t("tools.refresh_desc") %></span></a></li>
+		<li class="icon_item" id="opt_calendar"><a href="#"><span><strong><%= t("tools.calendar_title") %></strong><br /><%= t("tools.calendar_desc") %></span></a></li>
+		<li class="icon_item" id="opt_achievements"><a href="#"><span><strong><%= t("tools.achievements_title") %></strong><br /><%= t("tools.achievements_desc") %></span></a></li>
+		<li class="icon_item" id="opt_pdf"><a href="#"><span><strong><%= t("tools.pdf_title") %></strong><br /><%= t("tools.pdf_desc") %></span></a></li>
+		<li class="icon_item" id="opt_export"><a href="#"><span><strong><%= t("tools.export_title") %></strong><br /><%= t("tools.export_desc") %></span></a></li>
+		<li class="icon_item" id="opt_email"><a href="#"><span><strong><%= t("tools.share_title") %></strong><br /><%= t("tools.share_desc") %></span></a></li>
+		<li class="icon_item" id="opt_feedback"><a href="#"><span><strong><%= t("tools.feedback_title") %></strong><br /><%= t("tools.feedback_desc") %></span></a></li>
+		<li class="icon_item" id="opt_beer"><a href="#"><span><strong><%= t("tools.support_title") %></strong><br /><%= t("tools.support_desc") %></span></a></li>
+	</ul>
+	</div>
+</div>
+
+
+<div id="achievements" class="toolbox">
+	<div class="container">
+		<p style="color:#fff; font-size:13px;"><%= t("tools.achievements_copy") %></p>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+
+<div id="calendar" class="toolbox">
+	<div class="container">
+		<div id="datepicker_canvas">
+			<div id="datepicker" style="display:inline;"></div>
+		</div>
+	</div>
+</div>
+
+<div id="pdf" class="toolbox">
+	<div class="container">
+		<div class="buttons">
+		<%= link_to '<img src="/images/icons/office-calendar.png" alt="PDF" width="16" height="16" />Download PDF Report', '/tasks/' + @today.to_s + '.pdf' %>
+		</div>
+		<p style="color:#f0f0f0; font-size:13px;"><%= t("tools.pdf_copy")%></p>
+		
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+
+<div id="export" class="toolbox">
+	<div class="container">
+		<div class="buttons">
+			<%= link_to '<img src="/images/icons/page_white_put.png" alt="iCal" width="16" height="16" />' + t("tools.export_excel"), '/csv?format=csv' %>
+			<%= link_to '<img src="/images/icons/office-calendar.png" alt="iCal" width="16" height="16" />' + t("tools.export_ical"), '/ical?format=ics' %>
+		</div>
+		<p style="color:#f0f0f0; font-size:13px;"><%= t("tools.export_copy_1")%></p>
+		<p><a href="/help#export" class="highlight"><%= t("tools.export_copy_2")%></a></p>
+		<div style="clear:both;"></div>	
+	</div>
+</div>
+
+<div id="email" class="toolbox">
+	<div class="container">
+		<% if @current_list.security == 1 %>
+		<p style="color:#fff; font-size:13px;"><%= t("tools.is_shared")%> <%= t("tools.share_settings")%></p>
+		<p style="color:#fff; font-size:30px;"><a href="/share/<%= @current_list.key %>" class="highlight">http://5things.zenpunch.com/share/<%= @current_list.key %></a></p>
+		<!-->
+		<% form_for(:contact, :url => contact_path) do |f| %>
+			<%= f.hidden_field :email, :value => current_user.email %>
+			<p style="color:#fff; font-size:13px;"><%= t("tools.share_email")%> &nbsp;<%= f.text_field :email %></p>
+			<%#= f.text_area :body, :class => "feedback" %>
+		<%= f.error_messages %>
+		<div class="buttons">
+		  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/><%= t("tools.share_button")%></button>		
+		</div>
+		-->
+		<% end %>
+		
+		<% else %>
+		<p style="color:#fff; font-size:13px;"><%= t("tools.not_shared")%> <%= t("tools.share_settings")%></p>
+		<% end %>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
+<div id="feedback" class="toolbox">
+	<div class="container" style="width:420px;">
+		<p style="color:#fff; font-size:13px;"><%= t("tools.feedback_copy")%> <%= current_user.email %>.</p>		
+		<% form_for(:contact, :url => contact_path) do |f| %>
+			<% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
+			<%= f.hidden_field :name, :value => 'registered user' %>
+			<%= f.hidden_field :email, :value => current_user.email %>
+			<%= f.text_area :body, :class => "feedback" %>
+		<%= f.error_messages %>
+			<p style="color:#fff; font-size:13px;"><%= t("contact.type") %> &nbsp;<%= f.select :type, options_for_select(typeoptions) %></p>
+		<div class="buttons">
+		  <button type="submit" class="positive"><img src="/images/icons/tick.png" alt=""/><%= t("contact.button") %></button>		
+		</div>
+
+		<% end %>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+<div id="beer" class="toolbox">
+	<div class="container">
+		<p style="color:#fff; font-size:13px;"><img src="/images/pledgie_logo.png" style="float:right; margin-left:20px;" alt="Pledgie" /><%= t("tools.support_copy_1") %></p>
+		<p><a href="#" class="highlight"><%= t("tools.support_copy_2") %></a></p>
+		<div style="clear:both;"></div>
+	</div>
+</div>

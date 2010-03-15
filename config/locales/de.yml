@@ -1,0 +1,382 @@
+# Localization file for Deutsch. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+# German date and time translations for Ruby on Rails
+# by Clemens Kofler (clemens@railway.at)
+ 
+de:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
+      day_name: "%A"
+ 
+    day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
+    abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
+    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+    abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+    order: [ :day, :month, :year ]
+  
+  time:
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+      time: "%H:%M"
+ 
+    am: "vormittags"
+    pm: "nachmittags"
+      
+  datetime:
+    distance_in_words:
+      half_a_minute: 'eine halbe Minute'
+      less_than_x_seconds:
+        zero: 'weniger als 1 Sekunde'
+        one: 'weniger als 1 Sekunde'
+        other: 'weniger als {{count}} Sekunden'
+      x_seconds:
+        one: '1 Sekunde'
+        other: '{{count}} Sekunden'
+      less_than_x_minutes:
+        zero: 'weniger als 1 Minute'
+        one: 'weniger als eine Minute'
+        other: 'weniger als {{count}} Minuten'
+      x_minutes:
+        one: '1 Minute'
+        other: '{{count}} Minuten'
+      about_x_hours:
+        one: 'etwa 1 Stunde'
+        other: 'etwa {{count}} Stunden'
+      x_days:
+        one: '1 Tag'
+        other: '{{count}} Tage'
+      about_x_months:
+        one: 'etwa 1 Monat'
+        other: 'etwa {{count}} Monate'
+      x_months:
+        one: '1 Monat'
+        other: '{{count}} Monate'
+      about_x_years:
+        one: 'etwa 1 Jahr'
+        other: 'etwa {{count}} Jahre'
+      over_x_years:
+        one: 'mehr als 1 Jahr'
+        other: 'mehr als {{count}} Jahre'
+    prompts:
+      second: "Sekunden"
+      minute: "Minuten"
+      hour: "Stunden"
+      day: "Tag"
+      month: "Monat"
+      year: "Jahr"
+ 
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: '€'
+        format: '%n%u'
+        separator:
+        delimiter:
+        precision:
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+ 
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " und "
+      last_word_connector: " und "
+ 
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Konnte dieses {{model}} Objekt nicht speichern: 1 Fehler."
+          other: "Konnte dieses {{model}} Objekt nicht speichern: {{count}} Fehler."
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+ 
+      messages:
+        inclusion: "ist kein gültiger Wert"
+        exclusion: "ist nicht verfügbar"
+        invalid: "ist nicht gültig"
+        confirmation: "stimmt nicht mit der Bestätigung überein"
+        accepted: "muss akzeptiert werden"
+        empty: "muss ausgefüllt werden"
+        blank: "muss ausgefüllt werden"
+        too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+        too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+        taken: "ist bereits vergeben"
+        not_a_number: "ist keine Zahl"
+        greater_than: "muss größer als {{count}} sein"
+        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        equal_to: "muss genau {{count}} sein"
+        less_than: "muss kleiner als {{count}} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+        odd: "muss ungerade sein"
+        even: "muss gerade sein"
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: {{errors}}"
+      models:
+        
+        
+  common:
+    unassigned: "Unsortiert"
+    unassigned2: "bereit zum sortieren"
+    unassigned_sm: "unsortiert"
+    login: "Login"
+    login_long: "Bei 5things anmelden"
+    logout: "Abmelden"
+    register: "Registrieren"
+    help: "Hilfe"
+    forgot: "Passwort vergessen?"
+    rememberme: "angemeldet bleiben"
+    addtask: "neuer task..."
+    previous: "zurück"
+    next: "vor"
+    cancel: "Abbrechen"
+    save: "Änderungen speichern"
+    javascript: "Javascript is disabled on your browser! Please enable Javascript on your browser or upgrade to a Javascript-capable browser."
+    return: "Return to Home"
+    unmask: "anzeigen"
+    close: "schliessen"
+    tools: "tools_de.png"
+    todocount1: "du hast heute noch"
+    todocount2: "zu erledigen"
+    thing: "Sache"
+    things: "Sachen"
+    options: "Optionen"
+    error404: "Error 404 - Seite Nicht Gefunden"
+    error500: "Error 500 - Server Fehler"
+    addmanagelists: "Listen hinzufügen/verwalten..."
+    submit: "Senden"
+    next_image: "go-next_de.png"
+    previous_image: "go-previous_de.png"
+    
+  user:
+    account_settings: "Konto Einstellungen"
+    preferences: "Einstellungen"
+    emailaddress: "Email Adresse"
+    language: "Sprache"
+    timezone: "Zeitzone"
+    delete_account: "Konto Löschen"
+    account_created: "Ihr Konto wurde erstellt!<br />Aktivierungsanweisungen wurden an Ihre E-Mail Adresse geschickt."
+    firstsignup: "bei 5things anmelden!"
+    firstlist: "Meine To-Do Liste"
+    change_password: "Passwort Ändern"
+    updated: "Konto aktualisiert."
+    delete: "Konto Löschen"
+    deleteaccount: "lösche dein Konto"
+    deleteinstructions: "This will delete your account, including all the records you created.<br />Warning: This action cannot be undone!"
+    deleted: "Konto gelöscht."
+    registration: "Registrierung"
+    register: "Registrieren"
+    validatefail: "Felder stimmen nicht überein."
+    newactivationsent: "Ein neuer Aktivierungs-Link wurde geschickt an "
+    emailnotfound: "Diese Email-Adresse wurde nicht gefunden. Bitte neu registrieren."
+    alreadyactive: "Dieses Benutzerkonto wurde bereits aktiviert. Bitte einfach mit deiner Email-Adresse und Passwort anmelden."
+    resendactivation: "Aktivierungs-Link erneut schicken"
+    loginhere: "Hier anmelden"
+    activation_copy_1: "Geben Sie die Email-Adresse ein, mit der Sie sich registriert haben, um Ihren neuen Aktivierungs-Link zu erhalten."
+    new_copy_1: "Sich bei 5things zu registrieren ist einfach und schmerzfrei! Bitte einfach Ihre Email-Adresse angeben um eine Email mit Ihrem Aktivierungs-Link zu erhalten."
+    new_copy_2: "Bereits ein Benutzer?"
+    new_copy_3: "Bereits registriert, aber den Aktivierungs-Link verloren?"
+    edit_copy_1: "Auf dieser Seite können Sie Ihre Konto-Einstellungen einsehen und ändern."
+    edit_copy_2: "Um Ihr gesamtes Benutzerkonto zu löschen, inklusive aller Listen und Aufgaben,"
+    delete_warning_1: "Diese Aktion ist nicht umkehrbar!"
+    delete_warning_2: "Dies <span class='highlight'>löscht Ihr gesamtes Konto</span> bei 5things inklusive aller Listen und Aufgaben. Womöglich sollten Sie sich überlegen, mittels der Exportier-Funktion einen Backup Ihrer Daten vorzunehmen. Sobald Ihr Konto gelöscht wurde, müssen Sie sich neu registrieren um 5things benutzen zu können."
+    delete_warning_3: "Wollen Sie wirklich Ihr Benutzerkonto löschen?"
+    delete_confirm: "Ja, lösche mein Konto"
+    set_pw: "Passwort ändern"
+    confirm_pw: "Passwort bestätigen"
+   
+  pages:
+    about: "Über 5things"
+    privacy: "Datenschutzerklärung"
+    terms: "Nutzungsbedingungen"
+    contact: "Kontakt"
+    intro: "The Simple Task Manager"
+
+  activations:
+    title: "Aktiviere Dein Konto"
+    success: "Dein Konto wurde aktiviert. Willkommen zu 5things!"
+    invalidtoken: "Ungültiger/abgelaufener Aktivierungs-Code."
+    createaccount: "Erstelle dein Konto"
+    activate_copy_1: "Dies ist der letzte Schritt bevor Sie 5things benutzen können um Ihr tägliches Leben produktiver und organisierter zu machen!"
+    activate_copy_2: "Bitte wählen Sie Ihr Passwort und Ortseinstellungen aus. Sie können diese Einstellungen später jederzeit ändern."
+    register_login: "Registrieren und Anmelden"
+  
+  application:
+    loginrequired: "Sie müssen eingeloggt sein, um diese Seite zu sehen"
+    logoutrequired: "Sie müssen ausgeloggt sein, um diese Seite zu sehen"
+  
+  contact:
+    title: "Kontakt Formular"
+    success: "Email wurde erfolgreich verschickt."
+    fail: "Beim Versenden dieser Email ist ein Fehler aufgetreten."
+    name: "Ihr Name"
+    email: "Ihre Email-Adresse"
+    message: "Ihre Nachricht"
+    type: "Betreff der Kontaktaufnahme"
+    type_option_1: "Kontaktaufnahme"
+    type_option_2: "Support-Anfrage"
+    type_option_3: "Feature Request"
+    type_option_4: "Bug-Meldung"
+    type_option_5: "Anderes"
+    button: "Nachricht senden"
+    contact_copy_1: "Benutzen Sie dieses Formular um 5things zu kontaktieren."
+    contact_copy_2: "Sie müssen JavaScript eingeschaltet haben, um dieses Formular zu benutzen. Dies ist eine Sicherheitsmassnahme."
+  
+  pwreset:
+    title: "Passwort Zurücksetzen"
+    changetitle: "Passwort Ändern"
+    pageinstructions: "Geben Sie Ihre Email-Adresse ein. Eine Anleitung um Ihr Passwort zu ändern wird Ihnen dann geschickt."
+    instructions: "Die Anleitung um Ihr Passwort zu ändern wurde Ihnen geschickt. Bitte überprüfen Sie Ihre Emails."
+    notfound: "Diese Email-Adresse wurde nicht gefunden."
+    success: "Passwort erfolgreich geändert!"
+    fail: "Sie müssen ein neues Passwort eingeben. Bitte versuchen Sie es erneut."
+    invalidtoken: "Es tut uns leid, aber wir konnten Ihr Konto nicht feststellen. Falls Sie Probleme mit dem Link aus Ihrer Email haben, versuchen Sie Ihn zu kopieren und einzufügen oder wiederholen Sie den Prozess."
+    button: "Passwort Ändern"
+    email: "Email"
+  
+  tasks:
+    maint_message: "Ansicht erneuert. "
+    maint_today: " Aufgabe(n) auf Heute verschoben."
+    maint_unassigned: " Aufgabe(n) nach Unsortiert verschoben."
+    created: "Aufgabe erstellt."
+    export: "Export komplett."
+    duedate: "Fälligkeitsdatum"
+    task: "Aufgabe"
+    list: "Liste"
+    completed: "Fertig"
+    editicon: "diese Aufgabe ändern"
+    removed: "Aufgabe gelöscht."
+    notexist: "Aufgabe existiert nicht."
+    edittask: "Edit Task"
+    managetasks: "Aufgaben verwalten"
+  
+  session:
+    login: "Erfolgreich eingeloggt."
+    logout: "Erfolgreich ausgeloggt!"
+  
+  prefs:
+    reportprefs: "Report Einstellungen"
+    mainttitle: "Wartung"
+    maintenance: "Geben Sie an, was 5things mit Aufgaben von früheren Tagen machen soll, die noch nicht komplettiert wurden (überfällige Aufgaben). Dies wird bei jeder Anmeldung bzw. Reset vorgenommen."
+    maint_1: "alles so lassen wie es ist (Standardverhalten)"
+    maint_2: "verschiebe überfällige Aufgaben auf Heute"
+    maint_3: "verschiebe überfällige Aufgabenmove nach Unsortiert"
+    reports: "Mit 5things können Sie Reports in verschiedenen Formaten erstellen. Hier können Sie Ihre Standard Report-Einstellungen festlegen."
+    reports_1: "komplettierte Aufgaben im Report anzeigen"
+    reports_2: "unsortierte Aufgaben im Report anzeigen"
+    reports_3: "leere Tage anzeigen"
+    prefs_copy_1: "Auf dieser Seite können Sie Ihre bevorzugten Anwendungseinstellungen ansehen und ändern:"
+    prefs_copy_2: "<strong>Wartung</strong> legt fest, was mit überfälligen Aufgaben gemacht werden soll."
+    prefs_copy_3: "<strong>Report Einstellungen</strong> legen fest, welche Art von Informationen in PDF Reports und freigegebenen Listen dargestellt werden soll. Diese Einstellungen können Sie einzeln für jede Liste ändern unter "
+  
+  lists:
+    title: "Listen verwalten"
+    notfound: "Liste Nicht Gefunden"
+    errormessage: "Diese Liste wurde nicht gefunden oder wurde nicht freigegeben."
+    createlist: "Erstelle eine neue Liste"
+    add_list: "Liste hinzufügen"
+    editlist: "Liste ändern"
+    listcreated: "Neue Liste wurde erstellt."
+    listupdated: "Liste wurde erfolgreicht geändert."
+    listremoved: "Liste gelöscht."
+    removedisabled: "Sie dürfen Ihre aktive Liste nicht löschen."
+    notexist: "Diese Liste existiert nicht."
+    edit: "ändern"
+    remove: "löschen"
+    key: "Schlüssel"
+    security: "Sicherheit"
+    numberoftasks: "# Aufgaben"
+    coltitle: "Titel"
+    description: "Beschreibung"
+    private: "Privat"
+    public: "Öffentlich"
+    security_copy_1: "Setzen Sie Ihre Liste auf <strong>Privat</strong> wenn Sie sie nicht mit anderen Personen freigeben wollten. Dies ist die Standardeinstellung für neue Listen. Setzen Sie Ihre Liste auf <strong>Öffentlich</strong>, um sie unter folgender URL freizugeben:"
+    security_copy_2: "Öffentliche URL"
+    edit_copy_1: "Sie können eine unlimitierte Anzahl von Listen erstellen, um Ihre Aufgaben darin zu organisieren."
+    edit_copy_2: "<strong>Sicherheit</strong> setzt fest, ob diese Liste öffentlich freigegeben wird oder privat bleibt."
+    edit_copy_3: "<strong>Report Einstellungen</strong> legen fest, welche Art von Informationen in PDF Reports und freigegebenen Listen dargestellt werden soll."
+    delete_warning_1: "Diese Aktion kann nicht rückgänging gemacht werden!"
+    delete_warning_2: "Wenn Sie diese Liste löschen, werden all beinhalteten Aufgaben ebenfalls gelöscht. Womöglich sollten Sie sich überlegen, mittels der Exportier-Funktion einen Backup Ihrer Daten vorzunehmen."
+    delete_warning_3: "Wollen Sie diese Liste wirklich löschen?"
+    delete_confirm: "Ja, diese Liste löschen"
+    new_copy_1: "Sie können eine unlimitierte Anzahl von Listen erstellen, um Ihre Aufgaben darin zu organisieren."
+    new_copy_2: "<strong>Sicherheit</strong> setzt fest, ob diese Liste öffentlich freigegeben wird oder privat bleibt."
+    new_copy_3: "<strong>Report Einstellungen</strong> legen fest, welche Art von Informationen in PDF Reports und freigegebenen Listen dargestellt werden soll."
+  
+  share:
+    alltasks: "Alle Aufgaben"
+    unassigned: "Unsortierte Aufgaben"
+    upcoming: "Kommende Aufgaben"
+  
+  tools:
+    intro1: "5things - The Simple Task Manager"
+    intro2: "klicken Sie auf ein Icon um die Funktion auszuführen"
+    refresh_title: "Ansicht erneuern"
+    refresh_desc: "setzt die Ansicht auf Heute zurück und wartet überfällige Aufgaben"
+    calendar_title: "Kalender anzeigen"
+    calendar_desc: "öffnet einen Kalender um schnell zu einem bestimmten Datum zu gelangen"
+    achievements_title: "Meine Fortschritte und Leistungen ansehen"
+    achievements_desc: "sehen Sie einige Statistiken zu Ihren Aufgaben"
+    pdf_title: "PDF Report erstellen"
+    pdf_desc: "dies erstellt einen PDF Report Ihrer Aufgaben zum Ansehen und Ausdrucken"
+    export_title: "Aufgaben exportieren"
+    export_desc: "exportieren Sie Ihre Daten auf iCalendar oder Excel"
+    share_title: "Diese Liste freigeben"
+    share_desc: "teilen Sie diese Liste mit Personen, die Sie kennen"
+    feedback_title: "Kontaktaufnahme"
+    feedback_desc: "nutzen Sie ein Kontaktformular, um 5things zu erreichen"
+    support_title: "5things unterstützen"
+    support_desc: "finden Sie heraus, wie sie 5things unterstützen können"
+    achievements_copy: "Sobald Sie genügen Daten eingegeben habe, können Sie in diesem Bereich einige Statistiken über Ihren Gebrauch von 5things einsehen."
+    pdf_copy: "Laden Sie sich einen PDF Report Ihrer kommenden Aufgaben auf Ihre Festplatte. Sie können Report-Einstellungen unter <a class='highlight' href='/tasklists'>Listen verwalten</a> festlegen."
+    export_excel: "Auf Excel (.csv) exportieren"
+    export_ical: "Auf iCalendar (.ics) exportieren"
+    export_copy_1: "Hier können Sie Ihre Daten in verschiedenen Formaten exportieren um Sie in der entsprechenden Dektop-Anwendung zu benutzen. Klicken Sie auf den entsprechenden Button um den Download zu beginnen."
+    export_copy_2: "Erfahren Sie mehr über die unterstützten Formate..."
+    is_shared: "Diese Liste ist derzeitig unter der folgenden URL freigegeben."
+    not_shared: "Diese Liste ist derzeitig nicht freigegeben."
+    share_settings: "Sie können die Sicherheitseinstellung dieser Liste unter <a href='/tasklists' class='highlight'>Listen verwalten</a> ändern."
+    share_email: "Email-Adresse"
+    share_button: "URL verschicken"
+    feedback_copy: "Benutzen Sie dieses Formular, um neue Features vorzuschlagen, Programm-Bugs zu melden, oder für sonstige Anfragen und Kommentare. Antworten werden an folgende Adresse geschickt: "
+    support_copy_1: "Wenn Sie diese Anwendung hilfreich finden, ziehen Sie doch in Betracht, via Pledgie oder Dreamhost, meinem Webhost, die Entwicklung und Erhaltung dieser Anwengung zu unterstützen. Ich versichere, dass alle Spenden direkt und ausnahmslos für die laufenden Kosten, insbesonder Hosting-Gebühren, verwendet werden. Alle Spenden werde über Paypal abgewickelt. Keine verherige Registrierung ist notwending."
+    support_copy_2: "Klicken Sie hier um zu 5things Pledgie Seite zu gelangen..."
+  
+  email:
+    activation_instructions: "5things - Aktivierungsanleitung"
+    admin_email: "5things Admin <noreply@zenpunch.com>"
+    welcome: "5things - Wilkommen zu 5things!"
+    pw_reset: "5things - Password Zurücksetzen"
+    feedback: "5things - Kontaktaufnahme"
+    sharelink: "5things - Here is a shared list for you"
+  

@@ -1,0 +1,4 @@
+$.fn.replace = function(o) { return this.after(o).remove(); }; 
+$("#main_div").empty();
+$("#main_div").append("<%= escape_javascript(render :partial => 'main') %>");
+$('#loader').removeClass('loading');
