@@ -37,7 +37,7 @@ function confirm(msg, callback) {
 
 // document.ready starts here -----------------------------------------------------
 $(document).ready(function() {
-
+	
 	//slider
 	$('#slider').loopedSlider({
 		//addPagination: true,

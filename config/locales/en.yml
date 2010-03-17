@@ -189,6 +189,9 @@ en:
     logout: "Logout successful!"
     
   prefs:
+    helpers: "5things displays instructions when logging in the first time. Here you can turn off/on those instructions."
+    showhelp: "Instructions"
+    helper_main: "main screen instructions"
     reportprefs: "Report Preferences"
     mainttitle: "Maintenance"
     maintenance: "Specify what 5things should do with tasks that have not been completed in previous days (overdue tasks). This will be performed on each login or reset."
@@ -241,6 +244,7 @@ en:
     alltasks: "All Tasks"
     unassigned: "Unassigned Tasks"
     upcoming: "Upcoming Tasks"
+    notfound: "This list does not contain any upcoming tasks. Click on <strong>All Tasks</strong> to view all items in this list."
     
   tools:
     intro1: "5things - The Simple Task Manager"
@@ -283,4 +287,9 @@ en:
     pw_reset: "5things - Password Reset Instructions"
     feedback: "5things - Feedback"
     sharelink: "5things - Here is a shared list for you"
+    
+  help:
+    welcome: "Welcome to 5things!"
+    general: "<p>Start off by adding tasks below. Move a task around by simply dragging and dropping it into its new location. To mark a task as completed (<img src='/images/icons/tick.png' />), just click on it. To edit a task, click on the edit icon <img src='/images/icons/edit.png' /> that appears when you move the mouse pointer over a task. To delete an item, simply drop it in the upper or lower area of the page (a trash icon will appear).</p><p>You may create an unlimited number of tasks and task lists. To add a new task list, click on <a href='/tasklists'>add/manage lists...</a>. Switch lists via the dropdown at the top.</p>"
+    stopshowing: "stop showing this..."
     

@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home '/home', :controller => 'tasks'
   map.help '/help', :controller => 'intro', :action => 'help'
   map.find_today '/find_today', :controller => 'tasks', :action => 'find_today'
+  map.set_help '/set_help', :controller => 'tasks', :action => 'set_help'
   # share lists
   map.share '/share/:id', :controller => 'tasklists', :action => 'show'
   map.set '/set/:id', :controller => 'users', :action => 'set_list'

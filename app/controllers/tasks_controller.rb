@@ -267,4 +267,7 @@ class TasksController < ApplicationController
     end
   end
   
+  def set_help
+    current_user.update_attributes(:env_other => 0)
+  end
 end

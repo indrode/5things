@@ -48,7 +48,7 @@
 	<div id="container">
 		<div id="headerarea">
 			<img id="logo" src="/images/5things_tr.png" alt="" width="352" height="117" />
-			<h2 class="status"><a href="home?d=" id="navhome"><%= l @today, :format => :long %></a><br /><%= t("common.todocount1") %> <span id="today_status"><%= pluralize(@alltasks.size, t("common.thing"), t("common.things")) %></span> <%= t("common.todocount2") %></h2>
+			<h2 class="status"><a href="home?d=" id="navhome"><%= l @actualday, :format => :long %></a><br /><%= t("common.todocount1") %> <span id="today_status"><%= pluralize(@alltasks.size, t("common.thing"), t("common.things")) %></span> <%= t("common.todocount2") %></h2>
 		</div>
 		<div style="clear:both;">
 		<%= yield %>

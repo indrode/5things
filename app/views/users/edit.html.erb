@@ -8,6 +8,10 @@
 <div id="settings">
 
 <% form_for @user, :url => account_path do |f| %>
+<%= f.hidden_field :env_reporting %>		
+<%= f.hidden_field :env_maintenance %>		
+<%= f.hidden_field :env_other %>		
+
 <div class="formarea_left">
 
 	<h1 class="formheader"><img src="/images/icons/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.account_settings") %></h1>		

@@ -1655,3 +1655,29 @@ a.intro_link {
 	font-size:30px;	
 }
 
+
+
+/* help message */
+
+div.message{
+	-moz-border-radius:4px;
+	-webkit-border-radius:2px;
+	float:left;
+	padding:5px 20px 15px 20px;
+	margin-bottom:40px;
+	border:1px solid #787878;
+	background-color:#fff5a5;}
+
+div.message p {
+	font-size:13px;
+}
+a.close {
+	color:#aa0000;
+	float:left;
+	width:32px;
+	height:32px;
+	margin-bottom:-10px;margin-top:-20px;margin-left:-35px;
+	background:url(/images/icons/process-stop.png);
+	text-indent:-9000px;
+	font-size:1px;
+}
