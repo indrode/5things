@@ -146,10 +146,17 @@ $(document).ready(function() {
 	var watermarkText = $('#new_unassigned_value').val();
 	var curTool = "";
 
+	// close default help
+	// expand this to include future env_other settings
+	$(".message a.close, .message a.close2").click(function(e){
+		e.preventDefault();
+		$(".message").fadeOut('medium');
+		$.ajax({ method: 'get', url : '/set_help', dataType : 'text'});
+	});
+
 		
 	// initialize tablesorter
-	$("#tasktable")
-		.tablesorter({ 
+	$("#tasktable").tablesorter({ 
 		headers: { 3: { sorter: false} },		// do not sort legend column
 		widthFixed: true });
 //	  .tablesorterPager({container: $("#pager")

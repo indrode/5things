@@ -1,7 +1,7 @@
 # app/models/user.rb
 
 class User < ActiveRecord::Base  
-  attr_accessible :email, :password, :password_confirmation, :language, :time_zone, :env_maintenance, :env_reporting, :current_list
+  attr_accessible :email, :password, :password_confirmation, :language, :time_zone, :env_maintenance, :env_reporting, :env_other, :current_list
   has_many :tasks, :dependent => :destroy
   has_many :tasklists, :dependent => :destroy
 

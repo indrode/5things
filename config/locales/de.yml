@@ -285,6 +285,9 @@ de:
     logout: "Erfolgreich ausgeloggt!"
   
   prefs:
+    helpers: "5things zeigt Hilfestellungen nachdem man das erste Mal eingeloggt hat. Hier können Sie diese Anweisungen an- und ausschalten."
+    showhelp: "Hilfestellungen"
+    helper_main: "Hauptbereich Hilfestellungen"
     reportprefs: "Report Einstellungen"
     mainttitle: "Wartung"
     maintenance: "Geben Sie an, was 5things mit Aufgaben von früheren Tagen machen soll, die noch nicht komplettiert wurden (überfällige Aufgaben). Dies wird bei jeder Anmeldung bzw. Reset vorgenommen."
@@ -337,6 +340,7 @@ de:
     alltasks: "Alle Aufgaben"
     unassigned: "Unsortierte Aufgaben"
     upcoming: "Kommende Aufgaben"
+    notfound: "Diese Liste enthält keine kommenden Aufgaben. Klicken Sie auf <strong>Alle Aufgaben</strong> um alle Aufgaben dieser Liste zu sehen."
   
   tools:
     intro1: "5things - The Simple Task Manager"
@@ -379,4 +383,10 @@ de:
     pw_reset: "5things - Password Zurücksetzen"
     feedback: "5things - Kontaktaufnahme"
     sharelink: "5things - Here is a shared list for you"
-  
+
+  help:
+    welcome: "Willkommen zu 5things!"
+    general: "<p>Beginnen Sie, indem Sie Aufgaben hinzufügen. Bewegen Sie Aufgaben durch das Verschieben mit der Maus. Klicken Sie auf eine Aufgabe um sie als komplettiert (<img src='/images/icons/tick.png' />) zu markieren. Um einen Eintrag zu editieren, clicken Sie auf das Editier-Icon <img src='/images/icons/edit.png' />, welches erscheint sobald Sie den Mauszeiger über die Aufgabe bewegen. Um einen Eintrag zu löschen, einfach in den oberen oder unteren Bereich der Seite verschieben (ein Mülleimer-Icon erscheint).</p><p>Sie können eine unlimitierte Anzahl von Aufgaben und Aufgabenlisten erstellen. Um eine neue Liste zu erstellen, klicken Sie auf <a href='/tasklists'>Listen hinzufügen/verwalten...</a>. Wechseln Sie zwischen Listen anhand des Dropdown-Menüs oben links.</p>"
+    stopshowing: "dies nicht mehr anzeigen..."
+    
+       

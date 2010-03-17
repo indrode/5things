@@ -8,7 +8,7 @@
 <div id="settings">
 	
 <% form_for @user, :url => account_path do |f| %>
-
+<%= f.hidden_field :page, { :value => "prefs" } %>		
 <%= f.error_messages %>
 
 <div style="clear:both;"></div>
@@ -18,6 +18,17 @@
 <h1 class="formheader"><img src="/images/icons/applications-system.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.preferences") %></h1>
 <fieldset>
 	<ol>
+		<li>
+			<p><%= t("prefs.helpers") %></p>
+		</li>
+		<li>
+			<%= f.label :env_other, t("prefs.showhelp") %> 
+			<%= check_box_tag "check_help", 1, Array[ 1 ].include?(current_user.env_other) %> <%= t("prefs.helper_main") %>
+			<%= f.hidden_field :env_other %>		
+			</li>		</li>
+		<li>
+			<p><hr /></p>
+		</li>
 		<li>
 			<p><%= t("prefs.maintenance") %></p>
 		</li>
@@ -41,7 +52,6 @@
 		</li>
 		<li>
 			<%= f.label :env_reporting_1, t("prefs.reportprefs") %> 
-			<%#= f.check_box "check_1", {}, 1, 0 %> 
 			<%= check_box_tag "check_1", 1, Array[ 1, 3, 5, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_1") %>
 		</li>
 		<li>

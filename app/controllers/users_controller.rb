@@ -65,7 +65,11 @@ class UsersController < ApplicationController
     
   def update
     @user = current_user
-    params[:user]['env_reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
+    if params[:user][:page] == "prefs"
+      params[:user]['env_reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
+      # change to add more env settings
+      params[:user]['env_other'] = params['check_help'].to_i
+    end
     
     @user.reset_perishable_token
     if @user.update_attributes(params[:user])  

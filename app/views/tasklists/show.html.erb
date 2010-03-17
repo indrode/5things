@@ -8,7 +8,7 @@
 		<div id="tabmenu">
 			<a class="tab" id="share_all" href="#"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
 			<%	if report_include_unassigned?(@tasklist.reporting) 	# including empty days %>
-			<a class="tab" id="share_unassigned" href="#"><%= t("share.unassigned") %></a>
+			<a class="tab" id="share_unassigned" href="#"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
 			<% end %>
 			<a class="tab current" id="share_upcoming" href="#"><%= t("share.upcoming") %></a>
 		</div>
@@ -18,7 +18,7 @@
 				
 				<div id="div_share_upcoming" class="share_content">
 <%	# desperately need to clean up this view
-
+count = 0
 curdate = @today
 @items_by_day.each do |duedate, items|
 
@@ -33,17 +33,21 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 
 <% # move to a partial to clean up view %>
 <ol style="margin:0 50px; color:#c0c0c0;">
-   <% items.each do |item| %>
+<% items.each do |item| %>
 <% if item.completed == false or report_include_completed?(@tasklist.reporting) %>
-     <li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
+	<li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
+<% count += 1 %>
 <% end %>
-   <% end %>
+<% end %>
 </ol>
 <% end %>
+<% if count == 0 %>
+<p><%= t("share.notfound") %></p>
+<% end %>
 </div>
-<div id="div_share_unassigned" class="share_content">
 
-<%	if report_include_unassigned?(@tasklist.reporting) 	# including empty days %>
+<div id="div_share_unassigned" class="share_content">
+<%	if report_include_unassigned?(@tasklist.reporting) 	# including unassigned %>
 <h3 style="margin:30px 0 0 60px; color:#000;"><%= t("share.unassigned") %></h3>
 
 	<ol style="margin:0 50px; color:#c0c0c0;">
