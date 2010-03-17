@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20100113222038) do
     t.string    "time_zone"
     t.string    "api_key", :limit => 50
     t.integer   "env_maintenance", :default => 1, :null => false
-    t.integer   "env_reporting", :default => 7, :null => false
-    t.integer   "env_other", :default => 0, :null => false
+    t.integer   "env_reporting", :default => 4, :null => false
+    t.integer   "env_other", :default => 1, :null => false
     t.integer   "current_list", :default => 0, :null => false
     t.datetime  "created_at"
     t.datetime  "updated_at"
