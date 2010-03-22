@@ -85,4 +85,14 @@ class ApplicationController < ActionController::Base
     end          
   end
 
+  # allow helpers in controller
+  def help
+    Helper.instance
+  end
+
+  class Helper
+    include Singleton
+    include ActionView::Helpers::TextHelper
+  end
+
 end

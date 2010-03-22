@@ -80,12 +80,15 @@ $(document).ready(function() {
 		$("#flash_notice").slideUp();		
 	});
 
-
+	// make share divs unobtrusive (show by default, then hide)
+	$(".share_content").hide();
+	
 	// show upcoming tasks
 	$('div#div_share_upcoming').show();
-	
+		
 	// share page tabbed menu
-	$("#tabmenu a").click(function(){
+	$("#tabmenu a").click(function(event){
+		event.preventDefault();
 		$("#tabmenu a").removeClass('current');
 		$(this).addClass('current');
 		var cur = $(this).attr('id');			
@@ -93,6 +96,8 @@ $(document).ready(function() {
 		$('div.share_content').hide();
 		$('div#div_'+cur).show();
 	});
+	
+
 
 	// add more magic here
 

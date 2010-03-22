@@ -265,9 +265,11 @@ de:
     email: "Email"
   
   tasks:
+    maint_task: "Aufgabe"
+    maint_task_plural: "Aufgaben"
     maint_message: "Ansicht erneuert. "
-    maint_today: " Aufgabe(n) auf Heute verschoben."
-    maint_unassigned: " Aufgabe(n) nach Unsortiert verschoben."
+    maint_today: " auf Heute verschoben."
+    maint_unassigned: " nach Unsortiert verschoben."
     created: "Aufgabe erstellt."
     export: "Export komplett."
     duedate: "Fälligkeitsdatum"
