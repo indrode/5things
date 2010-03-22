@@ -93,7 +93,7 @@ class TasksController < ApplicationController
         t.update_attribute :duedate, Time.zone.now.to_date
         count += 1
       }
-      status_report = count.to_s + t("tasks.maint_today") if count > 0   
+      status_report = help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
     when 3
       # move to unassigned
       current_user.tasks.find_overdue(current_user.current_list).each { |t| 

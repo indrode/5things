@@ -87,7 +87,7 @@ $(document).ready(function() {
 	$('div#div_share_upcoming').show();
 		
 	// share page tabbed menu
-	$("#tabmenu a").click(function(event){
+	$("#sharemenu a").click(function(event){
 		event.preventDefault();
 		$("#tabmenu a").removeClass('current');
 		$(this).addClass('current');

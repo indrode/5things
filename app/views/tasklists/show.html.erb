@@ -5,7 +5,7 @@
 			<p class="share_description"><strong style="font-size:20px;"><%= h @tasklist.title %></strong><br /><%= h @tasklist.description %></p>
 		</div>	
 	
-		<div id="tabmenu">
+		<div id="sharemenu">
 			<a class="tab" id="share_all" href="#alltasks"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
 			<%	if report_include_unassigned?(@tasklist.reporting) 	# including empty days %>
 			<a class="tab" id="share_unassigned" href="#unassigned"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
