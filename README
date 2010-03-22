@@ -1,6 +1,7 @@
 CHANGELOG
 
 Mar 22, 2010
+(032210)
 -add robots-noindex in share layout
 -use pluralize in maintenance flash message (both locales)
 -add twitter rss link to general layout
