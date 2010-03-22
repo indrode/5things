@@ -6,16 +6,16 @@
 		</div>	
 	
 		<div id="tabmenu">
-			<a class="tab" id="share_all" href="#"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
+			<a class="tab" id="share_all" href="#alltasks"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
 			<%	if report_include_unassigned?(@tasklist.reporting) 	# including empty days %>
-			<a class="tab" id="share_unassigned" href="#"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
+			<a class="tab" id="share_unassigned" href="#unassigned"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
 			<% end %>
-			<a class="tab current" id="share_upcoming" href="#"><%= t("share.upcoming") %></a>
+			<a class="tab current" id="share_upcoming" href="#upcoming"><%= t("share.upcoming") %></a>
 		</div>
 
 		<div id="settings">
 			<div id="main_div">
-				
+				<a name="upcoming"></a>
 				<div id="div_share_upcoming" class="share_content">
 <%	# desperately need to clean up this view
 count = 0
@@ -46,6 +46,7 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 <% end %>
 </div>
 
+<a name="unassigned"></a>
 <div id="div_share_unassigned" class="share_content">
 <%	if report_include_unassigned?(@tasklist.reporting) 	# including unassigned %>
 <h3 style="margin:30px 0 0 60px; color:#000;"><%= t("share.unassigned") %></h3>
@@ -60,6 +61,8 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 <% end %>
 
 </div>
+
+<a name="alltasks"></a>
 <div id="div_share_all" class="share_content">
 
 	<table id="sharedtable">

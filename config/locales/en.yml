@@ -169,9 +169,11 @@ en:
     email: "Email"   
     
   tasks:
+    maint_task: "task"
+    maint_task_plural: "tasks"
     maint_message: "View refreshed. "
-    maint_today: " task(s) moved to Today."
-    maint_unassigned: " task(s) moved to Unassigned."
+    maint_today: " moved to Today."
+    maint_unassigned: " moved to Unassigned."
     created: "Task created."
     export: "Export complete."
     duedate: "Due Date"

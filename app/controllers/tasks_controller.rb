@@ -100,7 +100,8 @@ class TasksController < ApplicationController
         t.update_attribute :duedate, NEVER
         count += 1
       }
-      status_report = count.to_s + t("tasks.maint_unassigned") if count > 0
+      #status_report = count.to_s + t("tasks.maint_unassigned") if count > 0
+      status_report = help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count > 0
     end
     # when logging in, also show login successfull message
     flash[:notice] = t("tasks.maint_message") + status_report 
