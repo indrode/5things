@@ -1,9 +1,9 @@
 <div id="user_nav">
 	<div class="user_container">
 		<p id="home_link" class="<%= headerclass %>">
-			<%- unless @title == t("pages.intro") -%>
-		<a href="/" style="font-weight:bold; color:#fff; border:none; text-decoration:none;">&larr; back to homepage</a>
-			<%- end -%>
+		<%- unless @title == t("pages.intro") -%>
+			<a href="/">5things</a> &rarr; <strong><%= @title %></strong>
+		<%- end -%>
 		</p>
 		<p>
 			<%- if !current_user -%>	

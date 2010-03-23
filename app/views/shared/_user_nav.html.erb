@@ -1,7 +1,7 @@
 <div id="user_nav">
 	<div class="user_container">		
 			<span id="loader"></span>
-			<div id="menu_head"><%= h @current_list.title %> &nbsp;<img src="/images/icons/arrow_expand.gif" />
+			<div id="menu_head"><%= h @current_list.title %> &nbsp;<img src="http://static.indrode.com/5things/images/arrow_expand.gif" />
 
 			<ul class="menu_body" id="dropdown"> 
 				<%= render :partial => "/tasklists/dropdownitems", :collection => @tasklists, :as => :item %>

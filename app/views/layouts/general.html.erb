@@ -23,7 +23,7 @@
 
 <body>	
 	
-<div><img id="bg_image" src="/images/5things_bg.jpg" alt="" title="" /></div>
+<div><img id="bg_image" src="http://static.indrode.com/5things/images/5things_bg.jpg" alt="" title="" /></div>
 
 <%= render :partial => 'shared/user_nav' %>
 <%= render :partial => 'shared/toolbox' %>
@@ -41,14 +41,14 @@
 
 <div id="showhide_button" style="clear:both;">
 	<div class="container" style="width:960px;margin:0 auto;">
-	<a href="#" class="togglebutton"><img src="/images/<%= t("common.tools") %>" class="clean toggle" alt="" height="50" width="200" /></a>
+	<a href="#" class="togglebutton"><img src="http://static.indrode.com/5things/images/<%= t("common.tools") %>" class="clean toggle" alt="" height="50" width="200" /></a>
 	</div>
 </div>
 
 <div id="container_bg">
 	<div id="container">
 		<div id="headerarea">
-			<img id="logo" src="/images/5things_tr.png" alt="" width="352" height="117" />
+			<img id="logo" src="http://static.indrode.com/5things/images/5things_tr.png" alt="" width="352" height="117" />
 			<h2 class="status"><a href="home?d=" id="navhome"><%= l @actualday, :format => :long %></a><br /><%= t("common.todocount1") %> <span id="today_status"><%= pluralize(@alltasks.size, t("common.thing"), t("common.things")) %></span> <%= t("common.todocount2") %></h2>
 		</div>
 		<div style="clear:both;">
