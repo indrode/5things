@@ -1,6 +1,6 @@
 <div class="formarea">
 	<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
-	<h1 class="formheader"><img src="/images/icons/lock_edit.png" alt="" width="16" height="16" /> <%= t("pwreset.changetitle") %></h1>	
+	<h1 class="formheader"><img src="http://static.indrode.com/5things/images/lock_edit.png" alt="" width="16" height="16" /> <%= t("pwreset.changetitle") %></h1>	
 	<fieldset class="transparent">
 	<ol>
 		<li>
@@ -17,7 +17,7 @@
 	<%= f.error_messages %>
 	<div class="buttons">
 		<%= cancel_button %>
-	  <button type="submit"><img src="/images/icons/tick.png" alt=""/><%= t("pwreset.button") %></button>
+	  <button type="submit"><img src="http://static.indrode.com/5things/images/tick.png" alt=""/><%= t("pwreset.button") %></button>
 	</div>
 	<% end %>
 	<div style="clear:both;"></div>

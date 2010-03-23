@@ -1,7 +1,10 @@
 CHANGELOG
 
-Mar 22, 2010
-(032210)
+Mar 23, 2010 (032310)
+-add breadcrumb nav
+-use cookieless domain for images
+
+Mar 22, 2010 (032210)
 -add robots-noindex in share layout
 -use pluralize in maintenance flash message (both locales)
 -add twitter rss link to general layout

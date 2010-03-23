@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<div><img id="bg_image" src="/images/5things_bg.jpg" alt="" title="" /></div>
+<div><img id="bg_image" src="http://static.indrode.com/5things/images/5things_bg.jpg" alt="" title="" /></div>
 <%= render :partial => 'shared/outside_nav', :locals => {:headerclass => @hd || "defaultclass"} %>
 <% if flash[:notice] %>
 	<div id="flash_space">
@@ -52,7 +52,7 @@
 <div id="container_bg">
 	<div id="container">
 		<div id="headerarea">
-			<a href="<%= root_path %>"><img id="logo" src="/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
+			<a href="<%= root_path %>"><img id="logo" src="http://static.indrode.com/5things/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
 		</div>
 		<%= yield %>
 	</div>

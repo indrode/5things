@@ -185,10 +185,7 @@ img.right {
 	width:960px;
 	margin:30px auto 0 auto;
 	padding:5px 20px;
-	background-image:url(/images/footer_bg.png);
-	background-position:center top;
 	height:140px;
-	background-repeat:no-repeat;
 }
 
 
@@ -244,7 +241,7 @@ img.right {
 	min-height:100px;
 	clear:both;
 	background-color:#dedddc;
-	background-image:url(/images/gradient_intro.png);
+	background-image:url("http://static.indrode.com/5things/images/gradient_intro.png");
 	background-repeat:repeat-x;
 	border-top:1px solid #909090;
 	border-bottom:1px solid #666;
@@ -310,7 +307,7 @@ p.intro {
 	padding:40px 0; 
 	display:none; 
 	background-color:#666; 
-	background-image:url(/images/gradient_toolbox.png); 
+	background-image:url("http://static.indrode.com/5things/images/gradient_toolbox.png"); 
 	background-repeat:repeat-x;
 	border-top:1px solid #bbb;
 }
@@ -364,7 +361,7 @@ code {
 #flash_space {
 	padding:10px 0 5px 0;
 	background-color:#a6c34e;
-	background-image:url(/images/gradient_flash.png);
+	background-image:url("http://static.indrode.com/5things/images/gradient_flash.png");
 	background-repeat:repeat-x;
 }
 
@@ -397,7 +394,7 @@ code {
 }
 
 .transparent {
-background-image:url(/images/transparent.png);
+background-image:url("http://static.indrode.com/5things/images/transparent.png");
 }
 
 #login_links {
@@ -476,7 +473,7 @@ p.large {
 }
 
 #user_nav p a:hover {
-	border-bottom:2px solid #444;	
+	border-bottom:3px solid #a6c34e;	
 }
 
 #previous {
@@ -490,7 +487,7 @@ ul {
 	list-style-type: none; 
 	padding: 0; 
 	float: left; 
-	background-image:url(/images/transparent.png);	 
+	background-image:url("http://static.indrode.com/5things/images/transparent.png");	 
 	padding: 5px;	
 }
 
@@ -619,7 +616,7 @@ small {
 .errorExplanation li {
 	color:#000;
 	height:32px;
-	background-image:url(/images/icons/dialog-error.png);
+	background-image:url("http://static.indrode.com/5things/images/dialog-error.png");
 	background-repeat:no-repeat;
 	margin:0;
 	padding-top:10px;
@@ -638,7 +635,7 @@ small {
 	display:none;
 	font-size:20px;
 	color:#fff;
-	background-image:url(/images/bg-header.gif);
+	background-image:url("http://static.indrode.com/5things/images/bg-header.gif");
 	background-repeat:repeat-x;
 	height:60px;
 }
@@ -681,31 +678,14 @@ small {
 	xmargin-right:10px;
 	text-decoration:none;
 	font-weight:bold;
-	
 	text-align:center;
-	xpadding:4px 3px 8px 3px;	
-	
-	
-	xbackground-color:#a6c34e;
-	xborder:1px solid #666;
-	xborder-top:none;
-	
-	/*
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	box-shadow: 2px 2px 2px #222; 
-	-webkit-box-shadow: 2px 2px 2px #222; 
-	-moz-box-shadow: 2px 2px 2px #222;
-	*/
 }
-
-
 
 .toggle {
 	vertical-align:middle;
 	margin-right:5px;
 }
+
 #toggle {
 	outline: none;
 }
@@ -725,7 +705,7 @@ small {
 .ui-state-checked {
 	background-color:#d8d8d8;
 	border: 1px solid #cccccc; 
-	background-image:url(/images/icons/tick.png);
+	background-image:url("http://static.indrode.com/5things/images/tick.png");
 	background-position:175px;
 	padding-right:26px;
 	background-repeat:no-repeat;
@@ -775,7 +755,7 @@ fieldset {
 	xborder:none; 	
 	
 	/*
-	background-image:url(/images/transparent.png);
+	background-image:url("http://static.indrode.com/5things/images/transparent.png");
 	-moz-border-radius: 5px;  
 	-webkit-border-radius: 5px;  
 	border-radius: 5px;
@@ -933,17 +913,6 @@ button.positive, .buttons a.positive{
 	color:#fff;
 }
 
-
-
-.tools {
-
-}
-
-
-
-
-
-
 p.announce {
 	color:#777;
 	font-size:16px;
@@ -978,7 +947,7 @@ a img.clean {
 /* should have a background image: "drop here to remove this task" */
 
 .drophover {
-	background-image:url(/images/icons/user-trash.png);
+	background-image:url("http://static.indrode.com/5things/images/user-trash.png");
 	background-position:480px 60px;
 	background-repeat:no-repeat;
 }
@@ -1032,11 +1001,11 @@ a.highlight {
 
 
 #loader.loading {
-  background: url(/images/spinner.gif) no-repeat center center;
+  background: url("http://static.indrode.com/5things/images/spinner.gif") no-repeat center center;
 }
 
 #loader_new_unassigned.loading, #loader_new_yesterday.loading, #loader_new_today.loading, #loader_new_tomorrow.loading {
-	background: url(/images/spinner2.gif) no-repeat center center;
+	background: url("http://static.indrode.com/5things/images/spinner2.gif") no-repeat center center;
 }
 
 #home_link {
@@ -1082,7 +1051,7 @@ a.highlight {
 	height: 48px; 
 	position: absolute; 
 	top: 0; 
-	background: url(/images/sprites.png) 0 0px no-repeat; 
+	background: url("http://static.indrode.com/5things/images/sprites.png") 0 0px no-repeat; 
 	display: block; 
 	list-style: none; 
 	margin:0; 
@@ -1105,14 +1074,14 @@ a.highlight {
 #iconmenu #opt_feedback {width:40px; left: 288px; background-position: -288px 0;}
 #iconmenu #opt_beer {width:40px; left: 336px; background-position: -336px 0;}
 
-#iconmenu #opt_refresh a:hover {width:40px; background: url(/images/sprites.png) 0px -48px no-repeat;}
-#iconmenu #opt_calendar a:hover {width:40px; background: url(/images/sprites.png) -48px -48px no-repeat;}
-#iconmenu #opt_achievements a:hover {width:40px; background: url(/images/sprites.png) -96px -48px no-repeat;}
-#iconmenu #opt_pdf a:hover {width:40px; background: url(/images/sprites.png) -144px -48px no-repeat;}
-#iconmenu #opt_export a:hover {width:40px; background: url(/images/sprites.png) -192px -48px no-repeat;}
-#iconmenu #opt_email a:hover {width:40px; background: url(/images/sprites.png) -240px -48px no-repeat;}
-#iconmenu #opt_feedback a:hover {width:40px; background: url(/images/sprites.png) -288px -48px no-repeat;}
-#iconmenu #opt_beer a:hover {width:40px; background: url(/images/sprites.png) -336px -48px no-repeat;}
+#iconmenu #opt_refresh a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") 0px -48px no-repeat;}
+#iconmenu #opt_calendar a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -48px -48px no-repeat;}
+#iconmenu #opt_achievements a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -96px -48px no-repeat;}
+#iconmenu #opt_pdf a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -144px -48px no-repeat;}
+#iconmenu #opt_export a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -192px -48px no-repeat;}
+#iconmenu #opt_email a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -240px -48px no-repeat;}
+#iconmenu #opt_feedback a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -288px -48px no-repeat;}
+#iconmenu #opt_beer a:hover {width:40px; background: url("http://static.indrode.com/5things/images/sprites.png") -336px -48px no-repeat;}
 
 
 
@@ -1140,9 +1109,7 @@ a.highlight {
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; font-size: 1em; }
 
 .ui-widget-content { 
-	xborder: 1px solid #dddddd; 
-	xbackground: #eeeeee url(/images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x; color: #333333; 
-	xbackground-color:#000;
+
 	}
 	
 .ui-widget-content a { 
@@ -1151,7 +1118,6 @@ a.highlight {
 	
 .ui-widget-header { 
 	border: 1px solid #292929; 
-	xbackground: #f6a828 url(/images/ui-bg_gloss-wave_35_f6a828_500x100.png) 50% 50% repeat-x; color: #ffffff;
 	font-weight: bold; 
 	background-color:#444;	
 	}
@@ -1164,11 +1130,11 @@ a.highlight {
 /* Interaction states
 		- set list item height here
 ----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default { border: 1px solid #cccccc; background: #f6f6f6 url(/images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #1c94c4; outline: none; min-height:10px; }
+.ui-state-default, .ui-widget-content .ui-state-default { border: 1px solid #cccccc; background: #f6f6f6 url("http://static.indrode.com/5things/images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x; font-weight: bold; color: #1c94c4; outline: none; min-height:10px; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #1c94c4; text-decoration: none; outline: none; }
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus { border: 1px solid #fbcb09; background: #fdf5ce url(/images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #c77405; outline: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus { border: 1px solid #fbcb09; background: #fdf5ce url("http://static.indrode.com/5things/images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x; font-weight: normal; color: #c77405; outline: none; }
 .ui-state-hover a, .ui-state-hover a:hover { color: #c77405; text-decoration: none; outline: none; }
-.ui-state-active, .ui-widget-content .ui-state-active { border: 1px solid #fbd850; background: #ffffff url(/images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #eb8f00; outline: none; }
+.ui-state-active, .ui-widget-content .ui-state-active { border: 1px solid #fbd850; background: #ffffff url("http://static.indrode.com/5things/images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x; font-weight: bold; color: #eb8f00; outline: none; }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #eb8f00; outline: none; text-decoration: none; }
 
 
@@ -1206,9 +1172,9 @@ a.highlight {
 
 /* Interaction Cues
 ----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight {border: 1px solid #fed22f; background: #ffe45c url(/images/ui-bg_highlight-soft_75_ffe45c_1x100.png) 50% top repeat-x; color: #363636; height:10px;}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {border: 1px solid #fed22f; background: #ffe45c url("http://static.indrode.com/5things/images/ui-bg_highlight-soft_75_ffe45c_1x100.png") 50% top repeat-x; color: #363636; height:10px;}
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
-.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #b81900 url(/images/ui-bg_diagonals-thick_18_b81900_40x40.png) 50% 50% repeat; color: #ffffff; }
+.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #b81900 url("http://static.indrode.com/5things/images/ui-bg_diagonals-thick_18_b81900_40x40.png") 50% 50% repeat; color: #ffffff; }
 .ui-state-error a, .ui-widget-content .ui-state-error a { color: #ffffff; }
 .ui-state-error-text, .ui-widget-content .ui-state-error-text { color: #ffffff; }
 .ui-state-disabled, .ui-widget-content .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
@@ -1244,7 +1210,7 @@ a.highlight {
 
 /* datepicker icons */
 .ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
-.ui-icon { width: 16px; height: 16px; background-image: url(/images/ui-icons_222222_256x240.png); }
+.ui-icon { width: 16px; height: 16px; background-image: url("http://static.indrode.com/5things/images/ui-icons_222222_256x240.png"); }
 .ui-icon-circle-triangle-e { background-position: -48px -192px; }
 .ui-icon-circle-triangle-w { background-position: -80px -192px; }
 
@@ -1268,7 +1234,7 @@ a.highlight {
 /* Autocomplete
 ----------------------------------*/
 .ui-autocomplete-menu { position: absolute; cursor: default; background-color:#eee; border:1px solid #555;}	
-.ui-autocomplete-loading { background: white url('/images/spinner.gif') right center no-repeat; }
+.ui-autocomplete-loading { background: white url("http://static.indrode.com/5things/images/spinner.gif") right center no-repeat; }
 .ui-autocomplete-over { background-color: #0A246A; color: white; }
 
 
@@ -1345,7 +1311,7 @@ th.list {
 	font-weight:bold;
 	border-bottom:1px solid #333;
 	text-align:left;	
-	background-image: url(/images/icons/bg.gif);
+	background-image: url("http://static.indrode.com/5things/images/bg.gif");
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
@@ -1353,10 +1319,10 @@ th.list {
 }
 
 table#tasktable thead tr .headerSortUp {
-	background-image: url(/images/icons/asc.gif);
+	background-image: url("http://static.indrode.com/5things/images/asc.gif");
 }
 table#tasktable thead tr .headerSortDown {
-	background-image: url(/images/icons/desc.gif);
+	background-image: url("http://static.indrode.com/5things/images/desc.gif");
 }
 
 
@@ -1409,23 +1375,9 @@ td.s_duedate, th.s_duedate  {
 
 tr.odd {
 	xbackground-color:#eee;
-	background-image:url(/images/transparent.png);
+	background-image:url("http://static.indrode.com/5things/images/transparent.png");
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1449,7 +1401,7 @@ h1.formheader {
 	padding-top:20px;
 	border: 1px solid #BFBAB0;    
 	
-	background-image:url(/images/transparent.png);
+	background-image:url("http://static.indrode.com/5things/images/transparent.png");
 	-moz-border-radius: 5px;  
 	-webkit-border-radius: 5px;  
 	border-radius: 5px;
@@ -1463,7 +1415,7 @@ h1.formheader {
 .tab {
 	font-weight:bold;
 	font-family:Verdana, sans-serif;
-	background-image:url(/images/transparent.png);
+	background-image:url("http://static.indrode.com/5things/images/transparent.png");
 	margin-right:5px;
 	text-align:center;
 	padding:5px 20px 5px 20px;
@@ -1588,7 +1540,7 @@ div.jqmConfirmWindow {
 }
 
 .jqmConfirmTitle{
-  background-image:url(/images/icons/dialog-warning.png);
+  background-image:url("http://static.indrode.com/5things/images/dialog-warning.png");
 	background-repeat:no-repeat;
 	margin:20px;
 	padding-top:10px;
@@ -1605,7 +1557,6 @@ div.jqmConfirm .jqmClose {
   display:block;
   float:right;
   clear:right;
-  background:transparent url(confirm/close_icon_double.png) 0 0 no-repeat;
 }
 
 div.jqmConfirm a.jqmClose:hover{ background-position: 0 -20px; }
@@ -1674,7 +1625,7 @@ a.close {
 	width:32px;
 	height:32px;
 	margin-bottom:-10px;margin-top:-20px;margin-left:-35px;
-	background:url(/images/icons/process-stop.png);
+	background:url("http://static.indrode.com/5things/images/process-stop.png");
 	text-indent:-9000px;
 	font-size:1px;
 }
