@@ -70,7 +70,7 @@ class ApplicationController < ActionController::Base
         @ft = "removed"
         @title = "Error 500"
         @view_title = '&nbsp;'
-        @copy = t("common.error500") + $!
+        @copy = t("common.error500")
         render :template => "/shared/error", :layout => "outside", :status => 500
         
         #render :template => "shared/error500", :layout => "outside", :status => "500"
@@ -78,7 +78,7 @@ class ApplicationController < ActionController::Base
         @ft = "removed"
         @title = "Error 500"
         @view_title = '&nbsp;'
-        @copy = t("common.error500") + '&nbsp;(' + $! + ")"
+        @copy = t("common.error500")
         render :template => "/shared/error", :layout => "outside", :status => 500
         
         #render :template => "shared/error500", :layout => "outside", :status => "500"

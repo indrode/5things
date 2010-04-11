@@ -209,6 +209,7 @@ en:
     prefs_copy_3: "<strong>Report Preferences</strong> specify what kind of information should or should not be displayed in PDF reports and on a shared list page. These settings can be modified for each list individually under "
   
   lists:
+    lists: "Lists"
     title: "Manage Lists"
     notfound: "List Not Found"
     errormessage: "This list was not found or is not shared."
