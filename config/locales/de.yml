@@ -305,6 +305,7 @@ de:
     prefs_copy_3: "<strong>Report Einstellungen</strong> legen fest, welche Art von Informationen in PDF Reports und freigegebenen Listen dargestellt werden soll. Diese Einstellungen können Sie einzeln für jede Liste ändern unter "
   
   lists:
+    lists: "Listen"
     title: "Listen verwalten"
     notfound: "Liste Nicht Gefunden"
     errormessage: "Diese Liste wurde nicht gefunden oder wurde nicht freigegeben."
