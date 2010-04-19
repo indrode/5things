@@ -10,7 +10,7 @@ class ContactController < ApplicationController
   
   def index
     @title = @view_title = t("contact.title")      
-    @ft = "removed"
+    #@ft = "removed"
     # this is also done inline in toolbar
   end
 

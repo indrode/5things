@@ -58,7 +58,7 @@
 	</div>
 </div>
 
-<%= render :partial => 'shared/footer' %>
+<%= render :partial => 'shared/footer', :locals => {:footerclass => @ft || "defaultclass"} %>
 <%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
 </body>
 </html>
