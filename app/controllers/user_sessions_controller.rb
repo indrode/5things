@@ -6,7 +6,8 @@ class UserSessionsController < ApplicationController
   layout "outside"
   
   def new
-    @title = t("common.login")
+    @title = @view_title = t("common.login")      
+    
     @ft = "removed"
     @user_session = UserSession.new
   end

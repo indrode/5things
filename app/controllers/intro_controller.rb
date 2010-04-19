@@ -9,10 +9,11 @@ class IntroController < ApplicationController
     if current_user_session
       redirect_to home_path
     end
+    
   end
 
   def about
-    @ft = "removed"
+    #@ft = "removed"
     @title = @view_title = t("pages.about")  
   end
   

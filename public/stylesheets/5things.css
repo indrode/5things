@@ -129,7 +129,7 @@ h3.landing {
 	font-family:Georgia;
 	padding:0;
 	font-size:16px;
-	margin-top:100px;
+	margin-top:70px;
 	font-variant:normal;
 	color:#777;
 	font-style: italic;
@@ -181,8 +181,9 @@ img.right {
 
 #footer {
 	clear:both;
+	border-top:1px solid #787878;
 	text-align:center;
-	width:960px;
+	width:560px;
 	margin:30px auto 0 auto;
 	padding:5px 20px;
 	height:140px;
@@ -1628,4 +1629,39 @@ a.close {
 	background:url("http://static.indrode.com/5things/images/process-stop.png");
 	text-indent:-9000px;
 	font-size:1px;
+}
+
+
+/* homepage header links */
+
+body section#titlenav ul {
+	background:none;
+	margin:10px 0 0 0;
+	padding:0;
+}
+
+body section#titlenav ul li {
+  display: inline-block;
+	margin:0;
+}
+
+body section#titlenav ul li a {
+	position: relative;
+  display: inline-block;
+  font-weight: bold;
+	font-style: normal;
+	color: #980905;
+  font-size: 13px;
+	text-decoration: none;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+	border: 1px solid #BFBAB0;    
+  background: #fff2ce;
+	background: #ffffff;
+  padding: 0.5em 10px;
+}
+
+body section#titlenav ul li a:hover {
+  background: #fff5a5;
 }

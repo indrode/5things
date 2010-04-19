@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   layout "clean"
 
   def new
-    @title = t("user.registration")
-    @user = User.new  
+    @title = @view_title = t("user.registration")      
+    @user = User.new 
+    render :layout => "outside"
   end
 
   def create

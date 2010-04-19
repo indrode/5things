@@ -2,7 +2,7 @@
 
 class ActivationsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  layout "outside"
+  layout "clean"
 
   def new
     @title = t("activations.title")
