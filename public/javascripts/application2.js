@@ -77,7 +77,8 @@ $(document).ready(function() {
 		$("#flash_space").stop();
 		$("#flash_notice").stop();
 		$("#flash_space").slideUp();
-		$("#flash_notice").slideUp();		
+		$("#flash_notice").slideUp();
+		return false;	
 	});
 
 	// make share divs unobtrusive (show by default, then hide)

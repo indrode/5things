@@ -17,7 +17,7 @@
 	<meta name="email" content="5things@zenpunch.com" />
 	<meta name="google-site-verification" content="gklsdc5QAalgcsZVquS80BrmQ9fbHeNxK-bpW5mq_JE" />
 	<link rel="alternate" href="http://twitter.com/statuses/user_timeline/122287859.rss" title="5things" type="application/rss+xml" />
-	<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<%= stylesheet_link_tag '5things' %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery-ui-1.8rc1.custom.min.js"></script>
@@ -48,16 +48,16 @@
 	<div id="container">
 		<div id="headerarea">
 			<a href="<%= root_path %>"><img id="logo" src="http://static.indrode.com/5things/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
-			<h3 class="landing"><%= @view_title %>&nbsp;&nbsp;
+			<div id="landing"><%= @view_title %>&nbsp;&nbsp;<br />
 				<%- if !current_user -%>
-				<section id="titlenav">
+				<div id="titlenav">
 				    <ul style="width:100%; float:right;">
-				      <li class="download"><a href="/account/new">Sign Up Now!</a></li>
-				      <li><a href="/about">Learn More...</a></li>
+				      <li class="download"><a href="/account/new"><img src="http://static.indrode.com/5things/images/tick.png" alt="" class="clean" style="vertical-align:text-bottom;"/> Sign Up Now!</a></li>
+				      <li><a href="/about"><img src="http://static.indrode.com/5things/images/information.png" alt="" class="clean" style="vertical-align:text-bottom;"/> Learn More...</a></li>
 				    </ul>            
-				</section>
+				</div>
 				<%- end -%>			
-				</h3>
+				</div>
 		</div>
 		<%= yield %>
 	</div>

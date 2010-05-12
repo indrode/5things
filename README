@@ -1,5 +1,22 @@
 CHANGELOG
 
+TODO for next release:
+- jquery: add onload function to improve slide performance
+- redo registration and help screens; finish up about screen
+- redo footer design
+- check create.js.erb pause, "parenthesize argument(s) for future version" warning
+- improve autocomplete functionality
+- workflow: put focus on text field after adding task
+- check asset_host
+
+May 12, 2010 (051210)
+- fix outside pages HTML validation errors
+- new feature: disable/activate lists
+- display today's task count in lists dropdown
+- bugfix: fix alltasks counter when using date picker
+- improve prev/next navigation performance
+- improve jquery slide performance	
+
 Apr 11, 2010 (041110)
 - delete unused stylesheets
 - add link to /tasklists in top nav
@@ -8,11 +25,11 @@ Apr 11, 2010 (041110)
 - remove some expired files
 
 Mar 23, 2010 (032310)
--add breadcrumb nav
--use cookieless domain for images
+- add breadcrumb nav
+- use cookieless domain for images
 
 Mar 22, 2010 (032210)
--add robots-noindex in share layout
--use pluralize in maintenance flash message (both locales)
--add twitter rss link to general layout
--make share nav unobtrusive; add anchor; preventDefault
+- add robots-noindex in share layout
+- use pluralize in maintenance flash message (both locales)
+- add twitter rss link to general layout
+- make share nav unobtrusive; add anchor; preventDefault

@@ -181,6 +181,7 @@ $(document).ready(function() {
 		} else {	
 			curTool = "";
 		}
+		return false;
 	});
 
 	
@@ -240,7 +241,8 @@ $(document).ready(function() {
 		$("#flash_space").stop();
 		$("#flash_notice").stop();
 		$("#flash_space").slideUp();
-		$("#flash_notice").slideUp();		
+		$("#flash_notice").slideUp();
+		return false;	
 	});
 
 	// using live event binding to bind events to future items
@@ -296,6 +298,7 @@ $(document).ready(function() {
 		state = (state == 'Close Tools' ? '<span id="shText">View Tools</span>' : '<span id="shText">Close Tools</span>');					
 		el.replaceWith(state);
 		curTool = "";	// reset current toolbar selection
+		return false;
 	});
 	
 	// sortable

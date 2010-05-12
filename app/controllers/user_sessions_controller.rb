@@ -15,6 +15,8 @@ class UserSessionsController < ApplicationController
   def create  
     @title = t("common.login")
     @ft = "removed"
+    # next line can be removed
+    Stat.find(:first).increment!(:taskcount)
     @user_session = UserSession.new(params[:user_session]) 
     #@current_list = current_user.default_list
     if @user_session.save
