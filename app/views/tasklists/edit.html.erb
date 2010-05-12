@@ -68,6 +68,17 @@
 		<%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_3") %> 
 		<%= f.hidden_field :reporting %>		
 	</li>
+	<li>
+		<p><hr /></p>
+	</li>
+	<li>
+		<%= f.label :active_1, t("lists.active_instructions") %>
+		<%= f.radio_button :active, 1 %> <%= t("lists.active") %>
+	</li>
+	<li>
+		<%= f.label :active_2, "&nbsp;" %>
+		<%= f.radio_button :active, 0 %> <%= t("lists.inactive") %>
+	</li>
 	</ol>
 </fieldset>
 
@@ -85,6 +96,7 @@
 				<p class="instructions"><img src="http://static.indrode.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_2") %></p>
 				<p class="instructions"><img src="http://static.indrode.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2") %></p>
 				<p class="instructions"><img src="http://static.indrode.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_3") %></p>
+				<p class="instructions"><img src="http://static.indrode.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.activated_copy_1") %></p>
 				<p>&nbsp;</p>
 				<div class="buttons">
 					<%= link_to '<img src="http://static.indrode.com/5things/images/cross.png" alt="' + t("common.cancel") +'" width="16" height="16" />' + t("common.cancel"), "/tasklists", :class => 'negative' %>

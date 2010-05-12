@@ -32,6 +32,8 @@ class IntroController < ApplicationController
   def notfound
     @title = @view_title = "Error 404"
     @copy = t("common.error404")
+    @ft = "removed"
+    # to do: remove /intro/notfound.html.erb
     render :template => "/shared/error", :status => 404
   end
   

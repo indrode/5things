@@ -65,6 +65,17 @@
 		<%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_3") %> 
 		<%= f.hidden_field :reporting %>		
 	</li>
+	<li>
+		<p><hr /></p>
+	</li>
+	<li>
+		<%= f.label :active_1, t("lists.active_instructions") %>
+		<%= f.radio_button :active, 1 %> <%= t("lists.active") %>
+	</li>
+	<li>
+		<%= f.label :active_2, "&nbsp;" %>
+		<%= f.radio_button :active, 0 %> <%= t("lists.inactive") %>
+	</li>
 	</ol>
 </fieldset>
 <%= f.error_messages %>	

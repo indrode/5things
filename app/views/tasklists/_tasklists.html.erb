@@ -1,5 +1,5 @@
 <tr>
-	<td class="title"><%= item.id == current_user.current_list ? '<small style="color:#aa0000; font-size:10px;">active</small> ' : '' %><%= h item.title %></td>
+	<td class="title"><%= item.active == 0 ? '<small style="color:#87421F; font-size:10px;">' + t("lists.disabled") + '</small> ' : '' %><%= item.id == current_user.current_list ? '<small style="color:#aa0000; font-size:10px;">' + t("lists.active") + '</small> ' : '' %><%= h item.title %></td>
 	<td class="taskcount"><%= item.tasks_count %></td>
 	<td class="security"><%= item.security == 1 ? 'public <small>(<a href="/share/' + item.key + '">view</a>)</small>' : 'private' %></td>
 	<td class="key"><%= h item.key %></td>

@@ -101,7 +101,7 @@ class UsersController < ApplicationController
   # update current task list
   def set_list
     @user = current_user
-    if @user.tasklists.find_by_id(params[:id])
+    if @user.tasklists.find_by_id(params[:id], :conditions => ["active = 1"])
       User.update(current_user.id, :current_list => params[:id])
       redirect_to "/maintenance" and return
     end

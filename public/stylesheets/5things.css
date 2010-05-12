@@ -45,13 +45,15 @@ h1 {
 	font-family:Helvetica, Arial, sans-serif;	
 	font-size:16px;
 	padding:20px 0 5px 0;
+	border-bottom:1px dotted #555;
+	margin:10px 0 5px 0;
 }
 
 h1.formheader {
 	font-family:Helvetica, Arial, sans-serif;
 	font-size:18px;
 	padding:20px 0 0 10px;
-
+	border:none;
 }
 
 h1.outside {
@@ -124,13 +126,14 @@ h3 {
 }
 
 
-h3.landing {
+#landing {
 	float:right;
 	font-family:Georgia;
 	padding:0;
 	font-size:16px;
-	margin-top:70px;
+	margin-top:60px;
 	font-variant:normal;
+	font-weight:bold;
 	color:#777;
 	font-style: italic;
 	border:none;
@@ -210,8 +213,8 @@ img.right {
 #footer2 {
 	border-top:5px solid #a6c34e;	
 	background-color:#000;
-	padding-top:10px;
-	height:50px;
+	padding:10px 0;
+	min-height:50px;
 }
 
 #footer2 p {
@@ -630,6 +633,7 @@ small {
 /* ------------------- */
 
 #view_nav{
+	border-top:1px solid #666;
 	background:#222;
 	padding:20px 10px;
 	padding:5px 10px;
@@ -1380,8 +1384,9 @@ tr.odd {
 	
 }
 
-
-
+td.deactivated {
+	font-style:italic;
+}
 
 h1.formheader {
 	font-family:Helvetica, Arial, sans-serif;
@@ -1416,7 +1421,7 @@ h1.formheader {
 .tab {
 	font-weight:bold;
 	font-family:Verdana, sans-serif;
-	background-image:url("http://static.indrode.com/5things/images/transparent.png");
+	background-image:url("http://static.indrode.com/5things/images/nav_bg.png");
 	margin-right:5px;
 	text-align:center;
 	padding:5px 20px 5px 20px;
@@ -1430,11 +1435,13 @@ h1.formheader {
 }
 
 .tab:hover {
+	background-image:none;
 	background-color:#fff;
 }
 
 .current {
 	font-weight:bold;
+	background-image:none;
 	background-color:#fff;
 }
 
@@ -1634,18 +1641,18 @@ a.close {
 
 /* homepage header links */
 
-body section#titlenav ul {
+body div#titlenav ul {
 	background:none;
 	margin:10px 0 0 0;
 	padding:0;
 }
 
-body section#titlenav ul li {
+body div#titlenav ul li {
   display: inline-block;
 	margin:0;
 }
 
-body section#titlenav ul li a {
+body div#titlenav ul li a {
 	position: relative;
   display: inline-block;
   font-weight: bold;
@@ -1662,6 +1669,6 @@ body section#titlenav ul li a {
   padding: 0.5em 10px;
 }
 
-body section#titlenav ul li a:hover {
+body div#titlenav ul li a:hover {
   background: #fff5a5;
 }

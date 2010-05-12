@@ -1,16 +1,15 @@
 # app/controllers/tasks_controller.rb
 
 class TasksController < ApplicationController
-  before_filter :require_user, :except => [:find_today]
+  before_filter :require_user, :except => [:find_today]  
   layout "general", :except => [:create]
   require 'icalendar'
   require 'fastercsv'
   
   def index
-    
+        
     #this adds two seconds
     # sleep 2    
-    
     tasklist_id = current_user.current_list
     
     @today = Time.zone.now.to_date
@@ -21,26 +20,25 @@ class TasksController < ApplicationController
  
     @yesterday = @today.yesterday
     @tomorrow = @today.tomorrow
-        
-    # find all tasks where date is within range yesterday..tomorrow of given day
-    @tasks = current_user.tasks.find_batch(tasklist_id, @yesterday, @tomorrow)
-    
-    # find today's incomplete tasks (change this and use for achievements too)
-    @alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", @today ])
     
     # find all unassigned tasks   
     @unassigned = current_user.tasks.find_unassigned(tasklist_id)
-    
-    # get list of all unique task bodies for autocomplete use (cache this query?)
-    @bodies = current_user.tasks.find(:all, :select => 'body', :group => 'body')     
 
-    # sharing a list
-    @tasklists = current_user.tasklists.find(:all, :order => "title")
-    @current_list = Tasklist.find_by_id(current_user.current_list)
-    
-    @title = @current_list.title
+    # find all tasks where date is within range yesterday..tomorrow of given day
+    @tasks = current_user.tasks.find_batch(tasklist_id, @yesterday, @tomorrow) 
 
-    @stat_unassigned = @unassigned.size
+    # don't need all this when using AJAX links
+    unless params[:a] == 'i'
+      # get list of all unique task bodies for autocomplete use (cache this query?)
+      @bodies = current_user.tasks.find(:all, :select => 'body', :group => 'body')     
+      # get all active lists
+      @tasklists = current_user.tasklists.find(:all, :order => "title", :conditions => ["active = 1"])
+      @current_list = Tasklist.find_by_id(current_user.current_list)
+      @title = @current_list.title     
+      @stat_unassigned = @unassigned.size     
+      # find today's incomplete tasks (change this and use for achievements too)
+      @alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
+    end
         
     respond_to do |format|
       format.html # index.html.erb
@@ -81,6 +79,7 @@ class TasksController < ApplicationController
     
   end
 
+  #todo: maintenance for all lists; create maintenance report
   def maintenance
     # do maintenance according to user preferences
     count = 0
@@ -162,9 +161,8 @@ class TasksController < ApplicationController
     render :layout => "outside"
   end
 
-  def create
-    #sleep 3   # simulate longer ajax call
-    
+  # todo: improve create performance
+  def create    
     # use current_list id
     params[:task][:tasklist_id] = current_user.current_list
     @task = current_user.tasks.create(params[:task])
@@ -256,8 +254,7 @@ class TasksController < ApplicationController
   
   def find_today
     if current_user # fix bug with two open windows, then logging out one window
-      today = Time.zone.now.to_date
-      alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", today ])
+      alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
       @todaycount = alltasks.size
       respond_to do |format|
         format.html { redirect_to root_path }

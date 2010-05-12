@@ -1,1 +1,1 @@
-<li><a href="/set/<%= item.id %>" class="switchlist"><%= h item.title %> <span class="menu_count"><%= item.tasks.count(:conditions => "completed = 0") %></span></a></li>
+<li><a href="/set/<%= item.id %>" class="switchlist"><%= h item.title %> <span class="menu_count"><strong><%= item.tasks.count(:conditions => ["completed = 0 AND duedate = (?)", Time.zone.now.to_date]) %></strong> (<%= item.tasks.count(:conditions => "completed = 0") %>)</span></a></li>
