@@ -744,8 +744,7 @@ li.ui-state-checked, li.ui-state-default {
 
 .formarea_right {
 	float:right;
-	width:365px;
-	width:330px;
+	width:310px;
 	
 }
 
@@ -842,9 +841,9 @@ label {
 	-webkit-box-shadow: 2px 2px 2px #555; 
 	-moz-box-shadow: 2px 2px 2px #555;
 	
-	-moz-border-radius: 5px;  
-	-webkit-border-radius: 5px;  
-	border-radius: 5px; 
+	-moz-border-radius: 8px;  
+	-webkit-border-radius: 8px;  
+	border-radius: 8px; 
 }
 
 .buttons button{
@@ -1403,7 +1402,7 @@ h1.formheader {
 #settings, #copies {    
   clear:both;
 	margin: 0 0 60px 0;
-	padding: 20px;
+	padding: 30px;
 	padding-top:20px;
 	border: 1px solid #BFBAB0;    
 	

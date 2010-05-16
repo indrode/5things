@@ -4,6 +4,7 @@
 //$.ui.dialog.defaults.bgiframe = true;
 
 var curState = true;
+var submitted = false;
 
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {
@@ -16,7 +17,8 @@ jQuery.fn.submitWithAjax = function() {
 		var id = $(this).attr('id');
 		var check = $(this).attr('id') + '_value';
 		var curVal = $('#'+check).val();
-		if($.trim(curVal)!='') {		
+		if($.trim(curVal)!='' && submitted == false) {
+			submitted = true;	
 			$(':text').attr("readonly", "readonly");
 			$('#loader_'+id).addClass('loading');
     	$.post(this.action, $(this).serialize(), null, "script");
@@ -27,15 +29,17 @@ jQuery.fn.submitWithAjax = function() {
   return this;
 };
 
+
 // prevent double-submit
-jQuery.fn.preventDoubleSubmit = function() {
-  $(this).submit(function() {
-    if (this.beenSubmitted)
-      return false;
-    else
-      this.beenSubmitted = true;
-  });
-};
+// sets global var submitted to false every second
+function resetSubmitted() {
+	submitted = false;
+	console.log('reset');
+}
+var submitInterval = setInterval(resetSubmitted, 1000);
+
+
+
 
 
 
@@ -165,7 +169,6 @@ $(document).ready(function() {
 
 	
 	$("#new_yesterday, #new_today, #new_tomorrow, #new_unassigned").livequery( function() {		
-		$(this).preventDoubleSubmit();
 	  $(this).submitWithAjax();	
 	});
 	

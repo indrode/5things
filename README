@@ -4,10 +4,14 @@ TODO for next release:
 - jquery: add onload function to improve slide performance
 - redo registration and help screens; finish up about screen
 - redo footer design
+- intro: add signup button/copy
 - check create.js.erb pause, "parenthesize argument(s) for future version" warning
 - improve autocomplete functionality
 - workflow: put focus on text field after adding task
-- check asset_host
+
+May 16, 2010 (051610)
+- increase whitespace
+- small jQuery enhancements; prevent double submit
 
 May 12, 2010 (051210)
 - fix outside pages HTML validation errors
