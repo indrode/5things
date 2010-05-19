@@ -9,3 +9,4 @@ $("#new_<%= @addtype %>")[0].reset();
 
 $('#loader_new_unassigned, #loader_new_yesterday, #loader_new_today, #loader_new_tomorrow').removeClass('loading');
 $(':text').removeAttr("readonly").addClass("watermarkOn").blur();
+$("#new_<%= @addtype %>_value").focus();

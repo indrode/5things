@@ -155,6 +155,7 @@ en:
     button: "Send Message"
     contact_copy_1: "Use this form to contact 5things."
     contact_copy_2: "You must enable JavaScript to use this contact form. This is a security measurement."
+    contact_copy_3: "Alternatively, you may also send an email to <a href='mailto:support@5things.zenpunch.com'>support@5things.zenpunch.com</a>"
 
   pwreset:
     title: "Reset Password"
@@ -171,9 +172,10 @@ en:
   tasks:
     maint_task: "task"
     maint_task_plural: "tasks"
-    maint_message: "View refreshed. "
-    maint_today: " moved to Today."
-    maint_unassigned: " moved to Unassigned."
+    maint_message: "Maintenance complete: "
+    maint_today: " moved to Today. "
+    maint_unassigned: " moved to Unassigned. "
+    no_maint: "No changes."
     created: "Task created."
     export: "Export complete."
     duedate: "Due Date"

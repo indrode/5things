@@ -251,6 +251,7 @@ de:
     button: "Nachricht senden"
     contact_copy_1: "Benutzen Sie dieses Formular um 5things zu kontaktieren."
     contact_copy_2: "Sie müssen JavaScript eingeschaltet haben, um dieses Formular zu benutzen. Dies ist eine Sicherheitsmassnahme."
+    contact_copy_3: "Alternativ, schicken Sie eine Email an <a href='mailto:support@5things.zenpunch.com'>support@5things.zenpunch.com</a>"
   
   pwreset:
     title: "Passwort Zurücksetzen"
@@ -267,9 +268,10 @@ de:
   tasks:
     maint_task: "Aufgabe"
     maint_task_plural: "Aufgaben"
-    maint_message: "Ansicht erneuert. "
-    maint_today: " auf Heute verschoben."
-    maint_unassigned: " nach Unsortiert verschoben."
+    maint_message: "Wartung fertig: "
+    maint_today: " auf Heute verschoben. "
+    maint_unassigned: " nach Unsortiert verschoben. "
+    no_maint: "Keine Änderungen."
     created: "Aufgabe erstellt."
     export: "Export komplett."
     duedate: "Fälligkeitsdatum"

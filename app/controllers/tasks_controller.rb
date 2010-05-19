@@ -82,27 +82,30 @@ class TasksController < ApplicationController
   #todo: maintenance for all lists; create maintenance report
   def maintenance
     # do maintenance according to user preferences
-    count = 0
     status_report = ""
-    tasklist = Tasklist.find_by_id(current_user.current_list)
-    case tasklist.maintenance
-    when 2
-      # move incomplete overdue items to today and mark 
-      current_user.tasks.find_overdue(current_user.current_list).each { |t| 
-        t.update_attribute :duedate, Time.zone.now.to_date
-        count += 1
-      }
-      status_report = help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
-    when 3
-      # move to unassigned
-      current_user.tasks.find_overdue(current_user.current_list).each { |t| 
-        t.update_attribute :duedate, NEVER
-        count += 1
-      }
-      #status_report = count.to_s + t("tasks.maint_unassigned") if count > 0
-      status_report = help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count > 0
+    tasklists = current_user.tasklists.find(:all, :conditions => ["active = 1"])
+    tasklists.each do |a|
+      count = 0 
+      case a.maintenance
+      when 2
+        # move incomplete overdue items to today and mark 
+        current_user.tasks.find_overdue(a).each { |t| 
+          t.update_attribute :duedate, Time.zone.now.to_date
+          count += 1
+        }
+        status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
+      when 3
+        # move to unassigned
+        current_user.tasks.find_overdue(a).each { |t| 
+          t.update_attribute :duedate, NEVER
+          count += 1
+        }
+        #status_report = count.to_s + t("tasks.maint_unassigned") if count > 0
+        status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count > 0
+      end
     end
     # when logging in, also show login successfull message
+    status_report = t("tasks.no_maint") if status_report == ""
     flash[:notice] = t("tasks.maint_message") + status_report 
     redirect_to root_url  
   end

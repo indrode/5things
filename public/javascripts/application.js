@@ -18,7 +18,7 @@ jQuery.fn.submitWithAjax = function() {
 		var check = $(this).attr('id') + '_value';
 		var curVal = $('#'+check).val();
 		if($.trim(curVal)!='' && submitted == false) {
-			submitted = true;	
+			submitted = true;
 			$(':text').attr("readonly", "readonly");
 			$('#loader_'+id).addClass('loading');
     	$.post(this.action, $(this).serialize(), null, "script");
@@ -31,12 +31,12 @@ jQuery.fn.submitWithAjax = function() {
 
 
 // prevent double-submit
-// sets global var submitted to false every second
+// sets global var submitted to false every 3 seconds
 function resetSubmitted() {
 	submitted = false;
-	console.log('reset');
+	//console.log('reset');
 }
-var submitInterval = setInterval(resetSubmitted, 1000);
+var submitInterval = setInterval(resetSubmitted, 2000);
 
 
 
@@ -234,9 +234,9 @@ $(document).ready(function() {
 	});
 
 	//console.log("animate flash");
-	$("#flash_space").effect("highlight", {}, 800);
-	$("#flash_space").pause(5000).slideUp();
-	$("#flash_notice").pause(5000).slideUp();			
+	//$("#flash_space").effect("highlight", {}, 800);
+	//$("#flash_space").pause(5000).slideUp();
+	//$("#flash_notice").pause(5000).slideUp();			
 	
 	
 	$("#flash_notice a").livequery('click', function() {
