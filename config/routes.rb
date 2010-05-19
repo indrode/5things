@@ -58,7 +58,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'about', :controller => "intro", :action => "about"
   map.connect 'privacy', :controller => "intro", :action => "privacy"
   map.connect 'terms', :controller => "intro", :action => "terms"
-  map.connect 'stats', :controller => "intro", :action => "stats"
+  map.connect 'statistics', :controller => "intro", :action => "stats"
   
   map.connect 'ical', :controller => "tasks", :action => "export_ics"
   map.connect 'csv', :controller => "tasks", :action => "export_csv"
