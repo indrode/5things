@@ -27,6 +27,12 @@ class IntroController < ApplicationController
     @title = @view_title = t("common.help")
   end
   
+  def stats
+    @title = @view_title = "Stats"
+    @count = Stat.find(:first).taskcount.to_s
+    @ft = "removed"
+  end
+  
   def notfound
     @title = @view_title = "Error 404"
     @copy = t("common.error404")

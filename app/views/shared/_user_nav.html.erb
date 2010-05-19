@@ -4,21 +4,21 @@
 			<div id="menu_head"><%= h @current_list.title %> &nbsp;<img src="http://static.indrode.com/5things/images/arrow_expand.gif" />
 
 			<ul class="menu_body" id="dropdown"> 
-				<%= render :partial => "/tasklists/dropdownitems", :collection => @tasklists, :as => :item %>
+				<%= render :partial => "/tasklists/dropdownitems", :collection => @tasklists, :as => :item -%>
   			<li class="manage"><a href="/tasklists"><%= t("common.addmanagelists") %></a></li>
 			</ul>
 			</div>
 		<p>
-		<% if !current_user %>
-		  <%= link_to_unless_current t("common.register"), new_account_path %> &nbsp;|&nbsp;
-		  <%= link_to_unless_current t("common.login"), login_path %>
-		<% else %>
-		<strong><%= current_user.email %></strong> &nbsp;|&nbsp;
-		<%= link_to_unless_current t("lists.lists") + ' (' + current_user.tasklists_count.to_s + ')', "/tasklists" %> &nbsp;|&nbsp; 
-		<%= link_to_unless_current t("user.preferences"), "/account" %> &nbsp;|&nbsp;
-		<%= link_to_unless_current t("common.help"), help_path %> &nbsp;|&nbsp;			
-	  <%= link_to_unless false, t("common.logout"), user_session_path, :method => :delete %>
-		<% end %>
+		<%- if !current_user -%>
+		  <%= link_to_unless_current t("common.register"), new_account_path -%> &nbsp;|&nbsp;
+		  <%= link_to_unless_current t("common.login"), login_path -%>
+		<%- else -%>
+		<strong><%= current_user.email -%></strong> &nbsp;|&nbsp;
+		<%= link_to_unless_current t("lists.lists") + ' (' + current_user.tasklists_count.to_s + ')', "/tasklists" -%> &nbsp;|&nbsp; 
+		<%= link_to_unless_current t("user.preferences"), "/account" -%> &nbsp;|&nbsp;
+		<%= link_to_unless_current t("common.help"), help_path -%> &nbsp;|&nbsp;			
+	  <%= link_to_unless false, t("common.logout"), user_session_path, :method => :delete -%>
+		<%- end -%>
 		</p> 
 	</div>
 </div>

@@ -1,13 +1,20 @@
 CHANGELOG
 
 TODO for next release:
-- jquery: add onload function to improve slide performance
 - redo registration and help screens; finish up about screen
 - redo footer design
 - intro: add signup button/copy
 - check create.js.erb pause, "parenthesize argument(s) for future version" warning
 - improve autocomplete functionality
+- bug: fix id value on help page (check validation)
+
+May 19, 2010 (051910)
+- add CSS3 box-shadow to header area
+- maintenance now performs function on all lists
+- bugfix: fix refresh button in toolbox
+- do not hide status flash message
 - workflow: put focus on text field after adding task
+- new file: intro/stats.html.erb
 
 May 16, 2010 (051610)
 - increase whitespace

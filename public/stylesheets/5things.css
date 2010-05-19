@@ -113,6 +113,7 @@ h2.grid {
 
 h2 span {
 	font-size:19px;
+	cursor: default;
 }
 
 h2.black {
@@ -668,6 +669,9 @@ small {
 
 #showhide_button{
 	border-top:5px solid #a6c34e;	
+	box-shadow:-2px 2px 2px #999; 
+	-webkit-box-shadow:-2px 2px 2px #999; 
+	-moz-box-shadow:-2px 2px 2px #999;
 }
 
 .container_standard {

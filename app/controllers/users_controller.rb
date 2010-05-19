@@ -103,9 +103,9 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.tasklists.find_by_id(params[:id], :conditions => ["active = 1"])
       User.update(current_user.id, :current_list => params[:id])
-      redirect_to "/maintenance" and return
+      #redirect_to "/maintenance" and return
     end
-    flash[:notice] = t("lists.notexist") # + $!
+    #flash[:notice] = t("lists.notexist") # + $!
     redirect_to home_path
   end
 
