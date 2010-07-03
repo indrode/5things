@@ -234,9 +234,9 @@ $(document).ready(function() {
 	});
 
 	//console.log("animate flash");
-	//$("#flash_space").effect("highlight", {}, 800);
-	//$("#flash_space").pause(5000).slideUp();
-	//$("#flash_notice").pause(5000).slideUp();			
+	$("#flash_space").effect("highlight", {}, 800);
+	$("#flash_space").pause(5000).slideUp();
+	$("#flash_notice").pause(5000).slideUp();			
 	
 	
 	$("#flash_notice a").livequery('click', function() {
