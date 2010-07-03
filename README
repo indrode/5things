@@ -8,6 +8,9 @@ TODO for next release:
 - improve autocomplete functionality
 - bug: fix id value on help page (check validation)
 
+July 2, 2010
+- empty push after changing dev environment
+
 May 19, 2010 (051910)
 - add CSS3 box-shadow to header area
 - maintenance now performs function on all lists

@@ -67,9 +67,9 @@ $(document).ready(function() {
 	});
 
 	//console.log("animate flash");
-	//$("#flash_space").effect("highlight", {}, 800);
-	//$("#flash_space").pause(7000).slideUp();
-	//$("#flash_notice").pause(7000).slideUp();			
+	$("#flash_space").effect("highlight", {}, 800);
+	$("#flash_space").pause(7000).slideUp();
+	$("#flash_notice").pause(7000).slideUp();			
 	
 	
 	$("#flash_notice a").bind('click', function() {
