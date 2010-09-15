@@ -1562,10 +1562,9 @@ input.taskbox {
 	font-size:12px;
 }
 
-
-
-
-
+.ui-menu {
+	background-color:#fff;
+}
 
 /* confirmation styles */
 
