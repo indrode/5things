@@ -1,7 +1,7 @@
 # app/controllers/tasks_controller.rb
 
 class TasksController < ApplicationController
-  before_filter :require_user, :except => [:find_today]  
+  before_filter :require_user, :except => [:find_today, :increment_taskcount]  
   layout "general", :except => [:create]
   require 'icalendar'
   require 'fastercsv'
@@ -270,5 +270,10 @@ class TasksController < ApplicationController
   
   def set_help
     current_user.update_attributes(:env_other => 0)
+  end
+  
+  def increment_taskcount
+    Stat.find(:first).increment!(:taskcount)
+    render :nothing => true
   end
 end

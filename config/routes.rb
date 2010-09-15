@@ -52,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'update', :controller => "tasks", :action => "update"
   map.connect 'destroytask', :controller => "tasks", :action => "destroy"
   map.connect 'maintenance', :controller => "tasks", :action => "maintenance"
+  map.connect 'inctsk', :controller => "tasks", :action => "increment_taskcount"
 
   #map.connect 'share', :controller => "tasklists", :action => "index"
   

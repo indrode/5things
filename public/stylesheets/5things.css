@@ -39,6 +39,7 @@ body {
 
 a {
 	color:#980905;
+	text-shadow:none;
 }
 
 h1 {
@@ -47,6 +48,7 @@ h1 {
 	padding:20px 0 5px 0;
 	border-bottom:1px dotted #555;
 	margin:10px 0 5px 0;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 h1.formheader {
@@ -124,6 +126,7 @@ h3 {
 	font-size:22px;
 	font-weight:bold;
 	margin:10px 0;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 
@@ -177,12 +180,62 @@ img.right {
 	width:960px;
 }
 
-.container{
+.container {
 	clear:both;
 	width:960px;
 	margin:0 auto;
 }
 
+/* footer */
+
+
+#footer {
+	margin-top: 20px;
+	border: 1px solid #e3e3e3;
+	height: 20px;
+	padding:5px;
+}
+
+#copyright {
+	padding: 4px 8px;
+	font-size:11px;
+}
+
+#footer_nav_bar {
+	float: right;
+	padding-bottom: 20px;
+}
+
+#footer_nav_bar ul {
+	padding: 0;
+	margin: 0;
+	background:none;
+	float:right;
+}
+
+#footer_nav_bar li {
+	display:inline;
+	padding: 0;
+	font-size: 11px;
+	margin: 0;
+}
+
+#footer_nav_bar a {
+	text-decoration: none;
+	padding: 4px 8px;
+	color: #444;
+	text-align: center;
+	font-size: 11px;
+	float: right;	
+}
+
+#footer_nav_bar a:hover { 
+	color: #fff; 
+	background-color:#666; 
+}
+
+
+/* old footer 
 #footer {
 	clear:both;
 	border-top:1px solid #787878;
@@ -210,6 +263,7 @@ img.right {
 	border-bottom:1px solid #000;
 }
 
+*/
 
 #footer2 {
 	border-top:5px solid #a6c34e;	
@@ -241,11 +295,12 @@ img.right {
 
 
 #outside_copy {
-	margin-top:40px;
-	padding:30px 0;
+	xmargin-top:40px;
+	padding:30px 0 60px 0;
 	min-height:100px;
 	clear:both;
 	background-color:#dedddc;
+	background-color:#fff;
 	background-image:url("http://static.indrode.com/5things/images/gradient_intro.png");
 	background-repeat:repeat-x;
 	border-top:1px solid #909090;
@@ -296,6 +351,7 @@ p.intro {
 	font-size:14px;
 	line-height:1.6em;
 	margin:0;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 #rightcol p.intro {
@@ -490,7 +546,6 @@ p.large {
 
 ul {
 	list-style-type: none; 
-	padding: 0; 
 	float: left; 
 	background-image:url("http://static.indrode.com/5things/images/transparent.png");	 
 	padding: 5px;	
@@ -984,7 +1039,7 @@ a img.clean {
 
 .highlight {
 	background-color:#fff5a5;
-	padding:0 3px;
+	padding:2px 3px;
 }
 
 a.highlight {
@@ -1449,11 +1504,11 @@ h1.formheader {
 }
 
 p.instructions {
-	font-family: Georgia, serif; 
+	/* font-family: Georgia, serif; */
 	font-size:16px; 
-	color:#444;
 	color:#000;
 	line-height:1.8em;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 
