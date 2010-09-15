@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-  <title><%= h @title %> | 5things</title>
+  <title><%= h @title %> | 5things (<%= @alltasks.size %>)</title>
 	<meta name="author" content="Indro De" />
 	<meta name="description" content="The simple task manager and to-do list for all those things in your life." />
 	<meta name="copyright" content="5things" />
@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<%= stylesheet_link_tag '5things' %>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery-ui-1.8rc1.custom.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
 	<%= javascript_include_tag 'jquery.livequery', 'jquery.jeditable.mini',  'jquery.hoverIntent.minified', 'jquery.tablesorter.min', 'application', :cache => true %>
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
 	
