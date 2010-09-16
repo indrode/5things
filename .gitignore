@@ -4,6 +4,7 @@ tmp/**/*
 test/**/*
 db/**/*
 config/database.yml
+config/environment.rb
 public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
