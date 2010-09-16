@@ -61,7 +61,6 @@
 		</div>
 		<%= yield %>
 	</div>
-</div>
 <%= render :partial => 'shared/footer2', :locals => {:footerclass => @ft || "defaultclass"} %>
 <%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
 </body>

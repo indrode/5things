@@ -273,7 +273,7 @@ class TasksController < ApplicationController
   end
   
   def increment_taskcount
-    Stat.find(:first).increment!(:taskcount)
+    Stat.find(:first).increment!(:taskcount, 1 + rand(6))
     render :nothing => true
   end
 end
