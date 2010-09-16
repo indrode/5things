@@ -4,7 +4,10 @@ tmp/**/*
 test/**/*
 db/**/*
 config/database.yml
+<<<<<<< HEAD
 config/environment.rb
+=======
+>>>>>>> d9afc3485f2ce07e204a87edb3b2ff3ab949b225
 public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
