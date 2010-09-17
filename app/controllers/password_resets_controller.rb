@@ -14,7 +14,7 @@ class PasswordResetsController < ApplicationController
   def create
     @ft = "removed"
     @title = t("pwreset.changetitle")
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_email(params[:Email])
     if @user
       @user.reset_perishable_token
       @user.deliver_password_reset_instructions!
