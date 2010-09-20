@@ -191,12 +191,12 @@ $(document).ready(function() {
 	
 	
 	// autocomplete feature
-	$(".taskbox").livequery( function(i) {
-		$('#new_unassigned_value, #new_yesterday_value, #new_today_value, #new_tomorrow_value').autocomplete({
-			source: availableTags,		
-			minLength: 3
-		});	
-	});
+	//$(".taskbox").livequery( function(i) {
+	//	$('#new_unassigned_value, #new_yesterday_value, #new_today_value, #new_tomorrow_value').autocomplete({
+	//		source: availableTags,		
+	//		minLength: 3
+	//	});	
+	//});
 
 	
 
