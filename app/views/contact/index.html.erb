@@ -17,7 +17,7 @@
 <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/mail-message-new.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("contact.title") %></h1>
 <% form_for(:contact, :url => contact_path) do |f| %>
 	<% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
-<fieldset>
+<fieldset class="outside_temp">
 	<ol>
 		<li>
 			<%= f.label :name, t("contact.name") %>

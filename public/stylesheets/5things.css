@@ -1729,3 +1729,11 @@ body div#titlenav ul li a {
 body div#titlenav ul li a:hover {
   background: #fff5a5;
 }
+
+fieldset.outside_temp {
+	width:600px;
+}
+
+fieldset.outside_temp input, fieldset.outside_temp textarea {
+	width:380px;
+}
