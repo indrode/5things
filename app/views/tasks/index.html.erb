@@ -1,6 +1,8 @@
+<!--
 <%#- javascript_tag do -%> 
 <%#= "var availableTags = [" -%><%#- @bodies.each do |b| -%>'<%#= escape_javascript(h(b.body)) -%>', <%#- end -%><%#= "''];" -%>
 <%#- end -%>
+-->
 
 <% if current_user.env_other == 1 %>
 <div class="message">
