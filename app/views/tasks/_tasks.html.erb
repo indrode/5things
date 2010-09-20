@@ -1,4 +1,4 @@
 <%- if (item.duedate.to_date == tasktype)
 classname = item.completed == false ? "ui-state-default" : "ui-state-checked" -%>
-<li id="atask_<%= item.id %>" class="<%= classname %>"><span style="float:right;"><a href="#" class="edit_task" id="task_<%= item.id %>"><img src="http://static.indrode.com/5things/images/edit.png" class="clean" style="visibility:hidden;" alt="edit" title="<%= t("tasks.editicon") %>" height="10" width="10" /></a></span><span class="inplace" id="edit_<%= item.id %>"><%= h item.body %></span></li>
+<li id="atask_<%= item.id %>" class="<%= classname %>"><span style="float:right;"><a href="#" class="edit_task" id="task_<%= item.id %>"><img src="http://static.zenpunch.com/5things/images/edit.png" class="clean" style="visibility:hidden;" alt="edit" title="<%= t("tasks.editicon") %>" height="10" width="10" /></a></span><span class="inplace" id="edit_<%= item.id %>"><%= h item.body %></span></li>
 <%- end -%>
