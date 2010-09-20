@@ -84,26 +84,32 @@ class TasksController < ApplicationController
     # do maintenance according to user preferences
     status_report = ""
     tasklists = current_user.tasklists.find(:all, :conditions => ["active = 1"])
+    count_today = 0 
+    count_unassigned = 0
     tasklists.each do |a|
-      count = 0 
       case a.maintenance
       when 2
         # move incomplete overdue items to today and mark 
         current_user.tasks.find_overdue(a).each { |t| 
           t.update_attribute :duedate, Time.zone.now.to_date
-          count += 1
+          count_today += 1
         }
-        status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
+        #status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
       when 3
         # move to unassigned
         current_user.tasks.find_overdue(a).each { |t| 
           t.update_attribute :duedate, NEVER
-          count += 1
+          count_unassigned += 1
         }
         #status_report = count.to_s + t("tasks.maint_unassigned") if count > 0
-        status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count > 0
+        #status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count > 0
       end
     end
+    # build status report
+    #status_report += help.pluralize(count, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count > 0   
+    status_report = help.pluralize(count_today, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_today") if count_today > 0
+    status_report += help.pluralize(count_unassigned, t("tasks.maint_task"), t("tasks.maint_task_plural")) + t("tasks.maint_unassigned") if count_unassigned > 0
+
     # when logging in, also show login successfull message
     status_report = t("tasks.no_maint") if status_report == ""
     flash[:notice] = t("tasks.maint_message") + status_report 
