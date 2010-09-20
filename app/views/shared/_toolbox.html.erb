@@ -73,10 +73,10 @@
 	<div class="container" style="width:420px;">
 		<p style="color:#fff; font-size:13px;"><%= t("tools.feedback_copy")%> <%= current_user.email %>.</p>		
 		<% form_for(:contact, :url => contact_path) do |f| %>
-			<% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
+			<div><% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
 			<%= f.hidden_field :name, :value => 'registered user' %>
 			<%= f.hidden_field :email, :value => current_user.email %>
-			<%= f.text_area :body, :class => "feedback" %>
+			<%= f.text_area :body, :class => "feedback" %></div>
 		<%= f.error_messages %>
 			<p style="color:#fff; font-size:13px;"><%= t("contact.type") %> &nbsp;<%= f.select :type, options_for_select(typeoptions) %></p>
 		<div class="buttons">
