@@ -14,7 +14,7 @@
 		</ol>
 	</fieldset>
 		
-	<%= f.error_messages %>
+	<%= render "shared/error_messages", :target => @user %> 
 	<div class="buttons">
 		<%= cancel_button %>
 	  <button type="submit"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("pwreset.button") %></button>

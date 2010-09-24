@@ -38,7 +38,7 @@
 	</ol>
 </fieldset>
 	
-<%= f.error_messages %>
+<%#= render "shared/error_messages", :target => @contact %> 
 
 </div>
 
@@ -47,13 +47,13 @@
 
 	<h1 class="formheader">&nbsp;</h1>
 
-	<p class="instructions"><%= t("contact.contact_copy_1") %></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_2") %></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_3") %></p>
+	<p class="instructions"><%= t("contact.contact_copy_1_html") %></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_2_html") %></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_3_html") %></p>
 	<p>&nbsp;</p>
 
 	<div class="buttons">
-	  <%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" />' + t("common.cancel"), root_path, :class => 'negative' %>
+	  <%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" />'.html_safe + t("common.cancel"), root_path, :class => 'negative' %>
 	  <button type="submit" class="positive" id="new_contact"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("contact.button") %></button>
 	</div>
 

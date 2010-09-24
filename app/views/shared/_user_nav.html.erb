@@ -17,7 +17,7 @@
 		<%= link_to_unless_current t("lists.lists") + ' (' + current_user.tasklists_count.to_s + ')', "/tasklists" -%> &nbsp;|&nbsp; 
 		<%= link_to_unless_current t("user.preferences"), "/account" -%> &nbsp;|&nbsp;
 		<%= link_to_unless_current t("common.help"), help_path -%> &nbsp;|&nbsp;			
-	  <%= link_to_unless false, t("common.logout"), user_session_path, :method => :delete -%>
+	  <%= link_to_unless false, t("common.logout"), "/logout", :method => :delete -%>
 		<%- end -%>
 		</p> 
 	</div>

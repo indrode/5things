@@ -41,14 +41,14 @@
 	  <%= cancel_button %>
 	  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("user.register") %></button>
 	</div>
-<%= f.error_messages %>
+	<%= render "shared/error_messages", :target => @user %> 
 </div>
 
 <div class="formarea_right">	
 
 <h1 class="formheader">&nbsp;</h1>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_2") %> <a href="/login"><%= t("user.loginhere") %></a></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_3") %> <a href="/resend"><%= t("user.resendactivation") %></a></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_2_html") %> <a href="/login"><%= t("user.loginhere") %></a></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_3_html") %> <a href="/resend"><%= t("user.resendactivation") %></a></p>
 	<p>&nbsp;</p>
 </div>
 	

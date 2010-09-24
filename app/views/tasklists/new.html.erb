@@ -5,7 +5,10 @@
 	<a class="tab" href="/account"><%= t("user.account_settings") %></a>
 </div>	
 
-<div id="settings">	
+</div>
+<div id="outside_copy">
+<div class="container">
+		
 <% form_for :tasklist, @tasklist, :url => update_path  do |f| %>
 <%= f.hidden_field :key, :value => random_alphanumeric(20) %>
 							
@@ -30,7 +33,7 @@
 		<%= f.radio_button :security, 0 %> <%= t("lists.private") %>
 	</li>
 	<li>
-		<%= f.label :security_2, "&nbsp;" %>
+		<%= f.label :security_2, "&nbsp;".html_safe %>
 		<%= f.radio_button :security, 1 %> <%= t("lists.public") %>
 	</li>
 	<li>
@@ -41,11 +44,11 @@
 		<%= f.radio_button :maintenance, 1 %> <%= t("prefs.maint_1") %>
 	</li>
 	<li>
-		<%= f.label :maintenance_2, "&nbsp;" %>
+		<%= f.label :maintenance_2, "&nbsp;".html_safe %>
 		<%= f.radio_button :maintenance, 2 %> <%= t("prefs.maint_2") %>
 	</li>
 	<li>
-		<%= f.label :maintenance_3, "&nbsp;" %>
+		<%= f.label :maintenance_3, "&nbsp;".html_safe %>
 		<%= f.radio_button :maintenance, 3 %> <%= t("prefs.maint_3") %>
 	</li>
 	<li>
@@ -57,11 +60,11 @@
 		<%= check_box_tag "check_1", 1, Array[ 1, 3, 5, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_1") %>
 	</li>
 	<li>
-		<%= f.label :env_reporting_2, "&nbsp;" %>
+		<%= f.label :env_reporting_2, "&nbsp;".html_safe %>
 		<%= check_box_tag "check_2", 2, Array[ 2, 3, 6, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_2") %> 
 	</li>
 	<li>
-		<%= f.label :env_reporting_3, "&nbsp;" %>
+		<%= f.label :env_reporting_3, "&nbsp;".html_safe %>
 		<%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(current_user.env_reporting) %> <%= t("prefs.reports_3") %> 
 		<%= f.hidden_field :reporting %>		
 	</li>
@@ -73,12 +76,12 @@
 		<%= f.radio_button :active, 1 %> <%= t("lists.active") %>
 	</li>
 	<li>
-		<%= f.label :active_2, "&nbsp;" %>
+		<%= f.label :active_2, "&nbsp;".html_safe %>
 		<%= f.radio_button :active, 0 %> <%= t("lists.inactive") %>
 	</li>
 	</ol>
 </fieldset>
-<%= f.error_messages %>	
+<%= render "shared/error_messages", :target => @tasklist %> 
 
 
 </div>
@@ -86,13 +89,13 @@
 
 				<h1 class="formheader">&nbsp;</h1>
 
-				<p class="instructions"><%= t("lists.new_copy_1") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.new_copy_2") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.new_copy_3") %></p>
+				<p class="instructions"><%= t("lists.new_copy_1_html") %></p>
+				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.new_copy_2_html") %></p>
+				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2_html") %></p>
+				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.new_copy_3_html") %></p>
 				<p>&nbsp;</p>
 				<div class="buttons">
-					<%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="' + t("common.cancel") +'" width="16" height="16" />' + t("common.cancel"), "/tasklists", :class => 'negative' %>
+					<%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="'.html_safe + t("common.cancel") +'" width="16" height="16" />'.html_safe + t("common.cancel"), "/tasklists", :class => 'negative' %>
 				  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/add.png" alt=""/><%= t("lists.add_list") %></button>
 				</div>
 
@@ -103,3 +106,4 @@
 
 
 		</div>
+</div>

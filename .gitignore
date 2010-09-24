@@ -11,3 +11,7 @@ config/environment.rb
 public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
+.bundle
+tmp/restart.txt
+script
+config/initializers/secret_token.rb

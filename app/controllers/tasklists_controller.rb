@@ -1,15 +1,15 @@
 class TasklistsController < ApplicationController
   before_filter :require_user, :except => "show"
-  layout "clean"
+  layout "outside"
   
   def index    
-    @title = t("lists.title")
-    @tasklists = current_user.tasklists.find(:all, :order => 'title')
+    @title = @view_title = t("lists.title")
+    @tasklists = current_user.tasklists.all(:order => 'title')
   end
   
 
   def show
-    @tasklist = Tasklist.find_by_key(params[:id])
+    @tasklist = @view_title = Tasklist.find_by_key(params[:id])
     @hd = "removed"
     raise "not found" if @tasklist.blank?
     if @tasklist.security?
@@ -19,7 +19,7 @@ class TasklistsController < ApplicationController
       
       @items_by_day = Task.find_upcoming(@tasklist.id).group_by { |item| item.duedate.strftime("%Y-%m-%d") }   
       @unassigned = Task.find_unassigned(@tasklist.id)
-      @all_items = Task.find(:all, :order => 'duedate, ordinal ASC', :conditions => ["tasklist_id = (?)", @tasklist.id])  
+      @all_items = Task.all(:order => 'duedate, ordinal ASC', :conditions => ["tasklist_id = (?)", @tasklist.id])  
       
       render :layout => "share"
     else
@@ -35,7 +35,7 @@ class TasklistsController < ApplicationController
   end
   
   def new
-    @title = t("lists.createlist")
+    @title = @view_title = t("lists.createlist")
     @tasklist = Tasklist.new(:maintenance => current_user.env_maintenance)    
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +44,7 @@ class TasklistsController < ApplicationController
   end
 
   def edit
-    @title = t("lists.editlist")
+    @title = @view_title = t("lists.editlist")
     @tasklist = current_user.tasklists.find(params[:id])
   end
 
@@ -65,7 +65,7 @@ class TasklistsController < ApplicationController
 
   # update task list details
   def update
-    @title = t("lists.editlist") 
+    @title = @view_title = t("lists.editlist") 
     @tasklist = Tasklist.find(params[:id])
     params[:tasklist]['reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
     if @tasklist.update_attributes(params[:tasklist])

@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :resend]
   before_filter :require_user, :only => [:show, :edit, :update, :delete, :preferences, :set_list]
-  layout "clean"
+  layout "outside"
 
   def new
     @title = @view_title = t("user.registration")      
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @title = t("user.account_settings")
+    @title = @view_title = t("user.account_settings")
     @user = current_user
     render :action => :edit
   end
@@ -60,11 +60,11 @@ class UsersController < ApplicationController
   end 
   
   def preferences
-    @title = t("user.preferences")
+    @title = @view_title = t("user.preferences")
     @user = current_user   
   end 
     
-  def update
+  def update    
     @user = current_user
     if params[:user][:page] == "prefs"
       params[:user]['env_reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
@@ -74,8 +74,8 @@ class UsersController < ApplicationController
     
     @user.reset_perishable_token
     if @user.update_attributes(params[:user])  
-      flash[:notice] = t("user.updated")
-      redirect_to home_url
+      #flash[:notice] = t("user.updated")
+      redirect_to home_url, :notice => t("user.updated")
     else  
       render :action => :edit  
     end  
@@ -83,14 +83,14 @@ class UsersController < ApplicationController
 
   def delete
     current_user.destroy  
-    flash[:notice] = t("user.deleted")
-    redirect_to home_path   
+    #flash[:notice] = t("user.deleted")
+    redirect_to home_path, :notice => t("user.deleted")   
   end
   
   def destroy
     #current_user.destroy!  
-    flash[:notice] = t("user.deleted")
-    redirect_to home_path
+    #flash[:notice] = t("user.deleted")
+    redirect_to home_path, :notice => t("user.deleted")
   end
 
   def success

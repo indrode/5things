@@ -5,8 +5,10 @@
 	<div class="tab current"><%= t("user.account_settings") %></div>
 </div>
 		
-<div id="settings">
-
+</div>
+<div id="outside_copy">
+<div class="container">
+	
 <% form_for @user, :url => account_path do |f| %>
 <%= f.hidden_field :env_reporting %>		
 <%= f.hidden_field :env_maintenance %>		
@@ -40,15 +42,15 @@
 		</ol>
 	</fieldset>
 
-<%= f.error_messages %>
+	<%= render "shared/error_messages", :target => @user %> 
 </div>
 
 <div class="formarea_right">	
 
 <h1 class="formheader">&nbsp;</h1>
 
-	<p class="instructions"><%= t("user.edit_copy_1") %></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/cross.png" width="16" height="16" alt="" />&nbsp; <%= t("user.edit_copy_2") %> <%= link_to t("user.deleteaccount"), 'delete', :class => "confirm", :rel => 'nofollow'  %>.</p>
+	<p class="instructions"><%= t("user.edit_copy_1_html") %></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/cross.png" width="16" height="16" alt="" />&nbsp; <%= t("user.edit_copy_2_html") %> <%= link_to t("user.deleteaccount"), 'delete', :class => "confirm", :rel => 'nofollow'  %>.</p>
 	<p>&nbsp;</p>
 	<div class="buttons">
 		<%= cancel_button %>
@@ -65,11 +67,11 @@
 
 <div class="jqmConfirm" id="confirm">
 	<div class="jqmConfirmWindow">
-	  <div class="jqmConfirmTitle clearfix"><%= t("user.delete_warning_1") %></div>
+	  <div class="jqmConfirmTitle clearfix"><%= t("user.delete_warning_1_html") %></div>
 	  
 	  <div class="jqmConfirmContent">
-	  	<p class="instructions"><%= t("user.delete_warning_2") %></p>
-	  	<p class="instructions"><span class="highlight"><%= t("user.delete_warning_3") %></span></p>
+	  	<p class="instructions"><%= t("user.delete_warning_2_html") %></p>
+	  	<p class="instructions"><span class="highlight"><%= t("user.delete_warning_3_html") %></span></p>
 	  </div>
 	
 		<div class="buttons">
@@ -80,4 +82,5 @@
 		<div style="clear:both;"></div>
 
 	</div>
+</div>
 </div>

@@ -1,6 +1,6 @@
 <div class="formarea">
 <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/key.png" alt="" width="16" height="16" /> <%= t("common.login_long") %></h1>
-<% form_for @user_session, :url => user_session_path do |f| %>
+<%= form_for @user_session, :url => user_session_path do |f| %>
 <fieldset class="transparent">
 	<ol>
 		<li>
@@ -20,7 +20,7 @@
   <%= cancel_button %>
   <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("common.submit") %></button>
 </div>
-<%= f.error_messages %>
+<%= render "shared/error_messages", :target => @user_session %> 
 
 <% end %>
 

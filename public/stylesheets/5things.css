@@ -1,3 +1,14 @@
+/*
+ .________ __  .__    .__                      
+ |   ____//  |_|  |__ |__| ____    ____  ______
+ |____  \\   __\  |  \|  |/    \  / ___\/  ___/
+ /       \|  | |   Y  \  |   |  \/ /_/  >___ \ 
+/______  /|__| |___|  /__|___|  /\___  /____  >
+       \/           \/        \//_____/     \/ 
+	
+5things
+	by Indro De (http://indrode.com/)	Hire me!
+*/
 
 @font-face {
 font-family: "titillium";
@@ -129,6 +140,21 @@ h3 {
 	text-shadow: 0px 1px 0px #fff;
 }
 
+/*
+#landing {
+	float:right;
+	font-family:Georgia;
+	padding:0;
+	font-size:16px;
+	margin-top:60px;
+	font-variant:normal;
+	font-weight:bold;
+	color:#777;
+	font-style: italic;
+	border:none;
+	text-align:right;
+}
+*/
 
 #landing {
 	float:right;
@@ -143,6 +169,7 @@ h3 {
 	border:none;
 	text-align:right;
 }
+
 
 h3 span {
 	font-style:normal;
@@ -294,16 +321,30 @@ img.right {
 .slides div { position:absolute; top:0; width:960px; display:none; }
 
 
+#outside_banner {
+	background-color:#fff;
+	background-repeat:repeat-x;
+	background-image:url("http://static.zenpunch.com/5things/images/gradient_intro.png");	
+	padding:20px 0;
+}
+
+#outside_banner p {
+	font-size:22px;
+	font-weight:bold;
+}
+
 #outside_copy {
 	xmargin-top:40px;
 	padding:30px 0 60px 0;
 	min-height:100px;
 	clear:both;
-	background-color:#dedddc;
+	xbackground-color:#dedddc;
 	background-color:#fff;
-	background-image:url("http://static.zenpunch.com/5things/images/gradient_intro.png");
-	background-repeat:repeat-x;
-	border-top:1px solid #909090;
+	xbackground-repeat:repeat-x;
+	xbackground-image:url("http://static.zenpunch.com/5things/images/gradient_intro.png");
+	background-image:url("/images/bg-noise.gif");
+	
+	border-top:1px solid #808080;
 	border-bottom:1px solid #666;
 }
 
@@ -415,19 +456,21 @@ code {
 }
 
 #alert_space {
+	border-top:1px solid #aaa;
 	padding:10px 0 10px 0;
 	background-color:#980905;
 }
 
 #flash_space {
-	padding:10px 0 5px 0;
+	border-top:1px solid #eee;
 	background-color:#a6c34e;
 	background-image:url("http://static.zenpunch.com/5things/images/gradient_flash.png");
 	background-repeat:repeat-x;
 }
 
-#flash_notice {
+#flash_notice, #maintenance_notice {
 	color:#fff;
+	padding:10px 0 5px 0;
 	font-weight:bold;
 	font-size:13px;
 	margin:0 auto;
@@ -606,7 +649,7 @@ ul#unassigned_list li, ul#yesterday_list li, ul#today_list li, ul#tomorrow_list 
 /* share list */
 
 li.sharelist {
-	font-family:Georgia;font-size:20px; color:#000; padding:10px; background-color:#eee;
+	font-family:Georgia;font-size:14px; color:#000; padding:7px; background-color:#eee;
 }
 
 .strike {
@@ -812,10 +855,11 @@ fieldset {
 	float: left;    
 	clear: both;    
 	width: 100%;   
-	margin: 0 0 2.5em 0;    
-	padding: 0;    
-	border: 1px solid #787878;
-	xborder:none; 	
+	margin: 0 0 30px 0;    
+	padding: 0 0 10px 0;    
+	xborder: 1px solid #787878;
+	border:none;
+	background-color:#cdcdcd;
 	
 	/*
 	background-image:url("http://static.zenpunch.com/5things/images/transparent.png");
@@ -1517,7 +1561,7 @@ p.instructions {
 input[type="text"], textarea {
 	width:320px;
 	font-size:15px;
-	background-color:#eee;
+	background-color:#fff;
 	font-family:"Lucida Grande", Helvetica, Arial, sans-serif;
 	padding:3px;
 	border:1px solid #000;
@@ -1532,7 +1576,7 @@ textarea {
 input[type="password"], input[type="text"]#user_session_email, input[type="text"]#user_password, input[type="text"]#user_password_confirmation {
 	width:250px;
 	font-size:15px;
-	background-color:#eee;
+	background-color:#fff;
 	font-family:"Lucida Grande", Helvetica, Arial, sans-serif;
 	padding:3px;
 	border:1px solid #000;
@@ -1730,10 +1774,15 @@ body div#titlenav ul li a:hover {
   background: #fff5a5;
 }
 
-fieldset.outside_temp {
+fieldset {
 	width:600px;
+}
+
+fieldset.wholewidth {
+	width:100%;
 }
 
 fieldset.outside_temp input, fieldset.outside_temp textarea {
 	width:380px;
 }
+

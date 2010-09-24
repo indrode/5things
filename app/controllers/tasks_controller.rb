@@ -30,14 +30,14 @@ class TasksController < ApplicationController
     # don't need all this when using AJAX links
     unless params[:a] == 'i'
       # get list of all unique task bodies for autocomplete use (cache this query?)
-      @bodies = current_user.tasks.find(:all, :select => 'body', :group => 'body')     
+      @bodies = current_user.tasks.all(:select => 'body', :group => 'body')     
       # get all active lists
-      @tasklists = current_user.tasklists.find(:all, :order => "title", :conditions => ["active = 1"])
+      @tasklists = current_user.tasklists.all(:order => "title", :conditions => ["active = 1"])
       @current_list = Tasklist.find_by_id(current_user.current_list)
       @title = @current_list.title     
       @stat_unassigned = @unassigned.size     
       # find today's incomplete tasks (change this and use for achievements too)
-      @alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
+      @alltasks = current_user.tasks.all(:conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
     end
         
     respond_to do |format|
@@ -47,13 +47,13 @@ class TasksController < ApplicationController
   end
   
   def list
-    @title = t("tasks.managetasks")
-    @tasks = current_user.tasks.find(:all, :include => :tasklist, :order => "duedate, body")
+    @title = @view_title = t("tasks.managetasks")
+    @tasks = current_user.tasks.all(:include => :tasklist, :order => "duedate, body")
     
     #page = params[:page] || 1
     #@tasks = current_user.tasks.paginate(:all, :page => page, :order => 'duedate', :per_page => 15)
     
-    render :layout => "clean"
+    render :layout => "outside"
   end
 
   def show    
@@ -83,7 +83,7 @@ class TasksController < ApplicationController
   def maintenance
     # do maintenance according to user preferences
     status_report = ""
-    tasklists = current_user.tasklists.find(:all, :conditions => ["active = 1"])
+    tasklists = current_user.tasklists.all(:conditions => ["active = 1"])
     count_today = 0 
     count_unassigned = 0
     tasklists.each do |a|
@@ -112,8 +112,8 @@ class TasksController < ApplicationController
 
     # when logging in, also show login successfull message
     status_report = t("tasks.no_maint") if status_report == ""
-    flash[:notice] = t("tasks.maint_message") + status_report 
-    redirect_to root_url  
+    #flash[:notice] = t("tasks.maint_message") + status_report 
+    redirect_to home_url, :notice => t("tasks.maint_message") + status_report 
   end
 
   # save sort order, also set new date (for connected lists)
@@ -263,7 +263,7 @@ class TasksController < ApplicationController
   
   def find_today
     if current_user # fix bug with two open windows, then logging out one window
-      alltasks = current_user.tasks.find(:all, :conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
+      alltasks = current_user.tasks.all(:conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
       @todaycount = alltasks.size
       respond_to do |format|
         format.html { redirect_to root_path }

@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-
-	<!--
-		***************************************************************************************
-		*** 5things
-		*** by Indro De (http://www.indrode.com/)
-		***************************************************************************************
-	-->
-
-  <title>5things | <%= h @title %></title>	
-	<meta name="author" content="Indro De" />
-	<meta name="description" content="The simple task manager and to-do list for managing all those things in your life." />
-	<meta name="keywords" content="5things, productivity, five things, task manager, todo, task, zenpunch, zen punch, indro de, indro" />
-	<meta name="copyright" content="5things" />
-	<meta name="email" content="5things@zenpunch.com" />
-	<meta name="google-site-verification" content="gklsdc5QAalgcsZVquS80BrmQ9fbHeNxK-bpW5mq_JE" />
-	<link rel="alternate" href="http://twitter.com/statuses/user_timeline/122287859.rss" title="5things" type="application/rss+xml" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<%= stylesheet_link_tag '5things' %>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
-	<%= javascript_include_tag 'loopedslider', 'jquery.tablesorter.min', 'jqModal', 'application2', :cache => 'outside' %>
-	
-	<!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
+  <!--
+  
+   .________ __  .__    .__                      
+   |   ____//  |_|  |__ |__| ____    ____  ______
+   |____  \\   __\  |  \|  |/    \  / ___\/  ___/
+   /       \|  | |   Y  \  |   |  \/ /_/  >___ \ 
+  /______  /|__| |___|  /__|___|  /\___  /____  >
+         \/           \/        \//_____/     \/ 
+  	
+  5things
+  	by Indro De (http://indrode.com/)	Hire me!
+  	
+  -->
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>5things | <%= h @title %></title>
+  <meta name="author" content="Indro De" />
+  <meta name="description" content=
+  "The simple task manager and to-do list for managing all those things in your life." />
+  <meta name="keywords" content=
+  "5things, productivity, five things, task manager, todo, task, zenpunch, zen punch, indro de, indro" />
+  <meta name="copyright" content="5things" />
+  <meta name="email" content="5things@zenpunch.com" />
+  <meta name="google-site-verification" content=
+  "gklsdc5QAalgcsZVquS80BrmQ9fbHeNxK-bpW5mq_JE" />
+  <link rel="alternate" href="http://twitter.com/statuses/user_timeline/122287859.rss"
+  title="5things" type="application/rss+xml" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <%= stylesheet_link_tag '5things' %>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+<%= javascript_include_tag 'loopedslider', 'jquery.tablesorter.min', 'jqModal', 'application2', :cache => 'outside' %><!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
 </head>
 
 <body>
-<div><img id="bg_image" src="http://static.zenpunch.com/5things/images/5things_bg.jpg" alt="" title="" /></div>
-<%= render :partial => 'shared/outside_nav', :locals => {:headerclass => @hd || "defaultclass"} %>
-<% if flash[:notice] %>
-	<div id="flash_space">
-		<div id="flash_notice"><%= flash[:notice] %> &nbsp; <a href="#">[<%= t("common.close") %>]</a></div>
-	</div>
-<% end %>
+  <div><img id="bg_image" src="http://static.zenpunch.com/5things/images/5things_bg.jpg"
+  alt="" title=
+  "" /></div><%= render :partial => 'shared/outside_nav', :locals => {:headerclass => @hd || "defaultclass"} %><% if flash[:notice] %>
 
-<noscript>
-	<div id="alert_space">
-		<div id="flash_notice"><%= t("common.javascript") %></div>
-	</div>
-</noscript>
+  <div id="flash_space">
+    <div id="flash_notice">
+      <%= flash[:notice] %>&nbsp; <a href="#">[<%= t("common.close") %>]</a>
+    </div>
+  </div><% end %><noscript>
+  <div id="alert_space">
+    <div id="flash_notice">
+      <%= t("common.javascript") %>
+    </div>
+  </div></noscript>
 
-<div id="showhide_button">
-</div>
+  <div id="flash_space">
+    <div id="flash_notice">
+      5things has been moved to a shiny new server!
+    </div>
+  </div>
 
-<div id="container_bg">
-	<div id="container">
-		<div id="headerarea">
-			<a href="<%= root_path %>"><img id="logo" src="http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
-			<div id="landing"><%= @view_title %>&nbsp;&nbsp;<br />
-				<%- if !current_user -%>
-				<div id="titlenav">
-				    <ul style="width:100%; float:right;">
-				      <li class="download"><a href="/account/new"><img src="http://static.zenpunch.com/5things/images/tick.png" alt="" class="clean" style="vertical-align:text-bottom;"/> Sign Up Now!</a></li>
-				      <li><a href="/about"><img src="http://static.zenpunch.com/5things/images/information.png" alt="" class="clean" style="vertical-align:text-bottom;"/> Learn More...</a></li>
-				    </ul>            
-				</div>
-				<%- end -%>			
-				</div>
-		</div>
-		<%= yield %>
-	</div>
-<%= render :partial => 'shared/footer2', :locals => {:footerclass => @ft || "defaultclass"} %>
-<%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
+  <div id="showhide_button"></div>
+
+  <div id="container_bg">
+    <div id="container">
+      <div id="headerarea">
+        <a href="%3C%=%20root_path%20%%3E"><img id="logo" src=
+        "http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352"
+        height="117" class="clean" /></a>
+
+        <div id="landing">
+          <%= @view_title %>&nbsp;&nbsp;<br />
+          <%- if !current_user -%>
+
+          <div id="titlenav">
+            <ul style="width:100%; float:right;">
+              <li class="download"><a href="/account/new"><img src=
+              "http://static.zenpunch.com/5things/images/tick.png" alt="" class="clean"
+              style="vertical-align:text-bottom;" /> Sign Up Now!</a></li>
+
+              <li><a href="/about"><img src=
+              "http://static.zenpunch.com/5things/images/information.png" alt="" class=
+              "clean" style="vertical-align:text-bottom;" /> Learn More...</a></li>
+            </ul>
+          </div><%- end -%>
+        </div>
+      </div><%= yield %>
+    </div><%= render :partial => 'shared/footer2', :locals => {:footerclass => @ft || "defaultclass"} %><%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
+  </div>
 </body>
 </html>
