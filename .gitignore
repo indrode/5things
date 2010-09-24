@@ -4,6 +4,7 @@ tmp/**/*
 test/**/*
 db/**/*
 config/database.yml
+config/application.rb
 <<<<<<< HEAD
 config/environment.rb
 =======

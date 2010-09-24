@@ -1,12 +1,9 @@
 CHANGELOG
 
-TODO for next release:
-- redo registration and help screens; finish up about screen
-- redo footer design
-- intro: add signup button/copy
-- check create.js.erb pause, "parenthesize argument(s) for future version" warning
-- improve autocomplete functionality
-- bug: fix id value on help page (check validation)
+September 24, 2010 - version 0.9
+- upgrade to Rails 3
+- start versioning
+- not noted in this log: a bunch of smaller changes, see commits
 
 July 2, 2010
 - empty push after changing dev environment
