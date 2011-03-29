@@ -1,5 +1,3 @@
-# app/models/user.rb
-
 class User < ActiveRecord::Base  
   attr_accessible :email, :password, :password_confirmation, :language, :time_zone, :env_maintenance, :env_reporting, :env_other, :current_list, :perishable_token
   has_many :tasks, :dependent => :destroy

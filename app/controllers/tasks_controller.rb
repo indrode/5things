@@ -1,5 +1,3 @@
-# app/controllers/tasks_controller.rb
-
 class TasksController < ApplicationController
   before_filter :require_user, :except => [:find_today, :increment_taskcount]  
   layout "general", :except => [:create]
