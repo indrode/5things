@@ -1,5 +1,3 @@
-# app/controllers/users_controller.rb
-
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :resend]
   before_filter :require_user, :only => [:show, :edit, :update, :delete, :preferences, :set_list]

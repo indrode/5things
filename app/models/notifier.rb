@@ -1,5 +1,3 @@
-# app/models/notifier.rb
-
 class Notifier < ActionMailer::Base
   
   # email sent after a user has initiated registration

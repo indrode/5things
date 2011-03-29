@@ -1,5 +1,3 @@
-# app/controllers/applications_controller.rb
-
 class ApplicationController < ActionController::Base  
   helper :all
   helper_method :current_user_session, :current_user

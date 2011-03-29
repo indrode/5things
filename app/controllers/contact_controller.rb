@@ -1,5 +1,3 @@
-# app/controllers/contact_controller.rb
-
 class ContactController < ApplicationController
   #before_filter :require_user 
   layout "outside"

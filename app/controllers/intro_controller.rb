@@ -1,5 +1,3 @@
-# app/controllers/intro_controller.rb
-
 class IntroController < ApplicationController
   layout "outside"
  
