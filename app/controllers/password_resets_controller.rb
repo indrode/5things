@@ -1,3 +1,5 @@
+# app/controllers/password_resets_controller.rb
+
 class PasswordResetsController < ApplicationController
   before_filter :load_user_using_perishable_token, :only => [:edit, :update]
   before_filter :require_no_user 
@@ -14,8 +16,8 @@ class PasswordResetsController < ApplicationController
     @title = t("pwreset.changetitle")
     @user = User.find_by_email(params[:Email])
     if @user
-      @user.reset_perishable_token
-      @user.deliver_password_reset_instructions!
+      @user.reset_perishable_token!
+      UserMailer.password_reset_instructions(@user).deliver
       @copy = t("pwreset.instructions")
       render :template => "/shared/success"
     else
@@ -54,8 +56,8 @@ class PasswordResetsController < ApplicationController
   def load_user_using_perishable_token  
     @user = User.find_using_perishable_token(params[:id])  
     unless @user  
-      flash[:notice] = t("pwreset.invalidtoken")  
-      redirect_to root_url  
+      @copy = t("pwreset.invalidtoken")  
+      render :template => "/shared/success"
     end  
   end
 

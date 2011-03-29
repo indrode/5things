@@ -1,3 +1,5 @@
+# app/controllers/users_controller.rb
+
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :resend]
   before_filter :require_user, :only => [:show, :edit, :update, :delete, :preferences, :set_list]
@@ -12,11 +14,12 @@ class UsersController < ApplicationController
   def create
     @ft = "removed"
     @title = t("user.registration")
-    @user = User.new
+    @user = User.new    
     if @user.signup!(params)
-      @user.reset_perishable_token
-      @user.deliver_activation_instructions!
-      @copy = t("user.account_created")
+      @user.reset_perishable_token!
+      UserMailer.activation_instructions(@user).deliver    
+            
+      @copy = t("user.account_created").html_safe
       render :template => "/shared/success"
     else
       render :action => :new
@@ -29,6 +32,7 @@ class UsersController < ApplicationController
     @user = User.new    
   end
   
+  layout "clean"
   def rs
     @ft = "removed"
     @title = t("user.registration")
@@ -37,8 +41,8 @@ class UsersController < ApplicationController
       if @user.active?
         @copy = t("user.alreadyactive")
       else
-        @user.reset_perishable_token    # disable previous activation link
-        @user.deliver_activation_instructions!
+        @user.reset_perishable_token!
+        UserMailer.activation_instructions(@user).deliver       
         @copy = t("user.newactivationsent") + params[:user]['email']        
       end
     else

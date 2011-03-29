@@ -1,5 +1,8 @@
+</div>
+<div id="outside_copy">
+<div class="container">
 <div class="formarea">
-	<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
+	<%= form_for @user, :url => password_reset_path, :method => :put do |f| %>
 	<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/lock_edit.png" alt="" width="16" height="16" /> <%= t("pwreset.changetitle") %></h1>	
 	<fieldset class="transparent">
 	<ol>

@@ -1,5 +1,7 @@
-<div id="settings">
-<% form_for @user, :url => "/rs" do |f| %>
+</div>
+<div id="outside_copy">
+<div class="container">
+<%= form_for @user, :url => "/rs" do |f| %>
 
 <div class="formarea_left">
 
@@ -12,7 +14,6 @@
 			</li>
 		</ol>
 	</fieldset>
-
 	<%= render "shared/error_messages", :target => @user %> 
 </div>
 

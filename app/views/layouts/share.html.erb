@@ -36,6 +36,7 @@
 </head>
 
 <body>
+<%= render :partial => 'shared/ie6nomore' %>
 <div><img id="bg_image" src="http://static.zenpunch.com/5things/images/5things_bg.jpg" alt="" title="" /></div>
 <%= render :partial => 'shared/outside_nav', :locals => {:headerclass => @hd || "defaultclass"} %>
 
@@ -44,6 +45,6 @@
 
 <%= yield %>
  
-<%= render :partial => 'shared/analytics' if RAILS_ENV == 'production' %>
+<%= render :partial => 'shared/analytics' %>
 </body>
 </html>

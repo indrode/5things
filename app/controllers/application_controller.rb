@@ -1,8 +1,9 @@
+# app/controllers/applications_controller.rb
+
 class ApplicationController < ActionController::Base  
   helper :all
   helper_method :current_user_session, :current_user
-  filter_parameter_logging :password, :password_confirmation  
-  before_filter :set_user_language, :set_user_time_zone
+  before_filter :set_user_language, :set_user_time_zone, :mailer_set_url_options
   after_filter :store_location
     
   protect_from_forgery
@@ -50,7 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def store_location
-    session[:return_to] = request.request_uri
+    session[:return_to] = request.fullpath
   end
   
   def redirect_back_or_default(default)
@@ -93,4 +94,7 @@ class ApplicationController < ActionController::Base
     include ActionView::Helpers::TextHelper
   end
 
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
 end

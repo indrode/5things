@@ -1,3 +1,5 @@
+# app/controllers/contact_controller.rb
+
 class ContactController < ApplicationController
   #before_filter :require_user 
   layout "outside"
@@ -13,14 +15,11 @@ class ContactController < ApplicationController
   end
 
   def create
-    # todo: use hidden field spambot protection
-    if Notifier.deliver_contact(params[:contact])
-      flash[:notice] = t("contact.success")
-      redirect_to root_path
-    else
-      flash.now[:error] = t("contact.fail")
-      render :index
-    end
+    # todo: everything
+    @contact = params[:contact]
+    UserMailer.contact(@contact).deliver
+    flash[:notice] = t("contact.success")
+    redirect_to root_url
   end
 
 end

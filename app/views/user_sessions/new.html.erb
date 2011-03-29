@@ -1,7 +1,10 @@
+</div>
+<div id="outside_copy" style="padding:0 0 40px 0;">
+<div class="container">
 <div class="formarea">
-<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/key.png" alt="" width="16" height="16" /> <%= t("common.login_long") %></h1>
+<h1 class="formheader tk-myriad-pro"><img src="http://static.zenpunch.com/5things/images/key.png" alt="" width="16" height="16" /> <%= t("common.login_long") %></h1>
 <%= form_for @user_session, :url => user_session_path do |f| %>
-<fieldset class="transparent">
+<fieldset class="login_box">
 	<ol>
 		<li>
 		<%= f.label :email %>
@@ -23,5 +26,8 @@
 <%= render "shared/error_messages", :target => @user_session %> 
 
 <% end %>
+</div>
+
+<div style="clear:both;"></div>
 
 </div>

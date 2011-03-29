@@ -1,9 +1,9 @@
-<div id="settings">
-<% form_for @user, :url => activate_path(@user.id), :html => { :method => :post } do |f| %>
-
+</div>
+<div id="outside_copy">
+<div class="container">
+<%= form_for @user, :url => activate_path(@user.id), :html => { :method => :post } do |f| %>
 <div class="formarea_left">
-
-	<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("activations.createaccount") %></h1>		
+<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("activations.createaccount") %></h1>		
 	<fieldset>
 		<ol>
 			<li>
@@ -24,24 +24,18 @@
 			</li>
 		</ol>
 	</fieldset>
-
 	<%= render "shared/error_messages", :target => @user %> 
 </div>
-
-<div class="formarea_right">	
-
-<h1 class="formheader">&nbsp;</h1>
-	<p class="instructions"><%= t("activations.activate_copy_1") %></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("activations.activate_copy_2") %></p>
+<div class="formarea_right">
+	<h1 class="formheader">&nbsp;</h1>
+	<p class="instructions"><%= t("activations.activate_copy_1_html") %></p>
+	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("activations.activate_copy_2_html") %></p>
 	<p>&nbsp;</p>
 	<div class="buttons">
 	  <%= cancel_button %>
 	  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("activations.register_login") %></button>
 	</div>
 </div>
-	
-<% end %>
-
+<%- end -%>
 <div style="clear:both;"></div>
-
 </div>

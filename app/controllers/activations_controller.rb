@@ -1,3 +1,5 @@
+# app/controllers/activations_controller.rb
+
 class ActivationsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   layout "clean"
@@ -22,7 +24,7 @@ class ActivationsController < ApplicationController
     
     if @user.signup!(params)
       @user.reset_perishable_token
-      @user.deliver_activation_instructions!
+      UserMailer.password_reset_instructions(@user).deliver
       @copy = t("user.account_created")
       render :template => "/shared/success"
     else
@@ -49,7 +51,7 @@ class ActivationsController < ApplicationController
       Stat.find(:first).increment!(:taskcount)
       
       @user.reset_perishable_token
-      @user.deliver_activation_confirmation!
+      UserMailer.activation_confirmation(@user).deliver      
       flash[:notice] = t("activations.success")
       redirect_to root_url
     else

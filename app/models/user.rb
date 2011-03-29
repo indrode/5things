@@ -1,5 +1,7 @@
+# app/models/user.rb
+
 class User < ActiveRecord::Base  
-  attr_accessible :email, :password, :password_confirmation, :language, :time_zone, :env_maintenance, :env_reporting, :env_other, :current_list
+  attr_accessible :email, :password, :password_confirmation, :language, :time_zone, :env_maintenance, :env_reporting, :env_other, :current_list, :perishable_token
   has_many :tasks, :dependent => :destroy
   has_many :tasklists, :dependent => :destroy
 
@@ -33,19 +35,19 @@ class User < ActiveRecord::Base
     active
   end
   
-  def deliver_activation_instructions!
-    reset_perishable_token!
-    Notifier.deliver_activation_instructions(self)
-  end
+#  def deliver_activation_instructions!
+#    reset_perishable_token!
+#    Notifier.deliver_activation_instructions(self)
+#  end
   
-  def deliver_activation_confirmation!
-    reset_perishable_token!
-    Notifier.deliver_activation_confirmation(self)
-  end
+#  def deliver_activation_confirmation!
+#    reset_perishable_token!
+#    Notifier.deliver_activation_confirmation(self)
+#  end
 
-  def deliver_password_reset_instructions!  
-    reset_perishable_token!  
-    Notifier.deliver_password_reset_instructions(self)  
-  end
+#  def deliver_password_reset_instructions!  
+#    reset_perishable_token!  
+#    Notifier.deliver_password_reset_instructions(self)  
+#  end
 
 end

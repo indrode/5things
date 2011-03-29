@@ -1,3 +1,5 @@
+# app/controllers/tasks_controller.rb
+
 class TasksController < ApplicationController
   before_filter :require_user, :except => [:find_today, :increment_taskcount]  
   layout "general", :except => [:create]
@@ -28,7 +30,7 @@ class TasksController < ApplicationController
     # don't need all this when using AJAX links
     unless params[:a] == 'i'
       # get list of all unique task bodies for autocomplete use (cache this query?)
-      @bodies = current_user.tasks.all(:select => 'body', :group => 'body')     
+      #@bodies = current_user.tasks.all(:select => 'body', :group => 'body')     
       # get all active lists
       @tasklists = current_user.tasklists.all(:order => "title", :conditions => ["active = 1"])
       @current_list = Tasklist.find_by_id(current_user.current_list)
@@ -37,7 +39,7 @@ class TasksController < ApplicationController
       # find today's incomplete tasks (change this and use for achievements too)
       @alltasks = current_user.tasks.all(:conditions => ["duedate IN (?) AND completed = 0", Time.zone.now.to_date ])
     end
-        
+    
     respond_to do |format|
       format.html # index.html.erb
       format.js
