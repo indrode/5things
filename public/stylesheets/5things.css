@@ -9,17 +9,6 @@
 5things
 	by Indro De (http://indrode.com/)	Hire me!
 */
-
-@font-face {
-font-family: "titillium";
-src: url("/fonts/TitilliumText20L001.otf");
-}
-
-@font-face {
-font-family: "Nevis";
-src: url("/fonts/nevis.ttf");
-}
-
 * {
 	margin:0;
 	padding:0;
@@ -54,9 +43,8 @@ a {
 }
 
 h1 {
-	font-family:Helvetica, Arial, sans-serif;	
-	font-size:16px;
-	padding:20px 0 5px 0;
+	font-size:18px;
+	padding:30px 0 5px 0;
 	border-bottom:1px dotted #555;
 	margin:10px 0 5px 0;
 	text-shadow: 0px 1px 0px #fff;
@@ -134,10 +122,10 @@ h2.black {
 }
 
 h3 {
-	font-size:22px;
-	font-weight:bold;
+	font-size:23px;
+	font-weight:700;
 	margin:10px 0;
-	text-shadow: 0px 1px 0px #fff;
+	text-shadow: 2px 2px 1px #fff;
 }
 
 /*
@@ -158,16 +146,16 @@ h3 {
 
 #landing {
 	float:right;
-	font-family:Georgia;
 	padding:0;
-	font-size:16px;
+	font-size:18px;
 	margin-top:60px;
 	font-variant:normal;
 	font-weight:bold;
-	color:#777;
+	color:#444;
 	font-style: italic;
 	border:none;
 	text-align:right;
+	text-shadow: 0px 1px 0px #fff;
 }
 
 
@@ -296,12 +284,12 @@ img.right {
 	border-top:5px solid #a6c34e;	
 	background-color:#000;
 	padding:10px 0;
-	min-height:50px;
+	height:70px;
 }
 
 #footer2 p {
 	color:#bbb;
-	font-size:11px;
+	font-size:12px;
 }
 
 #footer2 a {
@@ -321,29 +309,12 @@ img.right {
 .slides div { position:absolute; top:0; width:960px; display:none; }
 
 
-#outside_banner {
-	background-color:#fff;
-	background-repeat:repeat-x;
-	background-image:url("http://static.zenpunch.com/5things/images/gradient_intro.png");	
-	padding:20px 0;
-}
-
-#outside_banner p {
-	font-size:22px;
-	font-weight:bold;
-}
-
 #outside_copy {
-	xmargin-top:40px;
-	padding:30px 0 60px 0;
+	padding:50px 0 60px 0;
 	min-height:100px;
 	clear:both;
-	xbackground-color:#dedddc;
-	background-color:#fff;
-	xbackground-repeat:repeat-x;
-	xbackground-image:url("http://static.zenpunch.com/5things/images/gradient_intro.png");
-	background-image:url("/images/bg-noise.gif");
-	
+	background-color:#dedddc;
+	background-image:url("http://static.zenpunch.com/5things/images/bg-noise.gif");
 	border-top:1px solid #808080;
 	border-bottom:1px solid #666;
 }
@@ -389,8 +360,8 @@ img.linksicon {
 
 p.intro {
 	padding:10px 35px 10px 0;
-	font-size:14px;
-	line-height:1.6em;
+	font-size:15px;
+	line-height:25px;
 	margin:0;
 	text-shadow: 0px 1px 0px #fff;
 }
@@ -456,13 +427,11 @@ code {
 }
 
 #alert_space {
-	border-top:1px solid #aaa;
 	padding:10px 0 10px 0;
 	background-color:#980905;
 }
 
 #flash_space {
-	border-top:1px solid #eee;
 	background-color:#a6c34e;
 	background-image:url("http://static.zenpunch.com/5things/images/gradient_flash.png");
 	background-repeat:repeat-x;
@@ -543,6 +512,7 @@ background-image:url("http://static.zenpunch.com/5things/images/transparent.png"
 
 #user_nav {
 	background-color:#000;
+	border-bottom:1px solid #aaa;
 }
 
 
@@ -604,9 +574,9 @@ ul#unassigned_list, ul#yesterday_list, ul#today_list, ul#tomorrow_list {
 	-moz-border-radius: 5px;  
 	-webkit-border-radius: 5px;  
 	border-radius: 5px;
-	box-shadow: 2px 2px 2px #222; 
-	-webkit-box-shadow: 2px 2px 2px #222; 
-	-moz-box-shadow: 2px 2px 2px #222;
+	box-shadow: 2px 2px 2px #444; 
+	-webkit-box-shadow: 2px 2px 2px #444; 
+	-moz-box-shadow: 2px 2px 2px #444;
 	border:1px solid #b0b0b0;	
 
 }
@@ -709,14 +679,14 @@ small {
 	text-transform:uppercase;
 }
 
-.errorExplanation ul {
+#errorExplanation ul {
 	padding:0;
 	margin:0;
 	background:none;
 	width:100%;
 }
 
-.errorExplanation li {
+#errorExplanation li {
 	color:#000;
 	height:32px;
 	background-image:url("http://static.zenpunch.com/5things/images/dialog-error.png");
@@ -817,7 +787,7 @@ small {
 	padding-right:26px;
 	background-repeat:no-repeat;
 	font-weight: bold; 
-	color: #888;
+	color: #777;
 	outline: none;
 	border-top:1px solid #999;
 	border-left:1px solid #999;
@@ -857,9 +827,14 @@ fieldset {
 	width: 100%;   
 	margin: 0 0 30px 0;    
 	padding: 0 0 10px 0;    
-	xborder: 1px solid #787878;
 	border:none;
 	background-color:#cdcdcd;
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #bbb; 
+	-webkit-box-shadow: 2px 2px 2px #bbb; 
+	-moz-box-shadow: 2px 2px 2px #bbb;
 	
 	/*
 	background-image:url("http://static.zenpunch.com/5things/images/transparent.png");
@@ -912,10 +887,11 @@ fieldset li {
 
 label {    
 	float: left;    
-	width: 12em;    
+	width: 12em; 
+	font-size:13px;   
 	margin-right: 1em;    
 	text-align: right;
-	margin-top:4px;			/* align label with form field */ 
+	margin-top:7px;			/* align label with form field */ 
 }
 
 
@@ -1083,7 +1059,7 @@ a img.clean {
 
 .highlight {
 	background-color:#fff5a5;
-	padding:2px 3px;
+	padding:0 3px;
 }
 
 a.highlight {
@@ -1437,7 +1413,7 @@ table#tasktable thead tr .headerSortDown {
 
 
 td.title, th.title {
-	width:300px;
+	width:320px;
 }
 
 td.taskcount, th.taskcount {
@@ -1449,7 +1425,7 @@ td.security, th.security {
 }
 
 td.key, th.key {
-	width:210px;
+	width:230px;
 }
 
 td.legend, th.legend {
@@ -1463,7 +1439,7 @@ td.t_duedate, th.t_duedate {
 
 
 td.t_task, th.t_task {
-	width:360px;
+	width:370px;
 }
 
 
@@ -1491,16 +1467,54 @@ td.deactivated {
 }
 
 h1.formheader {
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:22px;
+	font-size:25px;
 	font-weight:normal;
 	margin-bottom:5px;
+	text-shadow: 2px 2px 1px #fff;
 }
 
 .listheader {
 	margin-top:20px;
 }
 
+.threecol {
+	width:33%; float:left;
+}
+
+.threecol h1 {
+	padding-top:0;
+}
+
+.threecol p {
+	padding-right:20px;
+	line-height:1.5em;
+}
+
+.threecol p.rightcol {
+	padding-right:0;
+}
+
+.threecol_img {
+	vertical-align:text-bottom;
+	margin-right:5px;
+}
+
+.image_area {
+	float:right; 
+	text-align:right; 
+	margin:10px 0 0 10px;
+}
+
+.image_area img {
+	margin-bottom:10px;
+}
+
+span.image_legend {
+	font-size:13px; 
+	color:#444; 
+	font-style:italic;
+	padding-right:15px;
+}
 
 #settings, #copies {    
   clear:both;
@@ -1623,14 +1637,6 @@ div.jqmConfirm { /* contains + positions the alert window */
   position: fixed;
   top: 17%;
   width: 100%;
-}
-    
-/* Fixed posistioning emulation for IE6
-     Star selector used to hide definition from browsers other than IE6
-     For valid CSS, use a conditional include instead */
-* html div.jqmConfirm {
-     position: absolute;
-     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
 }
 
 div.jqmConfirmWindow {
@@ -1782,7 +1788,32 @@ fieldset.wholewidth {
 	width:100%;
 }
 
+fieldset.login_box {
+	width:470px;
+}
+
 fieldset.outside_temp input, fieldset.outside_temp textarea {
 	width:380px;
 }
 
+
+/* homepage feature slider */
+
+p.feature {
+	padding-top:15px;
+	color:#fff; 
+	font-size:32px; 
+	text-shadow: 2px 2px 1px #333;
+}
+
+p.feature a {
+	text-decoration:none;
+	color:#ffff00;
+	text-shadow: 2px 2px 1px #333;
+}
+
+p.feature a:hover {
+	text-decoration:none;
+	color:#fff5a5;
+	text-shadow: 2px 2px 1px #333;
+}
