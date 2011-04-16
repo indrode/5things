@@ -11,8 +11,8 @@
 # Application
 #############################################################
 
-set :application, "muma"
-set :deploy_to, "/home/zorro/staging"
+set :application, "fivethings"
+set :deploy_to, "/home/zorro/testing"
 set :database_conf, "/home/zorro/database_conf" #contains database.yml.production
 
 #############################################################
@@ -31,7 +31,7 @@ set :rails_env, "production"
 
 set :user, "zorro"
 set :port, 52520
-set :domain, "testing.5things.com"
+set :domain, "testing.5thingsapp.com"
 server domain, :app, :web
 role :db, domain, :primary => true
 
