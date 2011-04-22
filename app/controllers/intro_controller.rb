@@ -1,12 +1,11 @@
 class IntroController < ApplicationController
   layout "outside"
+  before_filter :redirect_if_logged_in
+  caches_page :index
  
   def index
     @title = t("pages.intro")
     @view_title = Stat.find(:first).taskcount.to_s + ' tasks added so far!'
-    if current_user_session
-      redirect_to home_path
-    end
   end
 
   def about
@@ -39,4 +38,10 @@ class IntroController < ApplicationController
     render :template => "/shared/error", :status => 404
   end
   
+  private
+  def redirect_if_logged_in
+    if current_user_session
+      redirect_to home_path
+    end
+  end
 end
