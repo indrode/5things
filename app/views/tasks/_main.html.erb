@@ -17,7 +17,7 @@
 <ul id="unassigned_list" class="unassigned active">
 	<li class="clean"><div id="loader_new_unassigned"></div><h2 class="black"><span><%= t "common.unassigned" %></span><br /><%= t "common.unassigned2" %></h2></li>
 	<li class="clean"><%= f.text_field :body, :class => 'taskbox watermarkOn', :id => "new_unassigned_value", :value => t("common.addtask") %></li>	
-	<%= render :partial => "tasks", :collection => @unassigned, :as => :item, :locals => {:tasktype => NEVER} %> 
+	<%= render :partial => "tasks", :collection => current_user.tasks.unassigned, :as => :item, :locals => {:tasktype => NEVER} %> 
 </ul>
 <% end %>
 

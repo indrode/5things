@@ -18,9 +18,6 @@ class TasksController < ApplicationController
  
     @yesterday = @today.yesterday
     @tomorrow = @today.tomorrow
-    
-    # find all unassigned tasks   
-    @unassigned = current_user.tasks.find_unassigned(tasklist_id)
 
     # find all tasks where date is within range yesterday..tomorrow of given day
     @tasks = current_user.tasks.find_batch(tasklist_id, @yesterday, @tomorrow) 
