@@ -65,6 +65,8 @@ GEM
     prawn (0.12.0)
       pdf-reader (>= 0.9.0)
       ttfunk (~> 1.0.2)
+    rabl (0.8.0)
+      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -114,4 +116,5 @@ DEPENDENCIES
   icalendar
   mysql2
   prawn
+  rabl
   rails

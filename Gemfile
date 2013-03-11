@@ -7,6 +7,7 @@ gem 'authlogic'
 gem "prawn"
 gem "fastercsv"
 gem "icalendar"
+gem 'rabl'
 
 group :development, :test do
   #add gems
