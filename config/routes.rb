@@ -1,10 +1,8 @@
 # routes.rb
 # need to clean this up desperately
 
-ActionController::Routing::Routes.draw do |map|
-
-  #map.root :controller => "user_sessions", :action => "new"
-  map.root :controller => "intro"
+Fivethings::Application.routes.draw do |map|
+  root :to => 'intro#index'
 
   map.resource :account, :controller => "users"
   map.resources :users
