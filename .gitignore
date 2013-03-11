@@ -3,7 +3,6 @@ log/*.log
 tmp/**/*
 test/**/*
 db/**/*
-config/database.yml
 public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
