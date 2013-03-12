@@ -29,6 +29,7 @@ Fivethings::Application.routes.draw do
   match 'tasklists/:id/destroy' => 'tasklists#destroy', :as => :destroylist
   match 'tasks/:id/remove' => 'tasks#remove', :as => :removetask
   
+  match 'contact' => 'contact#index'
   # refactor/remove
   # map.with_options :controller => 'contact' do |contact|
   #   contact.contact '/contact',
