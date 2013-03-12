@@ -1,74 +1,70 @@
 # routes.rb
 # need to clean this up desperately
 
-Fivethings::Application.routes.draw do |map|
+Fivethings::Application.routes.draw do
   root :to => 'intro#index'
 
-  map.resource :account, :controller => "users"
-  map.resources :users
-  map.resources :tasks
-  map.resources :password_resets
-  map.resources :tasklists
- 
-  # named routes
-  # access like this: login_url or login_path
+  resources :users
+  resources :tasks
+  resources :password_resets
+  resources :tasklists
   
-  
-  match "/logout" => "user_sessions#destroy", :as => :logout  
-  
-  map.login '/login', :controller => 'user_sessions', :action => 'new'
-  #map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
-  map.register '/register/:activation_code', :controller => 'activations', :action => 'new'
-  map.activate '/activate/:id', :controller => 'activations', :action => 'create'
-  map.home '/home', :controller => 'tasks'
-  map.help '/help', :controller => 'intro', :action => 'help'
-  map.find_today '/find_today', :controller => 'tasks', :action => 'find_today'
-  map.set_help '/set_help', :controller => 'tasks', :action => 'set_help'
+  match "logout" => "user_sessions#destroy", :as => :logout  
+  match "login" => "user_sessions#new", :as => :login
+  match "register/:activation_code" => "activations#new", :as => :register
+  match "activate/:id" => "activations#create", :as => :activate
+
+  match "home" => "tasks#index", :as => :home
+  match "help" => "intro#help", :as => :help
+    
+  match "find_today" => "tasks#find_today", :as => :find_today
+  match 'set_help' => 'tasks#set_help', :as => :set_help
+
   # share lists
-  map.share '/share/:id', :controller => 'tasklists', :action => 'show'
-  map.set '/set/:id', :controller => 'users', :action => 'set_list'
+  match 'share/:id' => 'tasklists#show', :as => :share
+  match 'set/:id' => 'users#set_list', :as => :set
+
   # kinda messy, but will have to do for now
-  map.update '/tasklists/:id', :controller => 'tasklists', :action => 'update'
-  map.destroylist '/tasklists/:id/destroy', :controller => 'tasklists', :action => 'destroy'
-  map.removetask '/tasks/:id/remove', :controller => 'tasks', :action => 'remove'
+  match 'tasklists/:id' => 'tasklists#update', :as => :update
+  match 'tasklists/:id/destroy' => 'tasklists#destroy', :as => :destroylist
+  match 'tasks/:id/remove' => 'tasks#remove', :as => :removetask
   
-  map.with_options :controller => 'contact' do |contact|
-    contact.contact '/contact',
-      :action => 'index',
-      :conditions => { :method => :get }
+  # refactor/remove
+  # map.with_options :controller => 'contact' do |contact|
+  #   contact.contact '/contact',
+  #     :action => 'index',
+  #     :conditions => { :method => :get }
 
-    contact.contact '/contact',
-      :action => 'create',
-      :conditions => { :method => :post }
-  end
+  #   contact.contact '/contact',
+  #     :action => 'create',
+  #     :conditions => { :method => :post }
+  # end
   
-  map.resource :user_session
-  #map.root :controller => "user_sessions", :action => "new"
+  resource :user_session
   
-  map.connect 'resend', :controller => "users", :action => "resend"
-  map.connect 'rs', :controller => "users", :action => "rs"
+  match 'resend' => 'users#resend'
+  match 'rs' => 'users#rs'
 
-  map.connect 'list', :controller => "tasks", :action => "list"
-  map.connect 'sort', :controller => "tasks", :action => "sort"
-  map.connect 'checkcompleted', :controller => "tasks", :action => "checkcompleted"
-  map.connect 'update', :controller => "tasks", :action => "update"
-  map.connect 'destroytask', :controller => "tasks", :action => "destroy"
-  map.connect 'maintenance', :controller => "tasks", :action => "maintenance"
-  map.connect 'inctsk', :controller => "tasks", :action => "increment_taskcount"
 
-  #map.connect 'share', :controller => "tasklists", :action => "index"
-  
-  map.connect 'about', :controller => "intro", :action => "about"
-  map.connect 'privacy', :controller => "intro", :action => "privacy"
-  map.connect 'terms', :controller => "intro", :action => "terms"
-  map.connect 'statistics', :controller => "intro", :action => "stats"
-  
-  map.connect 'ical', :controller => "tasks", :action => "export_ics"
-  map.connect 'csv', :controller => "tasks", :action => "export_csv"
-  map.connect 'delete', :controller => "users", :action => "delete"
-  map.connect 'preferences', :controller => "users", :action => "preferences"
 
-  #map.connect ':controller/:action/:id.:format'
+  match 'list' => 'tasks#list'
+  match 'sort' => 'tasks#sort'
+  match 'checkcompleted' => 'tasks#checkcompleted'
+  match 'update' => 'tasks#update'
+  match 'destroytask' => 'tasks#destroytask'
+  match 'maintenance' => 'tasks#maintenance'
+  match 'inctsk' => 'tasks#increment_taskcount'
+
+
+  match 'about' => 'intro#about'
+  match 'privacy' => 'intro#privacy'
+  match 'terms' => 'intro#terms'
+  match 'statistics' => 'intro#stats'
+
+  match 'ical' => 'tasks#export_ics'
+  match 'csv' => 'tasks#export_csv'
+  match 'delete' => 'users#delete'
+  match 'preferences' => 'users#preferences'
   
-  map.error ':controllername',  :controller => 'intro', :action => 'notfound'
+  match '/404', :to => 'intro#not_found'
 end
