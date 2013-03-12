@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', "3.2.12"
 gem 'mysql2'
 gem 'activerecord-mysql-adapter'
 gem 'authlogic'
@@ -12,4 +12,5 @@ gem 'rabl'
 group :development, :test do
   gem "rspec-rails"
   gem "capybara"
+  gem 'database_cleaner'
 end

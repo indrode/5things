@@ -3,7 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :user, :counter_cache => true
   belongs_to :tasklist, :counter_cache => true
   
-  named_scope :unassigned, lambda { |day| { :conditions => ["duedate IN (?) AND tasklist_id = ?", NEVER, current_user.current_list ] } }
+  # named_scope :unassigned, lambda { |day| { :conditions => ["duedate IN (?) AND tasklist_id = ?", NEVER, current_user.current_list ] } }
   
   # find all tasks where date is within range yesterday..tomorrow of given day
   def self.find_batch(id, from, to)
