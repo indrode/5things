@@ -10,5 +10,6 @@ gem "icalendar"
 gem 'rabl'
 
 group :development, :test do
-  #add gems
+  gem "rspec-rails"
+  gem "capybara"
 end
