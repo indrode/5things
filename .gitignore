@@ -7,6 +7,6 @@ public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
 .bundle
-tmp/restart.txt
+tmp/
 script
 config/initializers/secret_token.rb
