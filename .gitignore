@@ -3,7 +3,6 @@ log/*.log
 tmp/**/*
 test/**/*
 db/**/*
-public/images/*.*
 public/images/icons/*.*
 public/fonts/*.*
 .bundle
