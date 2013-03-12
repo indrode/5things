@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :require_user, :except => [:find_today, :increment_taskcount]  
+  before_filter :require_user, :except => [:find_today]  
   layout "general", :except => [:create]
   require 'icalendar'
   require 'fastercsv'
@@ -171,9 +171,6 @@ class TasksController < ApplicationController
     params[:task][:tasklist_id] = current_user.current_list
     @task = current_user.tasks.create(params[:task])
     
-    # update global task count
-    Stat.find(:first).increment!(:taskcount)
-    
     if @task.save
       @addtype = @task.addtype
       flash[:notice] = t("tasks.created")  
@@ -273,8 +270,4 @@ class TasksController < ApplicationController
     current_user.update_attributes(:env_other => 0)
   end
   
-  def increment_taskcount
-    Stat.find(:first).increment!(:taskcount, 1 + rand(6))
-    render :nothing => true
-  end
 end

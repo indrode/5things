@@ -44,10 +44,7 @@ class ActivationsController < ApplicationController
       # create the first task and mark as completed
       newrecord = @user.tasks.new(:body => t("user.firstsignup"), :duedate => Time.zone.now, :completed => 1, :ordinal => 1, :tasklist_id => newlist.id)
       newrecord.save
-      
-      # update global task count
-      Stat.find(:first).increment!(:taskcount)
-      
+            
       @user.reset_perishable_token
       UserMailer.activation_confirmation(@user).deliver      
       flash[:notice] = t("activations.success")

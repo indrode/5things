@@ -45,16 +45,12 @@ Fivethings::Application.routes.draw do
   match 'resend' => 'users#resend'
   match 'rs' => 'users#rs'
 
-
-
   match 'list' => 'tasks#list'
   match 'sort' => 'tasks#sort'
   match 'checkcompleted' => 'tasks#checkcompleted'
   match 'update' => 'tasks#update'
   match 'destroytask' => 'tasks#destroytask'
   match 'maintenance' => 'tasks#maintenance'
-  match 'inctsk' => 'tasks#increment_taskcount'
-
 
   match 'about' => 'intro#about'
   match 'privacy' => 'intro#privacy'

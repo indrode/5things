@@ -5,7 +5,7 @@ class IntroController < ApplicationController
  
   def index
     @title = t("pages.intro")
-    @view_title = Stat.find(:first).taskcount.to_s + ' tasks added so far!'
+    # @view_title = "#{Task.count} tasks added so far!"
   end
 
   def about
@@ -22,12 +22,6 @@ class IntroController < ApplicationController
   
   def help
     @title = @view_title = t("common.help")
-  end
-  
-  def stats
-    @title = @view_title = "Stats"
-    @count = Stat.find(:first).taskcount.to_s
-    @ft = "removed"
   end
   
   def notfound
