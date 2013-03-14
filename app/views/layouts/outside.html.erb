@@ -73,5 +73,8 @@
 	</div>
 	<%= render :partial => 'shared/footer', :locals => {:footerclass => @ft || "defaultclass"} %>
 	<%= render :partial => 'shared/analytics' %>
+  <% if Rails.env.development? %>
+    <%= render :partial => 'shared/env_info' %>
+  <% end %>
 </body>
 </html>
