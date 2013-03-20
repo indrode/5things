@@ -1,11 +1,9 @@
 .DS_Store
-log/*.log
-tmp/**/*
-test/**/*
+log/
+tmp/
 db/**/*
 public/images/icons/*.*
 public/fonts/*.*
 .bundle
-tmp/
 script
 config/initializers/secret_token.rb
