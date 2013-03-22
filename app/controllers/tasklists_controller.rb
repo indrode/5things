@@ -35,7 +35,7 @@ class TasklistsController < ApplicationController
   end
 
   def new
-    @title = @view_title = t("lists.createlist")
+    init_page({title: t("lists.createlist")})
     @tasklist = Tasklist.new(:maintenance => current_user.env_maintenance)
     respond_to do |format|
       format.html # new.html.erb
@@ -44,12 +44,12 @@ class TasklistsController < ApplicationController
   end
 
   def edit
-    @title = @view_title = t("lists.editlist")
+    init_page({title: t("lists.editlist")})
     @tasklist = current_user.tasklists.find(params[:id])
   end
 
   def create
-    @title = t("lists.createlist")
+    init_page({title: t("lists.createlist")})
     params[:tasklist]['reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
     @tasklist = current_user.tasklists.create(params[:tasklist])
     if @tasklist.save
@@ -65,7 +65,7 @@ class TasklistsController < ApplicationController
 
   # update task list details
   def update
-    @title = @view_title = t("lists.editlist")
+    init_page({title: t("lists.editlist")})
     @tasklist = Tasklist.find(params[:id])
     params[:tasklist]['reporting'] = params['check_1'].to_i + params['check_2'].to_i + params['check_3'].to_i
     if @tasklist.update_attributes(params[:tasklist])

@@ -24,10 +24,7 @@ class IntroController < ApplicationController
   end
   
   def notfound
-    @title = @view_title = "Error 404"
-    @copy = t("common.error404")
-    @ft = "removed"
-    # to do: remove /intro/notfound.html.erb
+    init_page({title: "Error 404", footer: "removed", copy: t("common.error404")})
     render :template => "/shared/error", :status => 404
   end
 end
