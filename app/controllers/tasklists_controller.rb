@@ -3,7 +3,7 @@ class TasklistsController < ApplicationController
   layout "outside"
 
   def index
-    @title = @view_title = t("lists.title")
+    init_page({title: t("lists.title")})
     @tasklists = current_user.tasklists.all(:order => 'title')
   end
 

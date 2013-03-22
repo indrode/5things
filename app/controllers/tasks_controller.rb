@@ -220,13 +220,13 @@ class TasksController < ApplicationController
 #    render :text => @calendar.to_ical, :layout => false    
     
     send_data(@calendar.to_ical,:type => 'text/calendar', :disposition =>
-    'inline; filename=5things_' + Time.now.strftime("%m-%d-%Y") + '.ics', :filename => '5things_' + Time.now.strftime("%m-%d-%Y") + '.ics')
+    "inline; filename=5things_#{Time.now.strftime("%m-%d-%Y")}.ics", :filename => "5things_#{Time.now.strftime("%m-%d-%Y")}.ics")
   end
 
   # export to csv
   def export_csv
     @tasks = current_user.tasks.find_assigned(current_user.current_list)
-    @outfile = "5things_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+    @outfile = "5things_#{Time.now.strftime("%m-%d-%Y")}.csv"
 
     csv_data = FasterCSV.generate do |csv|
       csv << [

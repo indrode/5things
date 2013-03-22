@@ -13,7 +13,7 @@
 		  <%= link_to_unless_current t("common.login"), login_path -%>
 		<%- else -%>
 		<strong><%= current_user.email -%></strong> &nbsp;|&nbsp;
-		<%= link_to_unless_current t("lists.lists") + ' (' + current_user.tasklists_count.to_s + ')', "/tasklists" -%> &nbsp;|&nbsp; 
+		<%= link_to_unless_current "#{t("lists.lists")} (#{current_user.tasklists_count.to_s})", "/tasklists" -%> &nbsp;|&nbsp; 
 		<%= link_to_unless_current t("user.preferences"), "/account" -%> &nbsp;|&nbsp;
 		<%= link_to_unless_current t("common.help"), help_path -%> &nbsp;|&nbsp;			
 	  <%= link_to_unless false, t("common.logout"), "/logout", :method => :delete -%>

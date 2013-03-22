@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       else
         @user.reset_perishable_token!
         UserMailer.activation_instructions(@user).deliver       
-        @copy = t("user.newactivationsent") + params[:user]['email']        
+        @copy = "#{t("user.newactivationsent")} #{params[:user]['email']}"
       end
     else
       @copy = t("user.emailnotfound")
@@ -101,7 +101,6 @@ class UsersController < ApplicationController
       User.update(current_user.id, :current_list => params[:id])
       #redirect_to "/maintenance" and return
     end
-    #flash[:notice] = t("lists.notexist") # + $!
     redirect_to home_path
   end
 end
