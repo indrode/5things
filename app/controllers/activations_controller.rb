@@ -16,7 +16,7 @@ class ActivationsController < ApplicationController
   end
 
   def reset_token(user)
-    init_page({title: t("activations.title"), ft: "removed"})
+    init_page({title: t("activations.title"), footer: false})
     @user = User.find_by_email(params[:email])
     
     if @user.signup!(params)

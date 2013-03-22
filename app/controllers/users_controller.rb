@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    init_page({title: t("user.registration"), ft: "removed"})
+    init_page({title: t("user.registration"), footer: false})
 
     @user = User.new    
     if @user.signup!(params)
@@ -25,12 +25,12 @@ class UsersController < ApplicationController
   end
   
   def resend
-    init_page({title: t("user.registration"), ft: "removed"})
+    init_page({title: t("user.registration"), footer: false})
     @user = User.new    
   end
   
   def rs
-    init_page({title: t("user.registration"), ft: "removed"})
+    init_page({title: t("user.registration"), footer: false})
     @user = User.find_by_email(params[:user]['email'])
     unless @user.nil?
       if @user.active?
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
   end
 
   def success
-    init_page({title: t("user.registration"), ft: "removed"})
+    init_page({title: t("user.registration"), footer: false})
   end
   
   # update current task list

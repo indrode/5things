@@ -109,7 +109,7 @@ class ApplicationController < ActionController::Base
   def init_page(hash)
     @title = hash[:title]
     @view_title = hash[:view_title] || @title
-    @ft = hash[:ft]
+    @ft = "removed" if hash[:footer] == false
     @copy = hash[:copy]
   end
 end

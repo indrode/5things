@@ -4,12 +4,12 @@ class UserSessionsController < ApplicationController
   layout "clean"
 
   def new
-    init_page({title: t("common.login"), ft: "removed"})    
+    init_page({title: t("common.login"), footer: false})    
     @user_session = UserSession.new
   end
 
   def create
-    init_page({title: t("common.login"), ft: "removed"})    
+    init_page({title: t("common.login"), footer: false})    
     @user_session = UserSession.new(params[:user_session]) 
 
     #@current_list = current_user.default_list

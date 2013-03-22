@@ -24,7 +24,7 @@ class IntroController < ApplicationController
   end
   
   def notfound
-    init_page({title: "Error 404", footer: "removed", copy: t("common.error404")})
+    init_page({title: "Error 404", footer: false, copy: t("common.error404")})
     render :template => "/shared/error", :status => 404
   end
 end
