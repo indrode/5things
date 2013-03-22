@@ -35,11 +35,7 @@ class ActivationsController < ApplicationController
     raise Exception if @user.active?
 
     if @user.activate!(params)
-      # create the first list and set as current_list
-      s = ""
-      20.times { s << (i = Kernel.rand(62); i += ((i < 10) ? 48 : ((i < 36) ? 55 : 61 ))).chr }
-      newlist = @user.tasklists.new(:title => t("user.firstlist"), :key => s)
-      newlist.save
+      newlist = @user.tasklists.create(:title => t("user.firstlist"), :key => Tasklist.new_key)
       User.update(@user.id, :current_list => newlist.id)
       # create the first task and mark as completed
       newrecord = @user.tasks.new(:body => t("user.firstsignup"), :duedate => Time.zone.now, :completed => 1, :ordinal => 1, :tasklist_id => newlist.id)
