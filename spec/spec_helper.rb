@@ -13,6 +13,8 @@ require 'capybara'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.color_enabled = true
+
   # config.include(EmailSpec::Helpers)
   # config.include(EmailSpec::Matchers)
   config.include(Capybara::DSL)
