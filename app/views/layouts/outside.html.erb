@@ -8,10 +8,10 @@
    /       \|  | |   Y  \  |   |  \/ /_/  >___ \ 
   /______  /|__| |___|  /__|___|  /\___  /____  >
          \/           \/        \//_____/     \/ 
-  	
+    
   5things
-  	by Indro De (http://indrode.com/)	Hire me!
-  	
+    by Indro De (http://indrode.com/) Hire me!
+    
   -->
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>5things | <%= h @title %></title>
@@ -25,8 +25,8 @@
   title="5things" type="application/rss+xml" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <%= stylesheet_link_tag '5things' %>
-	<script type="text/javascript" src="http://use.typekit.com/cyv6shk.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="http://use.typekit.com/cyv6shk.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
   <%= javascript_include_tag 'loopedslider', 'jquery.tablesorter.min', 'jqModal', 'application2', :cache => 'outside' %>
@@ -66,13 +66,13 @@
               <li><a href="/about"><img src="http://static.zenpunch.com/5things/images/information.png" alt="" class="clean" style="vertical-align:text-bottom;" /> Learn More...</a></li>
             </ul>
           </div>
-		  <%- end -%>
+      <%- end -%>
         </div>
       </div>
-	<%= yield %>   
-	</div>
-	<%= render :partial => 'shared/footer', :locals => {:footerclass => @ft || "defaultclass"} %>
-	<%= render :partial => 'shared/analytics' %>
+  <%= yield %>   
+  </div>
+  <%= render :partial => 'shared/footer', :locals => {:footerclass => @ft || "defaultclass"} %>
+  <%= render :partial => 'shared/analytics' %>
   <% if Rails.env.development? %>
     <%= render :partial => 'shared/env_info' %>
   <% end %>

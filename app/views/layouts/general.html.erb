@@ -1,76 +1,76 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<!--
-	
-	 .________ __  .__    .__                      
-	 |   ____//  |_|  |__ |__| ____    ____  ______
-	 |____  \\   __\  |  \|  |/    \  / ___\/  ___/
-	 /       \|  | |   Y  \  |   |  \/ /_/  >___ \ 
-	/______  /|__| |___|  /__|___|  /\___  /____  >
-	       \/           \/        \//_____/     \/ 
-		
-	5things
-		by Indro De (http://indrode.com/)	Hire me!
-		
-	-->
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-  	<title><%= h @title %> | 5things (<%= @alltasks.size %>)</title>
-	<meta name="author" content="Indro De" />
-	<meta name="description" content="The simple task manager and to-do list for all those things in your life." />
-	<meta name="copyright" content="5things" />
-	<meta name="email" content="5things@zenpunch.com" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<%= stylesheet_link_tag '5things' %>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
-	<%= javascript_include_tag 'jquery.livequery', 'jquery.jeditable.mini',  'jquery.hoverIntent.minified', 'jquery.tablesorter.min', 'application', :cache => true %>
-	<!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
-	
-	<!--[if lt IE 8]>
-	<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
-	<![endif]-->
-	<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>	
-	
+  <!--
+  
+   .________ __  .__    .__                      
+   |   ____//  |_|  |__ |__| ____    ____  ______
+   |____  \\   __\  |  \|  |/    \  / ___\/  ___/
+   /       \|  | |   Y  \  |   |  \/ /_/  >___ \ 
+  /______  /|__| |___|  /__|___|  /\___  /____  >
+         \/           \/        \//_____/     \/ 
+    
+  5things
+    by Indro De (http://indrode.com/) Hire me!
+    
+  -->
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+    <title><%= h @title %> | 5things (<%= @alltasks.size %>)</title>
+  <meta name="author" content="Indro De" />
+  <meta name="description" content="The simple task manager and to-do list for all those things in your life." />
+  <meta name="copyright" content="5things" />
+  <meta name="email" content="5things@zenpunch.com" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <%= stylesheet_link_tag '5things' %>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+  <%= javascript_include_tag 'jquery.livequery', 'jquery.jeditable.mini',  'jquery.hoverIntent.minified', 'jquery.tablesorter.min', 'application', :cache => true %>
+  <!--[if IE]><link rel="stylesheet" type="text/css" href="/stylesheets/5things_ie.css" /><![endif]-->
+  
+  <!--[if lt IE 8]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>  
+  
 </head>
 
-<body>	
-	
+<body>  
+  
 <div><img id="bg_image" src="http://static.zenpunch.com/5things/images/5things_bg.jpg" alt="" title="" /></div>
 
 <%= render :partial => 'shared/user_nav' %>
 <%= render :partial => 'shared/toolbox' %>
 <% if flash[:notice] %>
-	<div id="flash_space">
-		<div id="flash_notice"><%= flash[:notice] %> &nbsp; <a href="#">[<%= t("common.close") %>]</a></div>
-	</div>
+  <div id="flash_space">
+    <div id="flash_notice"><%= flash[:notice] %> &nbsp; <a href="#">[<%= t("common.close") %>]</a></div>
+  </div>
 <% end %>
 
 <noscript>
-	<div id="alert_space">
-		<div id="flash_notice"><%= t("common.javascript") %></div>
-	</div>
+  <div id="alert_space">
+    <div id="flash_notice"><%= t("common.javascript") %></div>
+  </div>
 </noscript>
 
 <div id="showhide_button" style="clear:both;">
-	<div class="container" style="width:960px;margin:0 auto;">
-	<a href="#" class="togglebutton"><img src="http://static.zenpunch.com/5things/images/<%= t("common.tools") %>" class="clean toggle" alt="" height="50" width="200" /></a>
-	</div>
+  <div class="container" style="width:960px;margin:0 auto;">
+  <a href="#" class="togglebutton"><img src="http://static.zenpunch.com/5things/images/<%= t("common.tools") %>" class="clean toggle" alt="" height="50" width="200" /></a>
+  </div>
 </div>
 
 <div id="container_bg">
-	<div id="container">
-		<div id="headerarea">
-			<img id="logo" src="http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352" height="117" />
-			<h2 class="status"><a href="home?d=" id="navhome"><%= l @actualday, :format => :long %></a><br /><%= t("common.todocount1") %> <span id="today_status"><%= pluralize(@alltasks.size, t("common.thing"), t("common.things")) %></span> <%= t("common.todocount2") %></h2>
-		</div>
-		<div style="clear:both;">
-		<%= yield %>
-		</div>
-		<div id="footerarea" style="border:none;">
-			&nbsp;
-		</div>
-	</div>
+  <div id="container">
+    <div id="headerarea">
+      <img id="logo" src="http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352" height="117" />
+      <h2 class="status"><a href="home?d=" id="navhome"><%= l @actualday, :format => :long %></a><br /><%= t("common.todocount1") %> <span id="today_status"><%= pluralize(@alltasks.size, t("common.thing"), t("common.things")) %></span> <%= t("common.todocount2") %></h2>
+    </div>
+    <div style="clear:both;">
+    <%= yield %>
+    </div>
+    <div id="footerarea" style="border:none;">
+      &nbsp;
+    </div>
+  </div>
 </div>
 <%= render :partial => 'shared/analytics' %>
 </body>
