@@ -3,7 +3,7 @@ class ActivationsController < ApplicationController
   layout "clean"
 
   def new
-    @title = t("activations.title")
+    init_page({title: t("activations.title")})
     @user = User.find_using_perishable_token(params[:activation_code], 2.hours)
     raise "exception" if @user.active?
     
@@ -16,8 +16,7 @@ class ActivationsController < ApplicationController
   end
 
   def reset_token(user)
-    @ft = "removed"
-    @title = t("user.registration")
+    init_page({title: t("activations.title"), ft: "removed"})
     @user = User.find_by_email(params[:email])
     
     if @user.signup!(params)

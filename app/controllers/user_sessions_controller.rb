@@ -4,16 +4,14 @@ class UserSessionsController < ApplicationController
   layout "clean"
 
   def new
-    @title = @view_title = t("common.login")      
-    
-    @ft = "removed"
+    init_page({title: t("common.login"), ft: "removed"})    
     @user_session = UserSession.new
   end
 
-  def create  
-    @title = t("common.login")
-    @ft = "removed"
+  def create
+    init_page({title: t("common.login"), ft: "removed"})    
     @user_session = UserSession.new(params[:user_session]) 
+
     #@current_list = current_user.default_list
     if @user_session.save
       flash[:notice] = t("session.login")    
