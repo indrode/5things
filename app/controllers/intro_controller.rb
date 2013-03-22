@@ -4,24 +4,23 @@ class IntroController < ApplicationController
   caches_page :index
  
   def index
-    @title = t("pages.intro")
-    # @view_title = "#{Task.count} tasks added so far!"
+    init_page({title: t("pages.intro")})
   end
 
   def about
-    @title = @view_title = t("pages.about")  
+    init_page({title: t("pages.about")})
   end
   
   def privacy
-    @title = @view_title = t("pages.privacy")  
+    init_page({title: t("pages.privacy")})
   end
   
   def terms
-    @title = @view_title = t("pages.terms")
+    init_page({title: t("pages.terms")})
   end
   
   def help
-    @title = @view_title = t("common.help")
+    init_page({title: t("common.help")})
   end
   
   def notfound
@@ -30,12 +29,5 @@ class IntroController < ApplicationController
     @ft = "removed"
     # to do: remove /intro/notfound.html.erb
     render :template => "/shared/error", :status => 404
-  end
-  
-  private
-  def redirect_if_logged_in
-    if current_user_session
-      redirect_to home_path
-    end
   end
 end

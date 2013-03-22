@@ -4,10 +4,7 @@ class TasksController < ApplicationController
   require 'icalendar'
   require 'fastercsv'
   
-  def index
-        
-    #this adds two seconds
-    # sleep 2    
+  def index  
     tasklist_id = current_user.current_list
     
     @today = Time.zone.now.to_date

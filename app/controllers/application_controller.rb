@@ -1,3 +1,8 @@
+# TODOs
+# 1. un-DRY by adding method #flash_and_redirect
+# 2. rescue_action_in_public; add logging
+# 3. check helpers in controller 
+
 class ApplicationController < ActionController::Base  
   helper :all
   helper_method :current_user_session, :current_user
@@ -5,29 +10,13 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
     
   protect_from_forgery
-
-  private
-  def set_user_time_zone
-    Time.zone = current_user.time_zone if current_user
-  end
-
-  private  
-  def current_user_session  
-    return @current_user_session if defined?(@current_user_session)  
-    @current_user_session = UserSession.find  
-  end
-
-  private  
-  def set_user_language  
-    I18n.locale = current_user.language if current_user
-  end
     
   def current_user_id
-    @current_user_id = current_user.id
+    current_user.id
   end
   
   def current_user  
-    @current_user = current_user_session && current_user_session.record  
+    current_user_session && current_user_session.record  
   end
   
   def require_user
@@ -94,5 +83,33 @@ class ApplicationController < ActionController::Base
 
   def mailer_set_url_options
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
+
+
+  private
+
+  def set_user_time_zone
+    Time.zone = current_user.time_zone if current_user
+  end
+
+  def current_user_session  
+    return @current_user_session if defined?(@current_user_session)  
+    @current_user_session = UserSession.find  
+  end
+
+  def set_user_language  
+    I18n.locale = current_user.language if current_user
+  end
+
+  def redirect_if_logged_in
+    redirect_to home_path if current_user_session
+  end
+
+  # quick-refactoring; should be completely rewritten
+  def init_page(hash)
+    @title = hash[:title]
+    @view_title = hash[:view_title] || @title
+    @ft = hash[:ft]
+    @copy = hash[:copy]
   end
 end

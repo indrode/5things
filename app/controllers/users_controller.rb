@@ -4,14 +4,14 @@ class UsersController < ApplicationController
   layout "outside"
 
   def new
-    @title = @view_title = t("user.registration")      
+    init_page({title: t("user.registration")})
     @user = User.new 
     render :layout => "outside"
   end
 
   def create
-    @ft = "removed"
-    @title = t("user.registration")
+    init_page({title: t("user.registration"), ft: "removed"})
+
     @user = User.new    
     if @user.signup!(params)
       @user.reset_perishable_token!
@@ -25,15 +25,12 @@ class UsersController < ApplicationController
   end
   
   def resend
-    @ft = "removed"
-    @title = t("user.registration")
+    init_page({title: t("user.registration"), ft: "removed"})
     @user = User.new    
   end
   
-  layout "clean"
   def rs
-    @ft = "removed"
-    @title = t("user.registration")
+    init_page({title: t("user.registration"), ft: "removed"})
     @user = User.find_by_email(params[:user]['email'])
     unless @user.nil?
       if @user.active?
@@ -46,11 +43,11 @@ class UsersController < ApplicationController
     else
       @copy = t("user.emailnotfound")
     end
-    render :template => "/shared/success"
+    render :template => "/shared/success", :layout => "clean"
   end
 
   def show
-    @title = @view_title = t("user.account_settings")
+    init_page({title: t("user.account_settings")})
     @user = current_user
     render :action => :edit
   end
@@ -60,7 +57,7 @@ class UsersController < ApplicationController
   end 
   
   def preferences
-    @title = @view_title = t("user.preferences")
+    init_page({title: t("user.preferences")})
     @user = current_user   
   end 
     
@@ -94,8 +91,7 @@ class UsersController < ApplicationController
   end
 
   def success
-    @ft = "removed"
-    @title = t("user.registrations")
+    init_page({title: t("user.registration"), ft: "removed"})
   end
   
   # update current task list
@@ -108,5 +104,4 @@ class UsersController < ApplicationController
     #flash[:notice] = t("lists.notexist") # + $!
     redirect_to home_path
   end
-
 end
