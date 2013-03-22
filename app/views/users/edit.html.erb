@@ -9,7 +9,7 @@
 <div id="outside_copy">
 <div class="container">
 	
-<% form_for @user, :url => account_path do |f| %>
+<% form_for current_user, :url => account_path do |f| %>
 <%= f.hidden_field :env_reporting %>		
 <%= f.hidden_field :env_maintenance %>		
 <%= f.hidden_field :env_other %>		
@@ -21,7 +21,7 @@
 		<ol>
 			<li>
 				<%= f.label :email, t("user.emailaddress") %> 
-				<span style="font-size:16px;"><%= @user.email %></span>
+				<span style="font-size:16px;"><%= current_user.email %></span>
 			</li>
 			<li>
 				<%= f.label :language, t("user.language") %> 
@@ -42,7 +42,7 @@
 		</ol>
 	</fieldset>
 
-	<%= render "shared/error_messages", :target => @user %> 
+	<%= render "shared/error_messages", :target => current_user %> 
 </div>
 
 <div class="formarea_right">	
