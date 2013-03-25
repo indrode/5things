@@ -3,9 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :user, :counter_cache => true
   belongs_to :tasklist, :counter_cache => true
 
-  scope :find_batch, lambda do |id, from, to|
-    where("duedate IN (?) AND tasklist_id = ?", (from..to), id) 
-  end
+  scope :find_batch, lambda { |id, from, to| where("duedate IN (?) AND tasklist_id = ?", (from..to), id) }
   
   # named_scope :unassigned, lambda { |day| { :conditions => ["duedate IN (?) AND tasklist_id = ?", NEVER, current_user.current_list ] } }
   
