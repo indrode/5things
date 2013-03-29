@@ -6,9 +6,7 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.validates_length_of_password_field_options = {:on => :update, :minimum => 4, :if => :has_no_credentials?}
     c.validates_length_of_password_confirmation_field_options = {:on => :update, :minimum => 4, :if => :has_no_credentials?}
-    #c.merge_validates_confirmation_of_password_field_options :message => t("user.validatefail")
     c.disable_perishable_token_maintenance(true)
-    #c.logged_in_timeout(30.seconds)     #logs out after 30 minutes of inactivity   
   end  
 
   def has_no_credentials?

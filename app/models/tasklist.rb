@@ -3,7 +3,6 @@ class Tasklist < ActiveRecord::Base
   has_many :tasks, :dependent => :destroy
   validates_presence_of :title
 
-
   # not ActiveRecord; move out:
   def self.new_key(length=20)
     s = ''

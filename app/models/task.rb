@@ -4,9 +4,8 @@ class Task < ActiveRecord::Base
   belongs_to :tasklist, :counter_cache => true
 
   scope :find_batch, lambda { |id, from, to| where("duedate IN (?) AND tasklist_id = ?", (from..to), id) }
-  
-  # named_scope :unassigned, lambda { |day| { :conditions => ["duedate IN (?) AND tasklist_id = ?", NEVER, current_user.current_list ] } }
-  
+  scope :incomplete, lambda { where(completed: 0) }
+
   class << self
     
     # find all tasks where date is within range yesterday..tomorrow of given day
@@ -16,7 +15,8 @@ class Task < ActiveRecord::Base
 
     # find all incomplete tasks where date is within range yesterday..tomorrow of given day
     def find_incomplete_batch(id, from, to)
-      all(:order => 'duedate, ordinal ASC', :conditions => ["duedate IN (?) AND tasklist_id = ? AND completed=0", (from..to), id ])
+      find_batch(id, from, to).incomplete
+      # all(:order => 'duedate, ordinal ASC', :conditions => ["duedate IN (?) AND tasklist_id = ? AND completed=0", (from..to), id ])
     end
 
     # finds all past tasks that are not completed
