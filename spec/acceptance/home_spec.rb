@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'acceptance_spec_helper'
 
 describe "Hello World!" do
   let(:something) { mock("some thing", a: true) }
