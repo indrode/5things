@@ -34,14 +34,7 @@ class ActivationsController < ApplicationController
     raise Exception if @user.active?
 
     if @user.activate!(params)
-      newlist = @user.tasklists.create(:title => t("user.firstlist"), :key => Tasklist.new_key)
-      User.update(@user.id, :current_list => newlist.id)
-      # create the first task and mark as completed
-      newrecord = @user.tasks.new(:body => t("user.firstsignup"), :duedate => Time.zone.now, :completed => 1, :ordinal => 1, :tasklist_id => newlist.id)
-      newrecord.save
-            
-      @user.reset_perishable_token
-      UserMailer.activation_confirmation(@user).deliver      
+      ActionManager.initialize_user!(@user)
       flash[:notice] = t("activations.success")
       redirect_to root_url
     else
