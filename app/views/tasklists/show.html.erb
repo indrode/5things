@@ -1,41 +1,41 @@
 <div id="container_bg">
-	<div id="container">
-		<div id="headerarea">
-			<a href="<%= root_path %>"><img id="logo" src="http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
-			<p class="share_description"><strong style="font-size:20px;"><%= h @tasklist.title %></strong><br /><%= h @tasklist.description %></p>
-		</div>	
-	
-		<div id="sharemenu">
-			<a class="tab" id="share_all" href="#alltasks"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
-			<%	if report_include_unassigned?(@tasklist.reporting) 	# including empty days %>
-			<a class="tab" id="share_unassigned" href="#unassigned"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
-			<% end %>
-			<a class="tab current" id="share_upcoming" href="#upcoming"><%= t("share.upcoming") %></a>
-		</div>
+  <div id="container">
+    <div id="headerarea">
+      <a href="<%= root_path %>"><img id="logo" src="http://static.zenpunch.com/5things/images/5things_tr.png" alt="" width="352" height="117" class="clean" /></a>
+      <p class="share_description"><strong style="font-size:20px;"><%= h @tasklist.title %></strong><br /><%= h @tasklist.description %></p>
+    </div>
 
-		<div id="settings">
-			<div id="main_div">
-				<a name="upcoming"></a>
-				<div id="div_share_upcoming" class="share_content">
-<%	# desperately need to clean up this view
+    <div id="sharemenu">
+      <a class="tab" id="share_all" href="#alltasks"><%= t("share.alltasks") %> (<%= @tasklist.tasks_count %>)</a>
+      <%  if report_include_unassigned?(@tasklist.reporting)  # including empty days %>
+      <a class="tab" id="share_unassigned" href="#unassigned"><%= t("share.unassigned") %> (<%= @unassigned.size.to_s %>)</a>
+      <% end %>
+      <a class="tab current" id="share_upcoming" href="#upcoming"><%= t("share.upcoming") %></a>
+    </div>
+    
+    <div id="settings">
+      <div id="main_div">
+        <a name="upcoming"></a>
+        <div id="div_share_upcoming" class="share_content">
+<%  # desperately need to clean up this view
 count = 0
 curdate = @today
 @items_by_day.each do |duedate, items|
 
-if report_include_empty?(@tasklist.reporting) 	# including empty days
-	while duedate.to_date >= curdate.to_date %>
-		<h3 style="margin:30px 0 0 60px; color:#000;"><%= curdate.to_date %></h3>
-		<% curdate = curdate.tomorrow %>
-	<% end %>
-<% else 	# do not include empty days%>
-	<h3 style="margin:30px 0 0 60px; color:#000;"><%= duedate.to_date %></h3>
+if report_include_empty?(@tasklist.reporting)   # including empty days
+  while duedate.to_date >= curdate.to_date %>
+    <h3 style="margin:30px 0 0 60px; color:#000;"><%= curdate.to_date %></h3>
+    <% curdate = curdate.tomorrow %>
+  <% end %>
+<% else   # do not include empty days%>
+  <h3 style="margin:30px 0 0 60px; color:#000;"><%= duedate.to_date %></h3>
 <% end %>
 
 <% # move to a partial to clean up view %>
 <ol style="margin:0 50px; color:#c0c0c0;">
 <% items.each do |item| %>
 <% if item.completed == false or report_include_completed?(@tasklist.reporting) %>
-	<li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
+  <li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
 <% count += 1 %>
 <% end %>
 <% end %>
@@ -48,16 +48,16 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 
 <a name="unassigned"></a>
 <div id="div_share_unassigned" class="share_content">
-<%	if report_include_unassigned?(@tasklist.reporting) 	# including unassigned %>
+<%  if report_include_unassigned?(@tasklist.reporting)  # including unassigned %>
 <h3 style="margin:30px 0 0 60px; color:#000;"><%= t("share.unassigned") %></h3>
 
-	<ol style="margin:0 50px; color:#c0c0c0;">
-	   <% @unassigned.each do |item| %>
-	<% if item.completed == false or report_include_completed?(@tasklist.reporting) %>
-	     <li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
-	<% end %>
-	   <% end %>
-	</ol>
+  <ol style="margin:0 50px; color:#c0c0c0;">
+     <% @unassigned.each do |item| %>
+  <% if item.completed == false or report_include_completed?(@tasklist.reporting) %>
+       <li class="sharelist <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %><span style="float:right; width:40px; background-color:#e0e0e0; border:1px solid #000; text-align:center;"><%= item.completed ? 'X' : '&nbsp;' %></span></li>
+  <% end %>
+     <% end %>
+  </ol>
 <% end %>
 
 </div>
@@ -65,20 +65,20 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 <a name="alltasks"></a>
 <div id="div_share_all" class="share_content">
 
-	<table id="sharedtable">
-		<thead>
-		<tr class="header">
-			<th class="list s_duedate"><%= t("tasks.duedate") %></td>
-			<th class="list s_task"><%= t("tasks.task") %></td>
-		</tr>
-		</thead>
-		<tbody>
-		<%= render :partial => "allshared", :collection => @all_items, :as => :item %>
-		</tbody>
-	</table>
-		<p>&nbsp;</p>
+  <table id="sharedtable">
+    <thead>
+    <tr class="header">
+      <th class="list s_duedate"><%= t("tasks.duedate") %></td>
+      <th class="list s_task"><%= t("tasks.task") %></td>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render :partial => "allshared", :collection => @all_items, :as => :item %>
+    </tbody>
+  </table>
+    <p>&nbsp;</p>
 
-	</fieldset>
+  </fieldset>
 
 
 </div>
@@ -88,6 +88,6 @@ if report_include_empty?(@tasklist.reporting) 	# including empty days
 
 <p>&nbsp;</p>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </div>

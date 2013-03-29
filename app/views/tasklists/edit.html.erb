@@ -1,88 +1,88 @@
 <div id="tabmenu">
-	<a class="tab" href="/list"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</a>
-	<a class="tab" href="/tasklists"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</a>
-	<a class="tab" href="/preferences"><%= t("user.preferences") %></a>
-	<a class="tab" href="/account"><%= t("user.account_settings") %></a>
+  <a class="tab" href="/list"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</a>
+  <a class="tab" href="/tasklists"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</a>
+  <a class="tab" href="/preferences"><%= t("user.preferences") %></a>
+  <a class="tab" href="/account"><%= t("user.account_settings") %></a>
 </div>
-	
+  
 </div>
 <div id="outside_copy">
 <div class="container">
 
 <% form_for :tasklist, @tasklist, :url => { :action => "update" }  do |f| %>
 
-<div class="formarea_left">	
+<div class="formarea_left"> 
 
-<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/applications-accessories.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("lists.editlist") %></h1>	
+<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/applications-accessories.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("lists.editlist") %></h1> 
 <fieldset>
-	<ol>
-	<li>
-		<%= f.label :title, t("lists.coltitle") %>
-		<%= f.text_field :title %>
-	</li>
-	<li>
-		<%= f.label :description, t("lists.description") %>
-		<%= f.text_area :description %>
-	</li>
-	<li>
-		<p><hr /></p>
-	</li>
-	<li>
-		<%= f.label :security_1, t("lists.security") %>
-		<%= f.radio_button :security, 0 %> <%= t("lists.private") %>
-	</li>
-	<li>
-		<%= f.label :security_2, "&nbsp;".html_safe %>
-		<%= f.radio_button :security, 1 %> <%= t("lists.public") %>
-	</li>
-	<li><p><%= t("lists.security_copy_1_html") %></p>
-	</li>
-	<li><%= f.label :security_4, t("lists.security_copy_2_html") %><a href="http://5thingsapp.com/share/<%= @tasklist.key %>">http://5thingsapp.com/share/<%= @tasklist.key %></a>
-	</li>
-	<li>
-		<p><hr /></p>
-	</li>
-	<li>
-		<%= f.label :maintenance_1, t("prefs.mainttitle") %> 
-		<%= f.radio_button :maintenance, 1 %> <%= t("prefs.maint_1") %>
-	</li>
-	<li>
-		<%= f.label :maintenance_2, "&nbsp;".html_safe %>
-		<%= f.radio_button :maintenance, 2 %> <%= t("prefs.maint_2") %>
-	</li>
-	<li>
-		<%= f.label :maintenance_3, "&nbsp;".html_safe %>
-		<%= f.radio_button :maintenance, 3 %> <%= t("prefs.maint_3") %>
-	</li>
-	<li>
-		<p><hr /></p>
-	</li>
-	<li>
-		<%= f.label :env_reporting_1, t("prefs.reportprefs") %> 
-		<%#= f.check_box "check_1", {}, 1, 0 %> 
-		<%= check_box_tag "check_1", 1, Array[ 1, 3, 5, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_1") %>
-	</li>
-	<li>
-		<%= f.label :env_reporting_2, "&nbsp;".html_safe %>
-		<%= check_box_tag "check_2", 2, Array[ 2, 3, 6, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_2") %> 
-	</li>
-	<li>
-		<%= f.label :env_reporting_3, "&nbsp;".html_safe %>
-		<%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_3") %> 
-		<%= f.hidden_field :reporting %>		
-	</li>
-	<li>
-		<p><hr /></p>
-	</li>
-	<li>
-		<%= f.label :active_1, t("lists.active_instructions") %>
-		<%= f.radio_button :active, 1 %> <%= t("lists.active") %>
-	</li>
-	<li>
-		<%= f.label :active_2, "&nbsp;".html_safe %>
-		<%= f.radio_button :active, 0 %> <%= t("lists.inactive") %>
-	</li>
-	</ol>
+  <ol>
+  <li>
+    <%= f.label :title, t("lists.coltitle") %>
+    <%= f.text_field :title %>
+  </li>
+  <li>
+    <%= f.label :description, t("lists.description") %>
+    <%= f.text_area :description %>
+  </li>
+  <li>
+    <p><hr /></p>
+  </li>
+  <li>
+    <%= f.label :security_1, t("lists.security") %>
+    <%= f.radio_button :security, 0 %> <%= t("lists.private") %>
+  </li>
+  <li>
+    <%= f.label :security_2, "&nbsp;".html_safe %>
+    <%= f.radio_button :security, 1 %> <%= t("lists.public") %>
+  </li>
+  <li><p><%= t("lists.security_copy_1_html") %></p>
+  </li>
+  <li><%= f.label :security_4, t("lists.security_copy_2_html") %><a href="http://5thingsapp.com/share/<%= @tasklist.key %>">http://5thingsapp.com/share/<%= @tasklist.key %></a>
+  </li>
+  <li>
+    <p><hr /></p>
+  </li>
+  <li>
+    <%= f.label :maintenance_1, t("prefs.mainttitle") %> 
+    <%= f.radio_button :maintenance, 1 %> <%= t("prefs.maint_1") %>
+  </li>
+  <li>
+    <%= f.label :maintenance_2, "&nbsp;".html_safe %>
+    <%= f.radio_button :maintenance, 2 %> <%= t("prefs.maint_2") %>
+  </li>
+  <li>
+    <%= f.label :maintenance_3, "&nbsp;".html_safe %>
+    <%= f.radio_button :maintenance, 3 %> <%= t("prefs.maint_3") %>
+  </li>
+  <li>
+    <p><hr /></p>
+  </li>
+  <li>
+    <%= f.label :env_reporting_1, t("prefs.reportprefs") %> 
+    <%#= f.check_box "check_1", {}, 1, 0 %> 
+    <%= check_box_tag "check_1", 1, Array[ 1, 3, 5, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_1") %>
+  </li>
+  <li>
+    <%= f.label :env_reporting_2, "&nbsp;".html_safe %>
+    <%= check_box_tag "check_2", 2, Array[ 2, 3, 6, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_2") %> 
+  </li>
+  <li>
+    <%= f.label :env_reporting_3, "&nbsp;".html_safe %>
+    <%= check_box_tag "check_3", 4, Array[ 4, 5, 6, 7 ].include?(@tasklist.reporting) %> <%= t("prefs.reports_3") %> 
+    <%= f.hidden_field :reporting %>    
+  </li>
+  <li>
+    <p><hr /></p>
+  </li>
+  <li>
+    <%= f.label :active_1, t("lists.active_instructions") %>
+    <%= f.radio_button :active, 1 %> <%= t("lists.active") %>
+  </li>
+  <li>
+    <%= f.label :active_2, "&nbsp;".html_safe %>
+    <%= f.radio_button :active, 0 %> <%= t("lists.inactive") %>
+  </li>
+  </ol>
 </fieldset>
 
 
@@ -91,25 +91,25 @@
 
 </div>
 
-			<div class="formarea_right">	
+      <div class="formarea_right">  
 
-				<h1 class="formheader">&nbsp;</h1>
+        <h1 class="formheader">&nbsp;</h1>
 
-				<p class="instructions"><%= t("lists.edit_copy_1_html") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_2_html") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2_html") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_3_html") %></p>
-				<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.activated_copy_1_html") %></p>
-				<p>&nbsp;</p>
-				<div class="buttons">
-					<%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="'.html_safe + t("common.cancel") +'" width="16" height="16" />'.html_safe + t("common.cancel"), "/tasklists", :class => 'negative' %>
-				  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("common.save") %></button>
-				</div>
+        <p class="instructions"><%= t("lists.edit_copy_1_html") %></p>
+        <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_2_html") %></p>
+        <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("prefs.prefs_copy_2_html") %></p>
+        <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.edit_copy_3_html") %></p>
+        <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("lists.activated_copy_1_html") %></p>
+        <p>&nbsp;</p>
+        <div class="buttons">
+          <%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="'.html_safe + t("common.cancel") +'" width="16" height="16" />'.html_safe + t("common.cancel"), "/tasklists", :class => 'negative' %>
+          <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("common.save") %></button>
+        </div>
 
-			</div>
-			<% end %>
+      </div>
+      <% end %>
 
-						<div style="clear:both;"></div>
+            <div style="clear:both;"></div>
 
 
 </div>

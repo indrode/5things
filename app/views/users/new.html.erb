@@ -1,42 +1,42 @@
 <div id="tabmenu">
-	<a class="tab" href="/contact"><%= t("pages.contact") %></a>
-	<a class="tab" href="/help"><%= t("common.help") %></a>
-	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
-	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
-	<a class="tab" href="/about"><%= t("pages.about") %></a>
-	<div class="tab current"><%= t("user.registration") %></div>
+  <a class="tab" href="/contact"><%= t("pages.contact") %></a>
+  <a class="tab" href="/help"><%= t("common.help") %></a>
+  <a class="tab" href="/terms"><%= t("pages.terms") %></a>
+  <a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+  <a class="tab" href="/about"><%= t("pages.about") %></a>
+  <div class="tab current"><%= t("user.registration") %></div>
 </div>
 
 </div>
 <div id="outside_copy">
-	<div class="container">
+  <div class="container">
 <%= form_for @user, :url => users_path do |f| %>
 <div class="formarea_left">
 
-	<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.registration") %></h1>		
-	<fieldset class="outside_temp">
-		<ol>
-			<li>
-				<%= f.label :email, "Enter your email-address" %>
-				<%= f.text_field :email %>	
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-	  <%= cancel_button %>
-	  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("user.register") %></button>
-	</div>
-	<%= render "shared/error_messages", :target => @user %> 
+  <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.registration") %></h1>    
+  <fieldset class="outside_temp">
+    <ol>
+      <li>
+        <%= f.label :email, "Enter your email-address" %>
+        <%= f.text_field :email %>  
+      </li>
+    </ol>
+  </fieldset>
+  <div class="buttons">
+    <%= cancel_button %>
+    <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("user.register") %></button>
+  </div>
+  <%= render "shared/error_messages", :target => @user %> 
 </div>
 
-<div class="formarea_right">	
+<div class="formarea_right">  
 
 <h1 class="formheader">&nbsp;</h1>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_2_html") %> <a href="/login"><%= t("user.loginhere") %></a></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_3_html") %> <a href="/resend"><%= t("user.resendactivation") %></a></p>
-	<p>&nbsp;</p>
+  <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_2_html") %> <a href="/login"><%= t("user.loginhere") %></a></p>
+  <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("user.new_copy_3_html") %> <a href="/resend"><%= t("user.resendactivation") %></a></p>
+  <p>&nbsp;</p>
 </div>
-	
+  
 <% end %>
 
 <div style="clear:both;"></div>

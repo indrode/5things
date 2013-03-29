@@ -1,4 +1,4 @@
 <tr>
-	<td class="s_duedate"><%= item.duedate == NEVER ? t("common.unassigned_sm") : l(item.duedate, :format => :default) %></td>
-	<td class="s_task <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %></td>
+  <td class="s_duedate"><%= item.duedate == NEVER ? t("common.unassigned_sm") : l(item.duedate, :format => :default) %></td>
+  <td class="s_task <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %></td>
 </tr>

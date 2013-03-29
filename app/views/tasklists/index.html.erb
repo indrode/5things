@@ -1,52 +1,52 @@
 <div id="tabmenu">
-	<a class="tab" href="/list"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</a>
-	<div class="tab current"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</div>
-	<a class="tab" href="/preferences"><%= t("user.preferences") %></a>
-	<a class="tab" href="/account"><%= t("user.account_settings") %></a>
-</div>	
+  <a class="tab" href="/list"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</a>
+  <div class="tab current"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</div>
+  <a class="tab" href="/preferences"><%= t("user.preferences") %></a>
+  <a class="tab" href="/account"><%= t("user.account_settings") %></a>
+</div>  
 
 </div>
 <div id="outside_copy">
-<div class="container">			
+<div class="container">     
 <div class="listheader">
-	<h1 class="formheader" style="float:left; padding-top:0;"><img src="http://static.zenpunch.com/5things/images/accessories-text-editor.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("lists.title") %></h1>
-	<div class="buttons">
-		<%= cancel_button %>
-		<%= link_to '<img src="http://static.zenpunch.com/5things/images/add.png" alt="New" width="16" height="16" />'.html_safe + t("lists.createlist"), '/tasklists/new' %>
-	</div>
-	</div>
+  <h1 class="formheader" style="float:left; padding-top:0;"><img src="http://static.zenpunch.com/5things/images/accessories-text-editor.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("lists.title") %></h1>
+  <div class="buttons">
+    <%= cancel_button %>
+    <%= link_to '<img src="http://static.zenpunch.com/5things/images/add.png" alt="New" width="16" height="16" />'.html_safe + t("lists.createlist"), '/tasklists/new' %>
+  </div>
+  </div>
 
-	<fieldset class="wholewidth">		
-		<table id="tasktable">
-			<thead>
-			<tr class="header">
-				<th class="list title"><%= t("lists.coltitle") %></td>
-				<th class="list taskcount"><%= t("lists.numberoftasks") %></td>
-				<th class="list security"><%= t("lists.security") %></td>
-				<th class="list key"><%= t("lists.key") %></td>
-				<th class="list legend"><%= t("common.options") %></td>
-			</tr>
-			</thead>
-			<%= render :partial => "tasklists", :collection => @tasklists, :as => :item %>
-		</table>   
-		</fieldset>
-	
-	<div style="clear:both;"></div>
+  <fieldset class="wholewidth">   
+    <table id="tasktable">
+      <thead>
+      <tr class="header">
+        <th class="list title"><%= t("lists.coltitle") %></td>
+        <th class="list taskcount"><%= t("lists.numberoftasks") %></td>
+        <th class="list security"><%= t("lists.security") %></td>
+        <th class="list key"><%= t("lists.key") %></td>
+        <th class="list legend"><%= t("common.options") %></td>
+      </tr>
+      </thead>
+      <%= render :partial => "tasklists", :collection => @tasklists, :as => :item %>
+    </table>   
+    </fieldset>
+  
+  <div style="clear:both;"></div>
 
 </div>
 </div>
 
 <div class="jqmConfirm" id="confirm">
-	<div class="jqmConfirmWindow">
-	  <div class="jqmConfirmTitle clearfix"><%= t("lists.delete_warning_1_html") %></div>
-	  <div class="jqmConfirmContent">
-	  	<p class="instructions"><%= t("lists.delete_warning_2_html") %></p>
-	  	<p class="instructions"><span class="highlight"><%= t("lists.delete_warning_3_html") %></span></p>
-	  </div>
-		<div class="buttons">
-			<button type="submit" value="no" class="negative"><img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" /><%= t("common.cancel") %></button>
-			<button type="submit" value="yes" class="neutral"><img src="http://static.zenpunch.com/5things/images/emblem-important.png" alt="Delete" /><%= t("lists.delete_confirm") %></button>
-		</div>
-		<div style="clear:both;"></div>
-	</div>
+  <div class="jqmConfirmWindow">
+    <div class="jqmConfirmTitle clearfix"><%= t("lists.delete_warning_1_html") %></div>
+    <div class="jqmConfirmContent">
+      <p class="instructions"><%= t("lists.delete_warning_2_html") %></p>
+      <p class="instructions"><span class="highlight"><%= t("lists.delete_warning_3_html") %></span></p>
+    </div>
+    <div class="buttons">
+      <button type="submit" value="no" class="negative"><img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" /><%= t("common.cancel") %></button>
+      <button type="submit" value="yes" class="neutral"><img src="http://static.zenpunch.com/5things/images/emblem-important.png" alt="Delete" /><%= t("lists.delete_confirm") %></button>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
 </div>

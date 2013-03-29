@@ -1,88 +1,88 @@
 <div id="tabmenu">
-	<a class="tab" href="/contact"><%= t("pages.contact") %></a>
-	<div class="tab current"><%= t("common.help") %></div>
-	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
-	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
-	<a class="tab" href="/about"><%= t("pages.about") %></a>
-	<% unless current_user %>
-	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
-	<% end %>
+  <a class="tab" href="/contact"><%= t("pages.contact") %></a>
+  <div class="tab current"><%= t("common.help") %></div>
+  <a class="tab" href="/terms"><%= t("pages.terms") %></a>
+  <a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+  <a class="tab" href="/about"><%= t("pages.about") %></a>
+  <% unless current_user %>
+  <a class="tab" href="/account/new"><%= t("user.registration") %></a>
+  <% end %>
 </div>
 
 </div>
 <div id="outside_copy">
 <div class="container">
-	<p class="instructions"><a href="#" class="showhide" id="4">How do I use 5things?</a></p>
+  <p class="instructions"><a href="#" class="showhide" id="4">How do I use 5things?</a></p>
 
-	<p class="instructions" id="a_4">On the main page, just enter a task in one of the four text fields and click on the <strong>Enter</strong> key. The task will be added to the list below. You may then move the task around the list or around different days. To mark a task as completed, click on it. To revert, click on it again. You may edit a task by clicking on the <strong>Edit</strong> icon which appears when you move your mouse over a task.</p>
-		
-	<p class="instructions"><a href="#" class="showhide" id="1">What are tasks and bins?</a></p>
+  <p class="instructions" id="a_4">On the main page, just enter a task in one of the four text fields and click on the <strong>Enter</strong> key. The task will be added to the list below. You may then move the task around the list or around different days. To mark a task as completed, click on it. To revert, click on it again. You may edit a task by clicking on the <strong>Edit</strong> icon which appears when you move your mouse over a task.</p>
+    
+  <p class="instructions"><a href="#" class="showhide" id="1">What are tasks and bins?</a></p>
 
-	<p class="instructions answer" id="a_1">Tasks are any items, errands, notes, or other "things" you may want to keep track of. Bins are collections of tasks for a specific date (or Unassigned for tasks not connected to a day). On the main screen, 4 of these bins are displayed. You can use the navigation buttons to move forward or back in time to reveal the appropriate bins.</p>
+  <p class="instructions answer" id="a_1">Tasks are any items, errands, notes, or other "things" you may want to keep track of. Bins are collections of tasks for a specific date (or Unassigned for tasks not connected to a day). On the main screen, 4 of these bins are displayed. You can use the navigation buttons to move forward or back in time to reveal the appropriate bins.</p>
 
-	<p class="instructions"><a href="#" class="showhide" id="2">And what are lists?</a></p>
-	<p class="instructions answer" id="a_2">Lists are independent collections of tasks (in bins). 5things allows you to create as many lists as you wish in order not to clutter up your collection of items. You may create lists such as "important errands", "random things around the house", "Ellen's wedding", "things to do before vacation", "birthday parties and other social events", etc. You may chose to share a list (under the Manage Lists screen). This will create a link that you can share with friends, relatives, co-workers or anyone else you pass the list URL to.</p>
+  <p class="instructions"><a href="#" class="showhide" id="2">And what are lists?</a></p>
+  <p class="instructions answer" id="a_2">Lists are independent collections of tasks (in bins). 5things allows you to create as many lists as you wish in order not to clutter up your collection of items. You may create lists such as "important errands", "random things around the house", "Ellen's wedding", "things to do before vacation", "birthday parties and other social events", etc. You may chose to share a list (under the Manage Lists screen). This will create a link that you can share with friends, relatives, co-workers or anyone else you pass the list URL to.</p>
 
-	<p class="instructions"><a href="#" class="showhide" id="15">How do I share a list? How do I make it private again?</a></p>
+  <p class="instructions"><a href="#" class="showhide" id="15">How do I share a list? How do I make it private again?</a></p>
 
-	<p class="instructions answer" id="a_15">When you create a new list, just select <strong>Public</strong> to share the list. Each list receives a unique identifier key. To view your shared list, just click on the <strong>View</strong> link under <strong>Manage Lists</strong>. You may share this URL with people you know. To share an existing, private list, edit the list, then set its security setting to <strong>Public</strong>.</p>
-
-
-	<p class="instructions"><a href="#" class="showhide" id="16">How do I delete an entire list?</a></p>
-
-	<p class="instructions answer" id="a_16">Under Manage Lists, click on the <strong>Remove</strong> link for the list you wish to remove. Be aware that all of the tasks added to that list will be removed as well. Those tasks can not be recovered. At any time, you need to have at least one list (your active list), therefore you may not delete your only list.</p>
-	
-	<p class="instructions"><a href="#" class="showhide" id="5">What is the <strong>Unassigned</strong> bin for?</a></p>
-
-	<p class="instructions answer" id="a_5">This area is for all the tasks that you have not assigned to a specific date.  It works just like any of the other bins. While you are moving forward and back through the days, the Unassigned bin will remain on the screen, so you might want to use it to temporarily place a task to move it to a new destination.</p>
-
-	<p class="instructions"><a href="#" class="showhide" id="6">How do I delete a task?</a></p>
-
-	<p class="instructions answer" id="a_6">Click and drag the desired task you wish to delete to the upper or lower area of the screen, i.e. the area above and below the task bins. You will notice that a trash-bin icon appears if you drag the task over these areas. Just drop the task here and it will be removed forever. Note, that you cannot undo the deletion of a task. So, in case you deleted something by accident, just add it again.  Instead of deleting a task, you may also consider just checking it off to mark as completed.</p>
-
-	<p class="instructions"><a href="#" class="showhide" id="7">What is the toolbox?</a></p>
-
-	<p class="instructions answer" id="a_7">The toolbox is a collection of advanced functions to offer more specific actions such as creating PDF files, exporting your tasks, or displaying a calendar to move quickly between different days.</p>
-
-	<p class="instructions"><a href="#" class="showhide" id="8">To which format(s) can I export my tasks?</a></p>
-
-	<p class="instructions answer" id="a_8">Currently, 5things supports two popular formats: iCalendar and CSV. You can export your tasks to iCalendar to use them in iCal on your Mac or many other applications that support this format. To export your tasks to Excel or use in a number of other applications, use the CSV format ("comma-separated values").</p>
-
-	<p class="instructions"><a href="#" class="showhide" id="9">What is a PDF report?</a></p>
-
-	<p class="instructions answer" id="a_9">A PDF report is a list of your upcoming tasks (next 7 days) in PDF format for easy viewing and/or printing. You can attach your PDF file to an email, keep it for your records, or print it out and stick it to your fridge. The <strong>Report Preferences</strong> for a list specify what kind of information is included in this report.</p>
-
-	<p class="instructions"><a href="#" class="showhide" id="3">On the main screen, is there a quick way to navigate back to <strong>Today</strong>?</a></p>
-
-	<p class="instructions answer" id="a_3">After you have navigated through a couple of days, instead of using the navigation links (previous/next), you can just click on today's date in the top right to move back to today's bin.</p>
-	
-	<p class="instructions"><a href="#" class="showhide" id="10">Can I view a list of all tasks I have added across all my lists?</a></p>
-
-	<p class="instructions answer" id="a_10">Yes. Just click on <strong>Preferences</strong> and then on the <strong>Tasks</strong> tab to view a list of all your tasks, sortable by date, task, and list.</p>
+  <p class="instructions answer" id="a_15">When you create a new list, just select <strong>Public</strong> to share the list. Each list receives a unique identifier key. To view your shared list, just click on the <strong>View</strong> link under <strong>Manage Lists</strong>. You may share this URL with people you know. To share an existing, private list, edit the list, then set its security setting to <strong>Public</strong>.</p>
 
 
-	<p class="instructions"><a href="#" class="showhide" id="11">What are the report settings and where can I change them?</a></p>
+  <p class="instructions"><a href="#" class="showhide" id="16">How do I delete an entire list?</a></p>
 
-	<p class="instructions answer" id="a_11"><strong>Report Preferences</strong> specify what kind of information is displayed in the PDF report and shared lists. You can chose if you want to include completed and/or unassigned tasks in your report. You may also select to include empty days in your report, which means that the date of a day without any tasks will still be displayed in the report/list. You can set the default report settings under the <strong>Preferences</strong> screen. Note, that these are just the default settings. You can set the settings specifically for each list that you create (or change the settings when you are editing your list).</p>
+  <p class="instructions answer" id="a_16">Under Manage Lists, click on the <strong>Remove</strong> link for the list you wish to remove. Be aware that all of the tasks added to that list will be removed as well. Those tasks can not be recovered. At any time, you need to have at least one list (your active list), therefore you may not delete your only list.</p>
+  
+  <p class="instructions"><a href="#" class="showhide" id="5">What is the <strong>Unassigned</strong> bin for?</a></p>
 
-	<p class="instructions"><a href="#" class="showhide" id="12">What is <strong>Maintenance</strong>?</a></p>
+  <p class="instructions answer" id="a_5">This area is for all the tasks that you have not assigned to a specific date.  It works just like any of the other bins. While you are moving forward and back through the days, the Unassigned bin will remain on the screen, so you might want to use it to temporarily place a task to move it to a new destination.</p>
 
-	<p class="instructions answer" id="a_12">You won't always complete the tasks that you have added for a certain day. In those cases, 5things can automatically move these incomplete tasks to either a) <strong>Today</strong>, or b) the <strong>Unassigned</strong> bin. Or you can leave everything as is. You can set the default behavior under the <strong>Preferences</strong> screen. Note, that this is just the default behavior. You can set the behavior specifically for each list that you create (or change the settings when you are editing your list).</p>
+  <p class="instructions"><a href="#" class="showhide" id="6">How do I delete a task?</a></p>
+
+  <p class="instructions answer" id="a_6">Click and drag the desired task you wish to delete to the upper or lower area of the screen, i.e. the area above and below the task bins. You will notice that a trash-bin icon appears if you drag the task over these areas. Just drop the task here and it will be removed forever. Note, that you cannot undo the deletion of a task. So, in case you deleted something by accident, just add it again.  Instead of deleting a task, you may also consider just checking it off to mark as completed.</p>
+
+  <p class="instructions"><a href="#" class="showhide" id="7">What is the toolbox?</a></p>
+
+  <p class="instructions answer" id="a_7">The toolbox is a collection of advanced functions to offer more specific actions such as creating PDF files, exporting your tasks, or displaying a calendar to move quickly between different days.</p>
+
+  <p class="instructions"><a href="#" class="showhide" id="8">To which format(s) can I export my tasks?</a></p>
+
+  <p class="instructions answer" id="a_8">Currently, 5things supports two popular formats: iCalendar and CSV. You can export your tasks to iCalendar to use them in iCal on your Mac or many other applications that support this format. To export your tasks to Excel or use in a number of other applications, use the CSV format ("comma-separated values").</p>
+
+  <p class="instructions"><a href="#" class="showhide" id="9">What is a PDF report?</a></p>
+
+  <p class="instructions answer" id="a_9">A PDF report is a list of your upcoming tasks (next 7 days) in PDF format for easy viewing and/or printing. You can attach your PDF file to an email, keep it for your records, or print it out and stick it to your fridge. The <strong>Report Preferences</strong> for a list specify what kind of information is included in this report.</p>
+
+  <p class="instructions"><a href="#" class="showhide" id="3">On the main screen, is there a quick way to navigate back to <strong>Today</strong>?</a></p>
+
+  <p class="instructions answer" id="a_3">After you have navigated through a couple of days, instead of using the navigation links (previous/next), you can just click on today's date in the top right to move back to today's bin.</p>
+  
+  <p class="instructions"><a href="#" class="showhide" id="10">Can I view a list of all tasks I have added across all my lists?</a></p>
+
+  <p class="instructions answer" id="a_10">Yes. Just click on <strong>Preferences</strong> and then on the <strong>Tasks</strong> tab to view a list of all your tasks, sortable by date, task, and list.</p>
 
 
-	<p class="instructions"><a href="#" class="showhide" id="13">Why don't my passwords show up after I have checked the "unmask password" box?</a></p>
+  <p class="instructions"><a href="#" class="showhide" id="11">What are the report settings and where can I change them?</a></p>
 
-	<p class="instructions answer" id="a_13">This only happens if you are using the Internet Explorer, which doesn't allow this type of functionality. There are workarounds for this (which may get implemented in a future update), but the better solution would be not to use the Internet Explorer at all and move to a real compliant web browser such as Firefox (<a href="http://www.killbillsbrowser.com/">here are more reasons why to make the switch now...</a>).</p>
+  <p class="instructions answer" id="a_11"><strong>Report Preferences</strong> specify what kind of information is displayed in the PDF report and shared lists. You can chose if you want to include completed and/or unassigned tasks in your report. You may also select to include empty days in your report, which means that the date of a day without any tasks will still be displayed in the report/list. You can set the default report settings under the <strong>Preferences</strong> screen. Note, that these are just the default settings. You can set the settings specifically for each list that you create (or change the settings when you are editing your list).</p>
+
+  <p class="instructions"><a href="#" class="showhide" id="12">What is <strong>Maintenance</strong>?</a></p>
+
+  <p class="instructions answer" id="a_12">You won't always complete the tasks that you have added for a certain day. In those cases, 5things can automatically move these incomplete tasks to either a) <strong>Today</strong>, or b) the <strong>Unassigned</strong> bin. Or you can leave everything as is. You can set the default behavior under the <strong>Preferences</strong> screen. Note, that this is just the default behavior. You can set the behavior specifically for each list that you create (or change the settings when you are editing your list).</p>
 
 
-	<p class="instructions"><a href="#" class="showhide" id="14">How do I cancel my account with 5things?</a></p>
+  <p class="instructions"><a href="#" class="showhide" id="13">Why don't my passwords show up after I have checked the "unmask password" box?</a></p>
 
-	<p class="instructions answer" id="a_14">Go to the <strong>Account Preferences</strong> screen by clicking on <strong>Preferences</strong> in the top right navigation. The click on the <strong>Delete Your Account</strong> link and confirm. Note that you will lose all of your data. 5things does not keep any of your records/data. You will have to re--register to start using 5things again.</p>
-	
-	
-	<p class="instructions"><a href="#" class="showhide" id="17">I need more specific assistance. How can I get answers to my questions?</a></p>
+  <p class="instructions answer" id="a_13">This only happens if you are using the Internet Explorer, which doesn't allow this type of functionality. There are workarounds for this (which may get implemented in a future update), but the better solution would be not to use the Internet Explorer at all and move to a real compliant web browser such as Firefox (<a href="http://www.killbillsbrowser.com/">here are more reasons why to make the switch now...</a>).</p>
 
-	<p class="instructions answer" id="a_17">In the toolbox, you can find the feedback option where you can enter your question and submit it the the site administrator. You may use this for all kinds of inquiries and requests, such as support, bug reports, feature requests, or just to say hi! Please specify the type of feedback you are making by selecting the appropriate item from the list underneath your message.</p>
-	
+
+  <p class="instructions"><a href="#" class="showhide" id="14">How do I cancel my account with 5things?</a></p>
+
+  <p class="instructions answer" id="a_14">Go to the <strong>Account Preferences</strong> screen by clicking on <strong>Preferences</strong> in the top right navigation. The click on the <strong>Delete Your Account</strong> link and confirm. Note that you will lose all of your data. 5things does not keep any of your records/data. You will have to re--register to start using 5things again.</p>
+  
+  
+  <p class="instructions"><a href="#" class="showhide" id="17">I need more specific assistance. How can I get answers to my questions?</a></p>
+
+  <p class="instructions answer" id="a_17">In the toolbox, you can find the feedback option where you can enter your question and submit it the the site administrator. You may use this for all kinds of inquiries and requests, such as support, bug reports, feature requests, or just to say hi! Please specify the type of feedback you are making by selecting the appropriate item from the list underneath your message.</p>
+  
 </div>
 </div>

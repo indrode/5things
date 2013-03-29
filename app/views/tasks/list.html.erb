@@ -1,38 +1,38 @@
 <div id="tabmenu">
-	<div class="tab current"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</div>
-	<a class="tab" href="/tasklists"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</a>
-	<a class="tab" href="/preferences"><%= t("user.preferences") %></a>
-	<a class="tab" href="/account"><%= t("user.account_settings") %></a>
+  <div class="tab current"><%= t("tasks.managetasks") %> (<%= current_user.tasks_count %>)</div>
+  <a class="tab" href="/tasklists"><%= t("lists.title") %> (<%= current_user.tasklists_count %>)</a>
+  <a class="tab" href="/preferences"><%= t("user.preferences") %></a>
+  <a class="tab" href="/account"><%= t("user.account_settings") %></a>
 </div>
 
 </div>
 <div id="outside_copy">
 <div class="container">
-		
-	<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/edit-find-replace.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("tasks.managetasks") %></h1>
+    
+  <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/edit-find-replace.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("tasks.managetasks") %></h1>
 
-	<fieldset class="wholewidth">								
-	<table id="tasktable">
-		<thead>
-		<tr class="header">
-			<th class="list t_duedate"><%= t("tasks.duedate") %></td>
-			<th class="list t_task"><%= t("tasks.task") %></td>
-			<th class="list t_list"><%= t("tasks.list") %></td>
-			<th class="list legend"><%= t("common.options") %></td>
-		</tr>
-		</thead>
-		<tbody>
-		<%= render :partial => "alltasks", :collection => @tasks, :as => :item %>
-		</tbody>
-	</table>
-	
-		<%#= will_paginate @tasks  %>
-		
-		<p>&nbsp;</p>
-	
-	</fieldset>
-	<div style="clear:both;"></div>
-	</div>
+  <fieldset class="wholewidth">
+  <table id="tasktable">
+    <thead>
+    <tr class="header">
+      <th class="list t_duedate"><%= t("tasks.duedate") %></td>
+      <th class="list t_task"><%= t("tasks.task") %></td>
+      <th class="list t_list"><%= t("tasks.list") %></td>
+      <th class="list legend"><%= t("common.options") %></td>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render :partial => "alltasks", :collection => @tasks, :as => :item %>
+    </tbody>
+  </table>
+  
+    <%#= will_paginate @tasks  %>
+    
+    <p>&nbsp;</p>
+  
+  </fieldset>
+  <div style="clear:both;"></div>
+  </div>
 
 </div>
 </div>

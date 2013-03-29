@@ -1,57 +1,57 @@
 <div id="tabmenu">
-	<div class="tab current"><%= t("pages.contact") %></div>
-	<a class="tab" href="/help"><%= t("common.help") %></a>
-	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
-	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
-	<a class="tab" href="/about"><%= t("pages.about") %></a>
-	<% unless current_user %>
-	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
-	<% end %>
+  <div class="tab current"><%= t("pages.contact") %></div>
+  <a class="tab" href="/help"><%= t("common.help") %></a>
+  <a class="tab" href="/terms"><%= t("pages.terms") %></a>
+  <a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+  <a class="tab" href="/about"><%= t("pages.about") %></a>
+  <% unless current_user %>
+  <a class="tab" href="/account/new"><%= t("user.registration") %></a>
+  <% end %>
 </div>
-		
+    
 </div>
 <div id="outside_copy">
-<div class="container">	
+<div class="container"> 
 <%= form_for(:contact, :url => contact_path) do |f| %>
 <% typeoptions = [t("contact.type_option_1"), t("contact.type_option_2"), t("contact.type_option_3"), t("contact.type_option_4"), t("contact.type_option_5")] %>
 <div class="formarea_left">
-<!--	
+<!--  
 <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/mail-message-new.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("contact.title") %></h1>
 -->
 <fieldset class="outside_temp">
-	<ol>
-		<li>
-			<%= f.label :name, t("contact.name") %>
-			<%= f.text_field :name %>	
-		</li>
-		<li>
-			<%= f.label :email, t("contact.email") %>
-			<%= f.text_field :email %>	
-		</li>
-		<li>
-			<%= f.label :message, t("contact.message") %>
-			<%= f.text_area :message %>	
-		</li>
-		<li>
-			<%= f.label :type, t("contact.type") %>
-			<%= f.select :type, options_for_select(typeoptions) %>
-		</li>
-	</ol>
+  <ol>
+    <li>
+      <%= f.label :name, t("contact.name") %>
+      <%= f.text_field :name %> 
+    </li>
+    <li>
+      <%= f.label :email, t("contact.email") %>
+      <%= f.text_field :email %>  
+    </li>
+    <li>
+      <%= f.label :message, t("contact.message") %>
+      <%= f.text_area :message %> 
+    </li>
+    <li>
+      <%= f.label :type, t("contact.type") %>
+      <%= f.select :type, options_for_select(typeoptions) %>
+    </li>
+  </ol>
 </fieldset>
 <%#= render "shared/error_messages", :target => @contact %> 
 </div>
 <div class="formarea_right">
-	<p class="instructions"><span class="highlight"><%= t("contact.contact_copy_1_html") %></span></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_2_html") %></p>
-	<p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_3_html") %></p>
-	<p>&nbsp;</p>
-	<div class="buttons">
-	  <%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" />'.html_safe + t("common.cancel"), root_path, :class => 'negative' %>
-	  <button type="submit" class="positive" id="new_contact"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("contact.button") %></button>
-	</div>
+  <p class="instructions"><span class="highlight"><%= t("contact.contact_copy_1_html") %></span></p>
+  <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_2_html") %></p>
+  <p class="instructions"><img src="http://static.zenpunch.com/5things/images/tick.png" width="16" height="16" alt="" />&nbsp; <%= t("contact.contact_copy_3_html") %></p>
+  <p>&nbsp;</p>
+  <div class="buttons">
+    <%= link_to '<img src="http://static.zenpunch.com/5things/images/cross.png" alt="Cancel" width="16" height="16" />'.html_safe + t("common.cancel"), root_path, :class => 'negative' %>
+    <button type="submit" class="positive" id="new_contact"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/><%= t("contact.button") %></button>
+  </div>
 
 </div>
-	
+  
 <% end %>
 
 <div style="clear:both;"></div>

@@ -1,20 +1,20 @@
 <div id="tabmenu">
-	<a class="tab" href="/contact"><%= t("pages.contact") %></a>
-	<a class="tab" href="/help"><%= t("common.help") %></a>
-	<div class="tab current"><%= t("pages.terms") %></div>
-	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
-	<a class="tab" href="/about"><%= t("pages.about") %></a>
-	<% unless current_user %>
-	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
-	<% end %>
+  <a class="tab" href="/contact"><%= t("pages.contact") %></a>
+  <a class="tab" href="/help"><%= t("common.help") %></a>
+  <div class="tab current"><%= t("pages.terms") %></div>
+  <a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+  <a class="tab" href="/about"><%= t("pages.about") %></a>
+  <% unless current_user %>
+  <a class="tab" href="/account/new"><%= t("user.registration") %></a>
+  <% end %>
 </div>
-		
+    
 </div>
 <div id="outside_copy">
-<div class="container">	
+<div class="container"> 
 <div id="blurb">
-	<p class="large">By accessing the website, you warrant and represent to the website owner that you are legally entitled to do so and to make use of information made available via the website.</p>
-	<p class="large">We welcome your questions and/or comments. Please send all inquiries to <%= mail_to "5thingsapp@googlemail.com", "5things Support", :encode => "hex" %>.</p>
+  <p class="large">By accessing the website, you warrant and represent to the website owner that you are legally entitled to do so and to make use of information made available via the website.</p>
+  <p class="large">We welcome your questions and/or comments. Please send all inquiries to <%= mail_to "5thingsapp@googlemail.com", "5things Support", :encode => "hex" %>.</p>
 </div>
 
 <div id="largecopy">

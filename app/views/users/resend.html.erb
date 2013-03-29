@@ -5,29 +5,29 @@
 
 <div class="formarea_left">
 
-	<h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.resendactivation") %></h1>		
-	<fieldset>
-		<ol>
-			<li>
-				<%= f.label :email, "Enter your email-address" %>
-				<%= f.text_field :email %>	
-			</li>
-		</ol>
-	</fieldset>
-	<%= render "shared/error_messages", :target => @user %> 
+  <h1 class="formheader"><img src="http://static.zenpunch.com/5things/images/system-users.png" alt="" width="32" height="32" style="vertical-align:text-bottom;" /> <%= t("user.resendactivation") %></h1>    
+  <fieldset>
+    <ol>
+      <li>
+        <%= f.label :email, "Enter your email-address" %>
+        <%= f.text_field :email %>  
+      </li>
+    </ol>
+  </fieldset>
+  <%= render "shared/error_messages", :target => @user %> 
 </div>
 
-<div class="formarea_right">	
+<div class="formarea_right">  
 
 <h1 class="formheader">&nbsp;</h1>
-	<p class="instructions"><%= t("user.activation_copy_1_html") %></p>
-	<p>&nbsp;</p>
-	<div class="buttons">
-	  <%= cancel_button %>
-	  <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/> <%= t("user.resendactivation") %></button>
-	</div>
+  <p class="instructions"><%= t("user.activation_copy_1_html") %></p>
+  <p>&nbsp;</p>
+  <div class="buttons">
+    <%= cancel_button %>
+    <button type="submit" class="positive"><img src="http://static.zenpunch.com/5things/images/tick.png" alt=""/> <%= t("user.resendactivation") %></button>
+  </div>
 </div>
-	
+  
 <% end %>
 
 <div style="clear:both;"></div>

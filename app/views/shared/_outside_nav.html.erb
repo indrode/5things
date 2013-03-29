@@ -1,15 +1,15 @@
 <div id="user_nav">
-	<div class="user_container">
-		<p>
-			<%- if !current_user -%>	
-		  Already a member? &nbsp; <strong><%= link_to t("common.login"), login_path -%></strong>
-		<%- else -%>
-			<strong><%= current_user.email %></strong> &nbsp;|&nbsp; 
+  <div class="user_container">
+    <p>
+      <%- if !current_user -%>  
+      Already a member? &nbsp; <strong><%= link_to t("common.login"), login_path -%></strong>
+    <%- else -%>
+      <strong><%= current_user.email %></strong> &nbsp;|&nbsp; 
 <%= link_to_unless_current t("lists.lists") + ' (' + current_user.tasklists_count.to_s + ')', "/tasklists" -%> &nbsp;|&nbsp;
-			<%= link_to_unless_current t("user.preferences"), "/account" -%> &nbsp;|&nbsp;
-			<%= link_to_unless_current t("common.help"), help_path -%> &nbsp;|&nbsp;			
-		  <%= link_to_unless false, t("common.logout"), "/logout", :method => :delete -%>
-		<%- end -%>
-		</p>
-	</div>
+      <%= link_to_unless_current t("user.preferences"), "/account" -%> &nbsp;|&nbsp;
+      <%= link_to_unless_current t("common.help"), help_path -%> &nbsp;|&nbsp;      
+      <%= link_to_unless false, t("common.logout"), "/logout", :method => :delete -%>
+    <%- end -%>
+    </p>
+  </div>
 </div>

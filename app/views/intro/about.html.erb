@@ -1,43 +1,43 @@
 <div id="tabmenu">
-	<a class="tab" href="/contact"><%= t("pages.contact") %></a>
-	<a class="tab" href="/help"><%= t("common.help") %></a>
-	<a class="tab" href="/terms"><%= t("pages.terms") %></a>
-	<a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
-	<div class="tab current"><%= t("pages.about") %></div>
-	<% unless current_user %>
-	<a class="tab" href="/account/new"><%= t("user.registration") %></a>
-	<% end %>
+  <a class="tab" href="/contact"><%= t("pages.contact") %></a>
+  <a class="tab" href="/help"><%= t("common.help") %></a>
+  <a class="tab" href="/terms"><%= t("pages.terms") %></a>
+  <a class="tab" href="/privacy"><%= t("pages.privacy") %></a>
+  <div class="tab current"><%= t("pages.about") %></div>
+  <% unless current_user %>
+  <a class="tab" href="/account/new"><%= t("user.registration") %></a>
+  <% end %>
 </div>
 
 </div>
 <div id="outside_copy">
-<div class="container">	
-	<div class="threecol">
-		<h1><img src="http://static.zenpunch.com/5things/images/1.png" class="threecol_img" width="20" height="19" alt="" /> Plan your daily tasks</h1>
-		<p >With 5things you can easily keep track of your tasks for a specific day using a simple, intuitive date-view interface. Check off completed tasks, plan ahead, or jot down things that you may need in future.</p>
-	</div>
-	<div class="threecol">
-		<h1><img src="http://static.zenpunch.com/5things/images/2.png" class="threecol_img" width="20" height="19" alt="" /> Manage tasks in lists</h1>
-		<p>You may organize your tasks in as many lists as you wish. For example, you could keep track of any correspondence in one list, daily errands in another, and grocery items in a third list. You can also use lists to organize specific projects, like wedding planning, a software project, and whatever it may be of use for you.</p>
-	</div>
-	<div class="threecol">
-		<h1><img src="http://static.zenpunch.com/5things/images/3.png" class="threecol_img" width="20" height="19" alt="" /> Sharing and more...</h1>
-		<p class="rightcol">5things adds a number of functions and settings for managing your tasks. You may share some or all of your lists with other people. From time to time, more functionality will be added, depending on the wishes and needs of you, the user.</p>
-	</div>
-	<div style="clear:both;"></div>
-	<h1>What is 5things?</h1>
-	<div class="image_area">
-	<img src="/images/5t_sample.png" width="496" height="306" alt="" /><br />
-	<span class="image_legend">create simple date-based to-do lists</span>
-	</div>
-	<p class="instructions">5things was created to simplify your daily planning and increase productivity by having all your tasks and to-do items neatly organized in one place. A user can create an unlimited number of "lists" which contain a number of tasks for a given day. Completed tasks can be checked off once they have been completed or become obsolete.</p>
-	<p class="instructions">The web app provides enough flexibility to be used in many different fashions, such as an events calendar, event planning, and for your various projects. Advanced functions such as reporting, exporting, and being able to share lists publicly add to the many different ways, 5things can support productivity.</p>
-	<h1>About the Technology</h1>
-	<p class="instructions">5things was designed and developed by <a href="http://www.indrode.com/">Indro De</a>, a web developer from Germany, in the beginning of 2010. Originally, the hosting was provided by Dreamhost and the website was powered by Apache, mySQL, and Ruby on Rails (through Passenger).</p>
-	<p class="instructions">End of September 2010, 5things was moved to a <a href="http://www.linode.com/?r=3b5ea1d3bc5d898513abf841c9fa84efa179a1d5">Debian/Ubuntu Linode box</a> and the production stack was upgraded to nginx, mySQL, Ruby Enterprise Edition/Rails3 via Passenger 3.0. Web performance monitoring by <a href="http://www.newrelic.com/">New Relic RPM</a>. Developed in an Mac OS X environment, the main development tools are Textmate, Terminal, and Photoshop (and that's all there really is).</p>
-	<p class="instructions">5things is an open-source project. The source code is available on <a href="http://github.com/indrode">GitHub</a>. Additionally, design and development notes will be <a href="http://pages.indrode.com/">published</a> from time to time.</p>
-	<h1>Privacy and Security</h1>
-	<p class="instructions">5things respects the privacy of its account holders and their data. Intentionally, no specific user data is collected apart from the email address. All user information is governed by the <a href="/terms">Terms of Service</a>. The user always retains all rights to his/her data. For more information, read the <a href="/privacy">Privacy Policy</a> or contact <%= mail_to "5thingsapp@googlemail.com", "5things Support", :encode => "hex" %>.</p>
-	
+<div class="container"> 
+  <div class="threecol">
+    <h1><img src="http://static.zenpunch.com/5things/images/1.png" class="threecol_img" width="20" height="19" alt="" /> Plan your daily tasks</h1>
+    <p >With 5things you can easily keep track of your tasks for a specific day using a simple, intuitive date-view interface. Check off completed tasks, plan ahead, or jot down things that you may need in future.</p>
+  </div>
+  <div class="threecol">
+    <h1><img src="http://static.zenpunch.com/5things/images/2.png" class="threecol_img" width="20" height="19" alt="" /> Manage tasks in lists</h1>
+    <p>You may organize your tasks in as many lists as you wish. For example, you could keep track of any correspondence in one list, daily errands in another, and grocery items in a third list. You can also use lists to organize specific projects, like wedding planning, a software project, and whatever it may be of use for you.</p>
+  </div>
+  <div class="threecol">
+    <h1><img src="http://static.zenpunch.com/5things/images/3.png" class="threecol_img" width="20" height="19" alt="" /> Sharing and more...</h1>
+    <p class="rightcol">5things adds a number of functions and settings for managing your tasks. You may share some or all of your lists with other people. From time to time, more functionality will be added, depending on the wishes and needs of you, the user.</p>
+  </div>
+  <div style="clear:both;"></div>
+  <h1>What is 5things?</h1>
+  <div class="image_area">
+  <img src="/images/5t_sample.png" width="496" height="306" alt="" /><br />
+  <span class="image_legend">create simple date-based to-do lists</span>
+  </div>
+  <p class="instructions">5things was created to simplify your daily planning and increase productivity by having all your tasks and to-do items neatly organized in one place. A user can create an unlimited number of "lists" which contain a number of tasks for a given day. Completed tasks can be checked off once they have been completed or become obsolete.</p>
+  <p class="instructions">The web app provides enough flexibility to be used in many different fashions, such as an events calendar, event planning, and for your various projects. Advanced functions such as reporting, exporting, and being able to share lists publicly add to the many different ways, 5things can support productivity.</p>
+  <h1>About the Technology</h1>
+  <p class="instructions">5things was designed and developed by <a href="http://www.indrode.com/">Indro De</a>, a web developer from Germany, in the beginning of 2010. Originally, the hosting was provided by Dreamhost and the website was powered by Apache, mySQL, and Ruby on Rails (through Passenger).</p>
+  <p class="instructions">End of September 2010, 5things was moved to a <a href="http://www.linode.com/?r=3b5ea1d3bc5d898513abf841c9fa84efa179a1d5">Debian/Ubuntu Linode box</a> and the production stack was upgraded to nginx, mySQL, Ruby Enterprise Edition/Rails3 via Passenger 3.0. Web performance monitoring by <a href="http://www.newrelic.com/">New Relic RPM</a>. Developed in an Mac OS X environment, the main development tools are Textmate, Terminal, and Photoshop (and that's all there really is).</p>
+  <p class="instructions">5things is an open-source project. The source code is available on <a href="http://github.com/indrode">GitHub</a>. Additionally, design and development notes will be <a href="http://pages.indrode.com/">published</a> from time to time.</p>
+  <h1>Privacy and Security</h1>
+  <p class="instructions">5things respects the privacy of its account holders and their data. Intentionally, no specific user data is collected apart from the email address. All user information is governed by the <a href="/terms">Terms of Service</a>. The user always retains all rights to his/her data. For more information, read the <a href="/privacy">Privacy Policy</a> or contact <%= mail_to "5thingsapp@googlemail.com", "5things Support", :encode => "hex" %>.</p>
+  
 </div>
 </div>

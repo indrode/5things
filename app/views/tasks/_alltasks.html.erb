@@ -1,11 +1,8 @@
 <tr>
-	<td class="t_duedate"><%= item.duedate == NEVER ? t("common.unassigned_sm") : l(item.duedate, :format => :default) %></td>
-	<td class="t_task <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %></td>
-	<td class="t_list"><%= h item.tasklist.title %></td>
-		<td class="legend">
-		<%#= link_to 'edit', :action => 'edit', :id => item.id %> <%#= item.id == current_user.current_list ? '' : ' | ' + link_to('remove', '/tasks/' + item.id.to_s + '/remove', :confirm => 'Are you sure?', :method => :post) %>
-		</td>	
+  <td class="t_duedate"><%= item.duedate == NEVER ? t("common.unassigned_sm") : l(item.duedate, :format => :default) %></td>
+  <td class="t_task <%= item.completed ? 'strike' : ' ' %>"><%= h item.body %></td>
+  <td class="t_list"><%= h item.tasklist.title %></td>
+    <td class="legend">
+    <%#= link_to 'edit', :action => 'edit', :id => item.id %> <%#= item.id == current_user.current_list ? '' : ' | ' + link_to('remove', '/tasks/' + item.id.to_s + '/remove', :confirm => 'Are you sure?', :method => :post) %>
+    </td> 
 </tr>
-
-
-
