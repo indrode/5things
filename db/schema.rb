@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330152157) do
+ActiveRecord::Schema.define(:version => 20130330152917) do
 
   create_table "tasklists", :force => true do |t|
     t.integer  "user_id",                  :default => 0, :null => false
@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(:version => 20130330152157) do
     t.date     "duedate"
     t.boolean  "completed"
     t.boolean  "assigned"
-    t.string   "addtype",    :limit => 10
+    t.string   "addtype",     :limit => 10
     t.integer  "ordinal"
-    t.integer  "user_id",                  :null => false
+    t.integer  "user_id",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tasklist_id"
   end
 
   create_table "users", :force => true do |t|
