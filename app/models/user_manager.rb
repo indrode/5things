@@ -2,10 +2,10 @@
 # initialize_user!     
 #  - setup initial tasklist and task, send activation confirmation for newly created user 
 
-class ActionManager
+class UserManager
 
   # tested in spec/acceptance/signup_spec.rb
-  def initialize_user!(user)
+  def initialize!(user)
     newlist = user.tasklists.create(
       :title => t("user.firstlist"),
       :key => Tasklist.new_key
@@ -25,4 +25,5 @@ class ActionManager
     user.reset_perishable_token
     UserMailer.activation_confirmation(user).deliver 
   end
+
 end

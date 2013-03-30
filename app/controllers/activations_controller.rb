@@ -34,7 +34,7 @@ class ActivationsController < ApplicationController
     raise Exception if @user.active?
 
     if @user.activate!(params)
-      ActionManager.initialize_user!(@user)
+      UserManager.initialize!(@user)
       flash[:notice] = t("activations.success")
       redirect_to root_url
     else
