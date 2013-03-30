@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100113222038) do
+ActiveRecord::Schema.define(:version => 20130330152157) do
 
   create_table "tasklists", :force => true do |t|
     t.integer  "user_id",                  :default => 0, :null => false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20100113222038) do
     t.integer  "current_list",                     :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tasklists_count",                  :default => 0
   end
 
 end
