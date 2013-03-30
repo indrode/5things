@@ -1,17 +1,17 @@
-class UserManager
+class UserCreationService
   include TaskUtils
 
   # tested in spec/acceptance/signup_spec.rb
-  def initialize!(user)
+  def initialize(user)
     newlist = user.tasklists.create(
-      :title => t("user.firstlist"),
+      :title => I18n.t("user.firstlist"),
       :key => new_key
     )
     user.current_list = newlist.id
     user.save
 
     newrecord = user.tasks.new(
-      :body => t("user.firstsignup"),
+      :body => I18n.t("user.firstsignup"),
       :duedate => Time.zone.now,
       :completed => 1,
       :ordinal => 1,

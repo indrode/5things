@@ -14,10 +14,8 @@ class UsersController < ApplicationController
 
     @user = User.new    
     if @user.signup!(params)
-      @user.reset_perishable_token!
-      UserMailer.activation_instructions(@user).deliver    
-            
-      @copy = t("user.account_created").html_safe
+      UserCreationService.new(@user)
+      flash[:notice] = t("activations.success")
       render :template => "/shared/success"
     else
       render :action => :new
