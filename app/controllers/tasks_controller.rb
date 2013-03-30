@@ -25,7 +25,7 @@ class TasksController < ApplicationController
       #@bodies = current_user.tasks.all(:select => 'body', :group => 'body')     
       # get all active lists
       @tasklists = current_user.tasklists.all(:order => "title", :conditions => ["active = 1"])
-      @current_list = Tasklist.find_by_id(current_user.current_list)
+      @current_list = current_user.current_tasklist
       @title = @current_list.title     
       @stat_unassigned = @unassigned.size     
       # find today's incomplete tasks (change this and use for achievements too)

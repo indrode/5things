@@ -1,8 +1,4 @@
-# TODOs
-# 1. un-DRY by adding method #flash_and_redirect
-# 2. rescue_action_in_public; add logging
-# 3. check helpers in controller 
-
+# TODO various refactorings
 class ApplicationController < ActionController::Base  
   helper :all
   helper_method :current_user_session, :current_user
@@ -22,8 +18,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_user
       store_location
-      flash[:notice] = t("application.loginrequired")
-      redirect_to new_user_session_url
+      flash_and_redirect(t("application.loginrequired"), new_user_session_url)
       return false
     end
   end
@@ -31,8 +26,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     if current_user
       store_location
-      flash[:notice] = t("application.logoutrequired")
-      redirect_to account_url
+      flash_and_redirect(t("application.logoutrequired"), account_url)
       return false
     end
   end
@@ -103,6 +97,11 @@ class ApplicationController < ActionController::Base
 
   def redirect_if_logged_in
     redirect_to home_path if current_user_session
+  end
+
+  def flash_and_redirect(message, url)
+    flash[:notice] = message
+    redirect_to url
   end
 
   # quick-refactoring; should be completely rewritten
