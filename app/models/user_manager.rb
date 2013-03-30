@@ -1,14 +1,11 @@
-# this class includes several services related to multiple models
-# initialize_user!     
-#  - setup initial tasklist and task, send activation confirmation for newly created user 
-
 class UserManager
+  include TaskUtils
 
   # tested in spec/acceptance/signup_spec.rb
   def initialize!(user)
     newlist = user.tasklists.create(
       :title => t("user.firstlist"),
-      :key => Tasklist.new_key
+      :key => new_key
     )
     user.current_list = newlist.id
     user.save
