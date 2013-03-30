@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+  attr_accessible :body, :duedate, :completed, :ordinal, :tasklist_id
   validates_presence_of :body
   belongs_to :user, :counter_cache => true
   belongs_to :tasklist, :counter_cache => true
