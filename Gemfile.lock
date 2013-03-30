@@ -33,6 +33,7 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.3)
     afm (0.2.0)
     arel (3.0.2)
     authlogic (3.2.0)
@@ -65,6 +66,8 @@ GEM
     icalendar (1.2.3)
     journey (1.0.4)
     json (1.7.7)
+    launchy (2.2.0)
+      addressable (~> 2.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -161,6 +164,7 @@ DEPENDENCIES
   fastercsv
   flatui-rails
   icalendar
+  launchy
   mysql2
   prawn
   rabl
