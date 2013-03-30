@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
     active
   end
 
+  def current_tasklist
+    Tasklist.find(self.current_list)
+  end
+
 end
